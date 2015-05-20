@@ -1,0 +1,49 @@
+{
+	"name" : "IFMA/odontoSys",
+	"description" : "Sistema academico para o setor odontológico do IFMA",
+	"authors" : [
+		{
+			"name" : "Maykon Deykon",
+			"email" : "maykondeykon@gmail.com",
+			"role" : "Developer"
+		},
+		{
+			"name" : "Vitor",
+			"email" : "vitorvqz@gmail.com",
+			"role" : "Developer"
+		},
+		{
+			"name" : "Gustavo",
+			"email" : "gustavomoreno_885@hotmail.com",
+			"role" : "Developer"
+		},
+		{
+			"name" : "Roberto",
+			"email" : "robertonscjr@gmail.com",
+			"role" : "Developer"
+		}
+	],
+	"require" : {
+		"php" : ">=5.4",
+		"silex/silex" : "1.0.*",
+		"symfony/http-kernel" : "*",
+		"symfony/browser-kit" : "*",
+		"symfony/console" : "*",
+		"doctrine/dbal" : "2.2.*",
+		"doctrine/orm" : "*",
+		"twig/twig" : ">=1.8,<2.0-dev",
+		"symfony/twig-bridge" : "2.1.*",
+		"swiftmailer/swiftmailer" : ">=4.1.2,<4.2-dev",
+		"entea/silex-twig-simple-asset-extension" : "dev-master",
+		"knplabs/knp-snappy" : "*",
+		"zendframework/zend-stdlib": "2.4.*@dev"
+	},
+	"autoload" : {
+		"psr-0" : {
+			"" : "src/"
+		}
+	},
+	"config" : {
+		"bin-dir" : "scripts"
+	}
+}
