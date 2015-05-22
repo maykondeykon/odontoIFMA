@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Maykon Deykon, Vitor Queiroz, Gustavo Moreno, Roberto Júnior">
+    <link rel="icon" href="{{ app.request.basepath }}/img/favicon.png"/>
+    <title>OdontoIFMA</title>
+
+    <link rel="stylesheet" href="{{ app.request.basepath }}/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ app.request.basepath }}/bootstrap/css/bootstrap-theme.min.css">
+    <link href="{{ app.request.basepath }}/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<header class="panel-heading header-base">
+    <div class="container">
+        <img src="http://placehold.it/900x150">
+    </div>
+</header>
+
+<div class="container" style="padding-top: 28px;">
+    {% block breadcrumb %}
+    {% endblock %}
+    {% block content %}
+    {% endblock %}
+</div>
+
+<footer class="footer-base">
+    <div class="footer-base-texto">
+        <div class="row text-center">
+            <p>OdontoIFMA</p>
+        </div>
+    </div>
+</footer>
+
+{#Scripts#}
+<script src="{{ app.request.basepath }}/js/jquery-min.js"></script>
+<script src="{{ app.request.basepath }}/bootstrap/js/bootstrap.min.js"></script>
+
+</body>
+</html>
