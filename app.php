@@ -2,7 +2,7 @@
 
 require_once __DIR__ . "/bootstrap.php";
 
-use odontoSys\controller\IndexController;
+use odontoIFMA\controller\IndexController;
 
 /**
  * Controllers

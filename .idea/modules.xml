@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/odontoSys.iml" filepath="$PROJECT_DIR$/.idea/odontoSys.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../odontoIFMA/.idea/odontoIFMA.iml" filepath="$PROJECT_DIR$/../odontoIFMA/.idea/odontoIFMA.iml" />
     </modules>
   </component>
 </project>
