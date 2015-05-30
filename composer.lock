@@ -627,7 +627,7 @@
         },
         {
             "name": "symfony/debug",
-            "version": "v2.6.8",
+            "version": "v2.6.9",
             "target-dir": "Symfony/Component/Debug",
             "source": {
                 "type": "git",
@@ -688,7 +688,7 @@
         },
         {
             "name": "symfony/dom-crawler",
-            "version": "v2.6.8",
+            "version": "v2.6.9",
             "target-dir": "Symfony/Component/DomCrawler",
             "source": {
                 "type": "git",
@@ -742,7 +742,7 @@
         },
         {
             "name": "symfony/event-dispatcher",
-            "version": "v2.3.29",
+            "version": "v2.3.30",
             "target-dir": "Symfony/Component/EventDispatcher",
             "source": {
                 "type": "git",
@@ -797,7 +797,7 @@
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v2.3.29",
+            "version": "v2.3.30",
             "target-dir": "Symfony/Component/HttpFoundation",
             "source": {
                 "type": "git",
@@ -924,7 +924,7 @@
         },
         {
             "name": "symfony/routing",
-            "version": "v2.3.29",
+            "version": "v2.3.30",
             "target-dir": "Symfony/Component/Routing",
             "source": {
                 "type": "git",

@@ -29,8 +29,8 @@ $params = array(
     'driver' => 'pdo_mysql',
     'host' => 'localhost',
     'port' => '3306',
-    'user' => 'root',
-    'password' => '',
+    'user' => 'odontoifma',
+    'password' => 'C3at4ASZP7DJg7S',
     'dbname' => 'odontoifma',
     'charset' => 'utf8'
 );
