@@ -40,6 +40,7 @@ Doctrine\DBAL\Types\Type::overrideType("datetime", "Doctrine\\DBAL\\Types\\VarDa
 $app = new Application();
 
 $app->register(new Silex\Provider\ServiceControllerServiceProvider());
+$app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__ . "/src/odontoIFMA/views"
 ));

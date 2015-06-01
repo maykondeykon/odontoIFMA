@@ -1,0 +1,31 @@
+{% extends 'template/template.twig' %}
+{% block content %}
+
+
+    <form class="form-horizontal form-padrao">
+
+        <div class="form-group">
+            <label for="descricao" class="col-sm-2 control-label">Descrição</label>
+
+            <div class="col-sm-8">
+                <input type="text" class="form-control uppercase" name="descricao"
+                       id="descricao" placeholder="Descrição" value="">
+            </div>
+        </div>
+
+        <input type="hidden" id="id" name="id">
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-8">
+                <button type="button" class="btn btn-primary" data-toggle="modal"
+                        data-target="#confirmModal " id="launchModal">
+                    <span class="glyphicon glyphicon-ok"></span> Salvar
+                </button>
+                <a class="btn btn-default" href="/"><i
+                            class="glyphicon glyphicon-remove"></i> Cancelar</a>
+            </div>
+        </div>
+
+    </form>
+
+{% endblock %}
