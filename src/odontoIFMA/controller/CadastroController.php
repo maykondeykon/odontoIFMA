@@ -35,4 +35,17 @@ class CadastroController extends AbstractController
     {
         return $this->app['twig']->render('cadastro/tipoOperador.twig', array("active_page" => "cadTipoOperador"));
     }
+
+    public function salvarOperador()
+    {
+        $this->entity = 'odontoIFMA\entity\TipoOperador';
+
+        $dados = array(
+            'descricao' => $this->app['request']->get('descricao')
+        );
+
+        $entidade = $this->insert($dados);
+        print_r($entidade);
+
+    }
 }

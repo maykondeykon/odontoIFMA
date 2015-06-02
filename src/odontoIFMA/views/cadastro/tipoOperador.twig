@@ -2,7 +2,7 @@
 {% block content %}
 
 
-    <form class="form-horizontal form-padrao">
+    <form class="form-horizontal form-padrao" method="post" action="/cadastro/salvar/tipo-operador">
 
         <div class="form-group">
             <label for="descricao" class="col-sm-2 control-label">Descrição</label>
@@ -17,8 +17,7 @@
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-8">
-                <button type="button" class="btn btn-primary" data-toggle="modal"
-                        data-target="#confirmModal " id="launchModal">
+                <button type="submit" class="btn btn-primary">
                     <span class="glyphicon glyphicon-ok"></span> Salvar
                 </button>
                 <a class="btn btn-default" href="/"><i

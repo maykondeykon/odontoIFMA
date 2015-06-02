@@ -27,6 +27,10 @@ $app->get('/cadastro/tipo-operador', function () use ($app) {
     return $app['cadastro.controller']->tipoOperador();
 })->bind('cadTipoOperador');
 
+$app->post('/cadastro/salvar/tipo-operador', function () use($app){
+    return $app['cadastro.controller']->salvarOperador();
+});
+
 
 /**
  * Executa o sistema
