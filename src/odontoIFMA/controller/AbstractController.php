@@ -17,7 +17,7 @@ abstract class AbstractController
             return $entity;
         }
 
-        return null;
+        throw new \Exception("Dados vazios.");
     }
 
     public function update(array $dados)
@@ -31,7 +31,7 @@ abstract class AbstractController
                 return $entity;
             }
         }
-        return null;
+        throw new \Exception("Dados vazios ou id indefinido.");
     }
 
     /**
@@ -52,7 +52,7 @@ abstract class AbstractController
                 throw new \Exception('Registro não encontrado.');
             }
         }
-        return null;
+        throw new \Exception("Id indefinido.");
     }
 
     protected function persist($entity)
@@ -69,6 +69,11 @@ abstract class AbstractController
         }
 
         return $entity;
+    }
+
+    public function msgSuccess(array $params)
+    {
+        return $this->app['twig']->render('success/success.twig', $params);
     }
 
 }

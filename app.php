@@ -33,6 +33,22 @@ $app->post('/cadastro/salvar/tipo-operador', function () use($app){
 
 
 /**
+ * Rota para captura de exceções
+ */
+$app->error(function (\Exception $e)use ($app) {
+    $titulo = 'Um erro ocorreu!';
+    $tipo = 'alert-danger';
+    $icon = 'glyphicon-remove';
+    return $app['twig']->render('error/error.twig', array(
+        'message' => $e->getMessage(),
+        'titulo' => $titulo,
+        'tipo' => $tipo,
+        'icon' => $icon
+    ));
+});
+
+
+/**
  * Executa o sistema
  */
 $app->run();
