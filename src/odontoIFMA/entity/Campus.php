@@ -4,14 +4,13 @@ namespace odontoIFMA\entity;
 use Doctrine\ORM\Mapping as ORM;
 use Zend\Stdlib\Hydrator;
 
-
 /**
- * Class Operador
+ * Class Campus
  * @package odontoIFMA\entity
  * @ORM\Entity
- * @ORM\Table(name="operador")
+ * @ORM\Table(name="campus")
  */
-class Operador
+class Campus
 {
     /**
      * @var integer $id
@@ -26,21 +25,6 @@ class Operador
      * @ORM\Column(name="nome", type="string", length=255, nullable=false)
      */
     private $nome;
-
-    /**
-     * @var string $documento
-     * @ORM\Column(name="documento", type="string", length=255, nullable=true)
-     */
-    private $documento;
-
-    /**
-     * @var TipoOperador $tipo
-     * @ORM\ManyToOne(targetEntity="TipoOperador")
-     * @ORM\JoinColumns({
-     * @ORM\JoinColumn(name="tipo_operador", referencedColumnName="id")
-     * })
-     */
-    private $tipo;
 
     public function __construct(array $data = array())
     {
@@ -87,41 +71,5 @@ class Operador
         $this->nome = $nome;
         return $this;
     }
-
-    /**
-     * @return string
-     */
-    public function getDocumento()
-    {
-        return $this->documento;
-    }
-
-    /**
-     * @param string $documento
-     * @return $this
-     */
-    public function setDocumento($documento)
-    {
-        $this->documento = $documento;
-        return $this;
-    }
-
-    /**
-     * @return TipoOperador
-     */
-    public function getTipo()
-    {
-        return $this->tipo;
-    }
-
-    /**
-     * @param TipoOperador $tipo
-     * @return $this
-     */
-    public function setTipo($tipo)
-    {
-        $this->tipo = $tipo;
-        return $this;
-    }
-
+    
 }
