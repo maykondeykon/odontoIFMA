@@ -68,7 +68,7 @@ class Campus
      */
     public function setNome($nome)
     {
-        $this->nome = $nome;
+        $this->nome = mb_strtoupper(trim($nome), 'UTF-8');
         return $this;
     }
     

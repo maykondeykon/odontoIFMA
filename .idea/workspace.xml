@@ -2,11 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ade7ce8-f0a8-49ad-858e-881229dc6532" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/formValidate.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/odontoIFMA/views/cadastro/campus.twig" afterPath="$PROJECT_DIR$/src/odontoIFMA/views/cadastro/campus.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/odontoIFMA/controller/CadastroController.php" afterPath="$PROJECT_DIR$/src/odontoIFMA/controller/CadastroController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/odontoIFMA/entity/Campus.php" afterPath="$PROJECT_DIR$/src/odontoIFMA/entity/Campus.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/odontoIFMA/views/cadastro/paciente.twig" afterPath="$PROJECT_DIR$/src/odontoIFMA/views/cadastro/paciente.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/odontoIFMA/views/template/template.twig" afterPath="$PROJECT_DIR$/src/odontoIFMA/views/template/template.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/odontoIFMA/views/cadastro/tipoOperador.twig" afterPath="$PROJECT_DIR$/src/odontoIFMA/views/cadastro/tipoOperador.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="odontoSys.iws" />
@@ -86,29 +84,43 @@
       <file leaf-file-name="CadastroController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/odontoIFMA/controller/CadastroController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="31.148148" vertical-offset="1687" max-vertical-offset="2394">
-              <caret line="48" column="20" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
+            <state vertical-scroll-proportion="-8.851851" vertical-offset="553" max-vertical-offset="2502">
+              <caret line="45" column="70" selection-start-line="45" selection-start-column="70" selection-end-line="45" selection-end-column="70" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="template.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/odontoIFMA/views/template/template.twig">
+      <file leaf-file-name="app.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.444445" vertical-offset="4065" max-vertical-offset="4662">
-              <caret line="249" column="55" selection-start-line="249" selection-start-column="55" selection-end-line="249" selection-end-column="55" />
+            <state vertical-scroll-proportion="-6.0" vertical-offset="270" max-vertical-offset="1368">
+              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scripts.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/scripts.js">
+      <file leaf-file-name="TipoOperador.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/odontoIFMA/entity/TipoOperador.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1062">
-              <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
-              <folding />
+            <state vertical-scroll-proportion="-13.925926" vertical-offset="902" max-vertical-offset="1458">
+              <caret line="71" column="68" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="68" />
+              <folding>
+                <element signature="e#37#69#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Paciente.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/odontoIFMA/entity/Paciente.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-18.666666" vertical-offset="936" max-vertical-offset="4968">
+              <caret line="80" column="4" selection-start-line="80" selection-start-column="4" selection-end-line="88" selection-end-column="5" />
+              <folding>
+                <element signature="e#36#68#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -116,9 +128,21 @@
       <file leaf-file-name="paciente.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/odontoIFMA/views/cadastro/paciente.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.333333" vertical-offset="1404" max-vertical-offset="2016">
-              <caret line="101" column="18" selection-start-line="101" selection-start-column="18" selection-end-line="101" selection-end-column="18" />
+            <state vertical-scroll-proportion="-7.4444447" vertical-offset="789" max-vertical-offset="2142">
+              <caret line="55" column="34" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Campus.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/odontoIFMA/entity/Campus.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.925926" vertical-offset="884" max-vertical-offset="1440">
+              <caret line="70" column="58" selection-start-line="70" selection-start-column="58" selection-end-line="70" selection-end-column="58" />
+              <folding>
+                <element signature="e#36#68#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -126,8 +150,8 @@
       <file leaf-file-name="formValidate.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/formValidate.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="3.2418525" vertical-offset="0" max-vertical-offset="3474">
-              <caret line="105" column="51" selection-start-line="105" selection-start-column="51" selection-end-line="105" selection-end-column="51" />
+            <state vertical-scroll-proportion="0.27787307" vertical-offset="864" max-vertical-offset="3474">
+              <caret line="57" column="21" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -158,33 +182,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Operador.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/odontoIFMA/entity/Operador.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="2250" max-vertical-offset="2376">
-              <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
-              <folding>
-                <element signature="e#36#68#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="tipoOperador.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/odontoIFMA/views/cadastro/tipoOperador.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="-2.6666667" vertical-offset="0" max-vertical-offset="630">
               <caret line="4" column="66" selection-start-line="4" selection-start-column="50" selection-end-line="4" selection-end-column="66" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Acesso.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/odontoIFMA/entity/Acesso.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="2484">
-              <caret line="51" column="20" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -219,15 +221,15 @@
         <option value="$PROJECT_DIR$/app.php" />
         <option value="$PROJECT_DIR$/app.php" />
         <option value="$PROJECT_DIR$/src/odontoIFMA/entity/Paciente.php" />
-        <option value="$PROJECT_DIR$/src/odontoIFMA/entity/Campus.php" />
         <option value="$PROJECT_DIR$/src/odontoIFMA/entity/Operador.php" />
-        <option value="$PROJECT_DIR$/src/odontoIFMA/controller/CadastroController.php" />
         <option value="$PROJECT_DIR$/public/js/scripts.js" />
         <option value="$PROJECT_DIR$/src/odontoIFMA/views/template/template.twig" />
-        <option value="$PROJECT_DIR$/src/odontoIFMA/views/cadastro/paciente.twig" />
         <option value="$PROJECT_DIR$/src/odontoIFMA/views/cadastro/tipoOperador.twig" />
         <option value="$PROJECT_DIR$/src/odontoIFMA/views/cadastro/campus.twig" />
+        <option value="$PROJECT_DIR$/src/odontoIFMA/controller/CadastroController.php" />
+        <option value="$PROJECT_DIR$/src/odontoIFMA/entity/Campus.php" />
         <option value="$PROJECT_DIR$/public/js/formValidate.js" />
+        <option value="$PROJECT_DIR$/src/odontoIFMA/views/cadastro/paciente.twig" />
       </list>
     </option>
   </component>
@@ -353,6 +355,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="cadastro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="odontoIFMA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="odontoIFMA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="odontoIFMA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="entity" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -640,7 +664,13 @@
       <option name="project" value="LOCAL" />
       <updated>1433475788838</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Adicionado validação nos formulários de campus, paciente e tipo paciente">
+      <created>1433477194340</created>
+      <option name="number" value="00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1433477194340</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -733,7 +763,8 @@
     <MESSAGE value="Atualização do método de inserção de tipo operador.&#10;Implementado método abstrato para exibição de msg.&#10;Adicionada rota para captura de erros.&#10;Adicionada views para exibição de mensagens de sucesso e erro." />
     <MESSAGE value="Adicionadas bibliotecas javascript para validação, máscara datatable e datepicker." />
     <MESSAGE value="Adicionado datepicker e máscara de celular ao form de paciente." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adicionado datepicker e máscara de celular ao form de paciente." />
+    <MESSAGE value="Adicionado validação nos formulários de campus, paciente e tipo paciente" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adicionado validação nos formulários de campus, paciente e tipo paciente" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -792,6 +823,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="414">
           <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+          <folding>
+            <element signature="e#41#70#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -846,6 +880,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="414">
           <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
+          <folding>
+            <element signature="e#41#70#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -886,6 +923,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="414">
           <caret line="15" column="71" selection-start-line="15" selection-start-column="71" selection-end-line="15" selection-end-column="71" />
+          <folding>
+            <element signature="e#41#70#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -926,6 +966,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="270" max-vertical-offset="414">
           <caret line="15" column="71" selection-start-line="15" selection-start-column="71" selection-end-line="15" selection-end-column="71" />
+          <folding>
+            <element signature="e#41#70#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -991,6 +1034,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="128" max-vertical-offset="684">
           <caret line="22" column="8" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="57" />
+          <folding>
+            <element signature="e#41#70#0#PHP" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1018,14 +1064,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="432" max-vertical-offset="1368">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/odontoIFMA/controller/AbstractController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="198" max-vertical-offset="1512">
@@ -1034,42 +1072,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/entity/TipoOperador.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="522" max-vertical-offset="1458">
-          <caret line="29" column="4" selection-start-line="29" selection-start-column="4" selection-end-line="37" selection-end-column="5" />
-          <folding>
-            <element signature="e#37#69#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/entity/Campus.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="1440">
-          <caret line="25" column="7" selection-start-line="22" selection-start-column="4" selection-end-line="25" selection-end-column="7" />
-          <folding>
-            <element signature="e#36#68#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/entity/Paciente.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="936" max-vertical-offset="4968">
-          <caret line="80" column="4" selection-start-line="80" selection-start-column="4" selection-end-line="88" selection-end-column="5" />
-          <folding>
-            <element signature="e#36#68#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/odontoIFMA/entity/Operador.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2250" max-vertical-offset="2376">
           <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
           <folding>
-            <element signature="e#36#68#0#PHP" expanded="true" />
+            <element signature="e#36#68#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1078,14 +1086,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="2484">
           <caret line="51" column="20" selection-start-line="51" selection-start-column="20" selection-end-line="51" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/controller/CadastroController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="31.148148" vertical-offset="1687" max-vertical-offset="2394">
-          <caret line="48" column="20" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
           <folding />
         </state>
       </provider>
@@ -1106,14 +1106,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/views/cadastro/paciente.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.333333" vertical-offset="1404" max-vertical-offset="2016">
-          <caret line="101" column="18" selection-start-line="101" selection-start-column="18" selection-end-line="101" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/odontoIFMA/views/cadastro/tipoOperador.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.6666667" vertical-offset="0" max-vertical-offset="630">
@@ -1130,6 +1122,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.0" vertical-offset="270" max-vertical-offset="1368">
+          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/controller/CadastroController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.851851" vertical-offset="553" max-vertical-offset="2502">
+          <caret line="45" column="70" selection-start-line="45" selection-start-column="70" selection-end-line="45" selection-end-column="70" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/entity/TipoOperador.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.925926" vertical-offset="902" max-vertical-offset="1458">
+          <caret line="71" column="68" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="68" />
+          <folding>
+            <element signature="e#37#69#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/entity/Paciente.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.666666" vertical-offset="936" max-vertical-offset="4968">
+          <caret line="80" column="4" selection-start-line="80" selection-start-column="4" selection-end-line="88" selection-end-column="5" />
+          <folding>
+            <element signature="e#36#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/entity/Campus.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.925926" vertical-offset="884" max-vertical-offset="1440">
+          <caret line="70" column="58" selection-start-line="70" selection-start-column="58" selection-end-line="70" selection-end-column="58" />
+          <folding>
+            <element signature="e#36#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="dbDummy://dbtable:/86ffa777/d7258286-fefa-4cc3-afed-578ebf299aa3/odontoifma..campus">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -1143,10 +1181,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/views/cadastro/paciente.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.4444447" vertical-offset="789" max-vertical-offset="2142">
+          <caret line="55" column="34" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/formValidate.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="3.2418525" vertical-offset="0" max-vertical-offset="3474">
-          <caret line="105" column="51" selection-start-line="105" selection-start-column="51" selection-end-line="105" selection-end-column="51" />
+        <state vertical-scroll-proportion="0.27787307" vertical-offset="864" max-vertical-offset="3474">
+          <caret line="57" column="21" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="21" />
           <folding />
         </state>
       </provider>

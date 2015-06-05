@@ -38,7 +38,13 @@ class CadastroController extends AbstractController
 
     public function tipoPaciente()
     {
-        return $this->app['twig']->render('cadastro/paciente.twig', array("active_page" => "cadTipoPaciente"));
+        $repoCampus = $this->em->getRepository('odontoIFMA\entity\Campus'); // Obtêm o repositório da entidade
+        $listaCampus = $repoCampus->findAll(); // Recupera a lista de todos os itens da entidade
+
+        return $this->app['twig']->render('cadastro/paciente.twig', array(
+            "active_page" => "cadTipoPaciente",
+            'listaCampus' => $listaCampus // Passa a lista para a view
+        ));
     }
 
     public function tipoCampus()
