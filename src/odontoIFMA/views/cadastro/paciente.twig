@@ -2,7 +2,7 @@
 {% block content %}
 
 
-    <form class="form-horizontal form-padrao" method="post" action="/cadastro/salvar/paciente">
+    <form class="form-horizontal form-padrao" id="formPaciente" method="post" action="/cadastro/salvar/paciente">
 
         <div class="form-group">
             <label for="nome" class="col-sm-2 control-label">Nome</label>
@@ -82,7 +82,7 @@
             <label for="campus" class="col-sm-2 control-label">Campus </label>
 
                 <div class="col-sm-4">
-                    <select class="form-control uppercase" name="nome" id="campus_id">
+                    <select class="form-control uppercase" name="campus_id" id="campus_id">
                       <option value="nome">Monte Castelo</option>
                       <option value="nome">Ze Doca</option>
                       <option value="nome">Maracana</option>                      
