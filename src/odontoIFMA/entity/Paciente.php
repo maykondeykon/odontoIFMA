@@ -138,7 +138,7 @@ class Paciente
      */
     public function setDtNascimento($dtNascimento)
     {
-        $this->dtNascimento = $dtNascimento;
+        $this->dtNascimento = (new \DateTime($dtNascimento));
         return $this;
     }
 

@@ -31,6 +31,16 @@ $app->post('/cadastro/salvar/tipo-operador', function () use($app){
     return $app['cadastro.controller']->salvarOperador();
 });
 
+$app->get('/cadastro/paciente', function () use ($app) {
+    return $app['cadastro.controller']->tipoPaciente();
+})->bind('cadTipoPaciente');
+
+$app->post('/cadastro/salvar/paciente', function () use($app){
+    return $app['cadastro.controller']->salvarPaciente(); 
+});
+
+
+
 
 /**
  * Rota para captura de exceções
