@@ -41,6 +41,11 @@ class CadastroController extends AbstractController
         return $this->app['twig']->render('cadastro/paciente.twig', array("active_page" => "cadTipoPaciente"));
     }
 
+    public function tipoCampus()
+    {
+        return $this->app['twig']->render('cadastro/campus.twig', array("active_page" => "cadTipoCampus"));
+    }
+
     public function salvarOperador()
     {
         $this->entity = 'odontoIFMA\entity\TipoOperador'; //Define a entidade que será usada
@@ -78,6 +83,32 @@ class CadastroController extends AbstractController
             'icon' => 'glyphicon-ok', // Ícone do título da mensagem
             'active_page' => 'cadTipoPaciente', // Define a página ativa no menu e breadcrumb
             'btVoltar' => '/cadastro/paciente' // Define a rota do botão voltar
+        );
+
+        if ($this->app['request']->getMethod() == 'POST') {
+            $request = $this->app['request']->request;
+            $dados = $request->all();
+            print_r($dados);
+
+            $this->insert($dados);            
+
+            return $this->msgSuccess($params);
+        }else{
+            throw new \Exception("Método inválido.");
+        }
+    }
+
+    public function salvarCampus()
+    {
+         $this->entity = 'odontoIFMA\entity\Campus'; //Define a entidade que será usada
+        //Define os parâmetros que serão usados na renderização da tela com retorno da operação
+        $params = array(
+            'message' => 'Campus cadastrado com sucesso.', //Mensagem a ser exibida
+            'titulo' => 'Sucesso!', // Título da mensagem
+            'tipo' => 'alert-success', // Define o tipo da mensagem, erro ou sucesso
+            'icon' => 'glyphicon-ok', // Ícone do título da mensagem
+            'active_page' => 'cadTipoCampus', // Define a página ativa no menu e breadcrumb
+            'btVoltar' => '/cadastro/campus' // Define a rota do botão voltar
         );
 
         if ($this->app['request']->getMethod() == 'POST') {

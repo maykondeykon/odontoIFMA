@@ -39,6 +39,14 @@ $app->post('/cadastro/salvar/paciente', function () use($app){
     return $app['cadastro.controller']->salvarPaciente(); 
 });
 
+$app->get('/cadastro/campus', function () use ($app) {
+    return $app['cadastro.controller']->tipoCampus();
+})->bind('cadTipoCampus');
+
+$app->post('/cadastro/salvar/campus', function () use($app){
+    return $app['cadastro.controller']->salvarCampus(); 
+});
+
 
 
 
