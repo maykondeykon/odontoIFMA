@@ -55,8 +55,12 @@ $app->post('/cadastro/salvar/campus', function () use($app){
     return $app['cadastro.controller']->salvarCampus(); 
 });
 
-
-
+/**
+ * Rota para logout do sistema
+ */
+$app->get('/logout', function () use ($app, $em) {
+    return $app->redirect('/');
+});
 
 /**
  * Rota para captura de exceções
