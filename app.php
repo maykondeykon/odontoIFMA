@@ -21,11 +21,15 @@ $app['cadastro.controller'] = $app->share(function () use($app) {
  */
 $app->get('/', function () use ($app) {
     return $app['index.controller']->index();
-})->bind('home');
+});
 
 $app->post('/login', function () use($app){
     return $app['index.controller']->login(); 
 });
+
+$app->get('/home', function () use ($app) {
+    return $app['index.controller']->home();
+})->bind('home');
 
 $app->get('/cadastro/tipo-operador', function () use ($app) {
     return $app['cadastro.controller']->tipoOperador();

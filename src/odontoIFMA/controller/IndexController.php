@@ -15,7 +15,7 @@ class IndexController extends AbstractController
 
     public function index()
     {
-        return $this->app['twig']->render('index/login.twig', array());
+        return $this->app['twig']->render('index/login.twig', array("active_page" => "login"));
     }
 
     public function login()
@@ -30,7 +30,7 @@ class IndexController extends AbstractController
             $dados = $request->all();
 
             if ($dados['login'] == $login && $dados['senha'] == $senha) {
-                return $this->app->redirect("/cadastro/tipo-operador");
+                return $this->app->redirect("/home");
             }else{
                 throw new \Exception("Usuário ou senha inválidos!");
             }
@@ -38,5 +38,10 @@ class IndexController extends AbstractController
         }else{
             throw new \Exception("Método inválido.");
         }
+    }
+
+    public function home()
+    {
+        return $this->app['twig']->render('index/home.twig', array("active_page" => "home"));
     }
 }

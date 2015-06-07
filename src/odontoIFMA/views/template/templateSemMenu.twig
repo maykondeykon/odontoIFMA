@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Maykon Deykon, Vitor Queiroz, Gustavo Moreno, Roberto Júnior">
+    <link rel="icon" href="{{ app.request.basepath }}/img/favicon.png"/>
+    <title>OdontoIFMA</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="{{ app.request.basepath }}/bootstrap/css/bootstrap.min.css">
+
+    <!--Datepicker CSS-->
+    <link href="{{ app.request.basepath }}/bootstrap/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css"
+          rel="stylesheet">
+
+    <!--Bootstrap Validator CSS-->
+    <link href="{{ app.request.basepath }}/bootstrap/plugins/bootstrapvalidator/bootstrapValidator.css"
+          rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link href="{{ app.request.basepath }}/css/sb-admin.css" rel="stylesheet">
+
+    <!-- Morris Charts CSS -->
+    <link href="{{ app.request.basepath }}/css/morris.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{{ app.request.basepath }}/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div id="wrapper">
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">OdontoIFMA</a>
+        </div>
+        {% block menu %}
+        {% endblock %}
+        <!-- /.navbar-collapse -->
+    </nav>
+    <div id="page-wrapper">
+        <div class="container-fluid">
+            {% block header %}
+            {% endblock %}
+            <div class="min-height">
+            {% block content %}
+            {% endblock %}
+            </div>
+        </div>
+        <!-- /.container-fluid -->
+    </div>
+    <!-- /#page-wrapper -->
+</div>
+<!-- /#wrapper -->
+
+
+<!-- jQuery -->
+<script src="{{ app.request.basepath }}/js/jquery-min.js"></script>
+<script src="{{ app.request.basepath }}/js/jquery-ui.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="{{ app.request.basepath }}/bootstrap/js/bootstrap.min.js"></script>
+
+<!--Datepicker js-->
+<script src="{{ app.request.basepath }}/bootstrap/plugins/bootstrap-datetimepicker/moment.js"></script>
+<script src="{{ app.request.basepath }}/bootstrap/plugins/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script src="{{ app.request.basepath }}/bootstrap/plugins/bootstrap-datetimepicker/locales/bootstrap-datetimepicker.pt-BR.js"></script>
+
+<!--Bootstrap Validator js-->
+<script src="{{ app.request.basepath }}/bootstrap/plugins/bootstrapvalidator/bootstrapValidator.js"></script>
+
+<!--jQuery Mask Plugin js-->
+<script src="{{ app.request.basepath }}/js/jquery.mask.min.js"></script>
+
+<!--DataTables js-->
+<script src="{{ app.request.basepath }}/js/jquery.plugin.min.js"></script>
+<script src="{{ app.request.basepath }}/js/jquery.dataTables.min.js"></script>
+<script src="{{ app.request.basepath }}/js/dataTables.bootstrap.js"></script>
+
+<!-- Scripts locais -->
+<script src="{{ app.request.basepath }}/js/scripts.js"></script>
+<script src="{{ app.request.basepath }}/js/formValidate.js"></script>
+
+</body>
+</html>
