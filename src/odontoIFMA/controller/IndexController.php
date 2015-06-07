@@ -15,19 +15,28 @@ class IndexController extends AbstractController
 
     public function index()
     {
-        $dados = [
-            'descricao' => 'servidor2',
-            'id' => '5'
-        ];
+        return $this->app['twig']->render('index/login.twig', array());
+    }
 
-        $this->entity = 'odontoIFMA\entity\TipoOperador';
+    public function login()
+    {   
+        $this->entity = 'odontoIFMA\entity\Acesso'; //Define a entidade que será usada
 
-//        $entity = $this->insert($dados);
+        $login = 'admin';
+        $senha = 'admin';
 
-//        $entity = $this->update($dados);
+        if ($this->app['request']->getMethod() == 'POST') {
+            $request = $this->app['request']->request;
+            $dados = $request->all();
 
-//        print_r($this->delete(5));
-
-        return $this->app['twig']->render('index/index.twig', array());
+            if ($dados['login'] == $login && $dados['senha'] == $senha) {
+                return $this->app->redirect("/cadastro/tipo-operador");
+            }else{
+                throw new \Exception("Usuário ou senha inválidos!");
+            }
+           
+        }else{
+            throw new \Exception("Método inválido.");
+        }
     }
 }
