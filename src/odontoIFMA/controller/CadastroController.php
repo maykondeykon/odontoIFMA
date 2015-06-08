@@ -52,6 +52,42 @@ class CadastroController extends AbstractController
         return $this->app['twig']->render('cadastro/campus.twig', array("active_page" => "cadTipoCampus"));
     }
 
+// INÍCIO ALTERAÇÃO FEITA POR ROBERTO 07/06/2015 (CRIAÇÃO FUNÇÃO Operador E salvarCadastroOperador)
+
+     public function Operador()
+    {
+        return $this->app['twig']->render('cadastro/operador.twig', array("active_page" => "cadOperador"));
+    }
+
+
+    public function salvarCadastroOperador()
+    {
+        $this->entity = 'odontoIFMA\entity\Operador'; //Define a entidade que será usada
+        //Define os parâmetros que serão usados na renderização da tela com retorno da operação
+        $params = array(
+            'message' => 'Operador cadastrado com sucesso.', //Mensagem a ser exibida
+            'titulo' => 'Sucesso!', // Título da mensagem
+            'tipo' => 'alert-success', // Define o tipo da mensagem, erro ou sucesso
+            'icon' => 'glyphicon-ok', // Ícone do título da mensagem
+            'active_page' => 'cadOperador', // Define a página ativa no menu e breadcrumb
+            'btVoltar' => '/cadastro/operador' // Define a rota do botão voltar
+        );
+
+        if ($this->app['request']->getMethod() == 'POST') {
+            $request = $this->app['request']->request;
+            $dados = $request->all();
+
+            $this->insert($dados);
+
+            return $this->msgSuccess($params);
+        }else{
+            throw new \Exception("Método inválido.");
+        }
+
+    }
+
+// FIM ALTERAÇÃO FEITA POR ROBERTO 07/06/2015 (CRIAÇÃO FUNÇÃO Operador E salvarCadastroOperador)
+
     public function salvarOperador()
     {
         $this->entity = 'odontoIFMA\entity\TipoOperador'; //Define a entidade que será usada

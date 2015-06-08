@@ -55,6 +55,18 @@ $app->post('/cadastro/salvar/campus', function () use($app){
     return $app['cadastro.controller']->salvarCampus(); 
 });
 
+// INÍCIO ALTERAÇÃO FEITA POR ROBERTO 07/06/2015 (CRIAÇÃO DAS ROTAS PARA CADASTRO DE OPERADOR)
+
+$app->get('/cadastro/operador', function () use ($app) {
+    return $app['cadastro.controller']->Operador();
+})->bind('cadOperador');
+
+$app->post('/cadastro/salvar/operador', function () use($app){
+    return $app['cadastro.controller']->salvarCadastroOperador(); 
+});
+
+// FIM DA ALTERAÇÃO FEITA POR ROBERTO 07/06/2015 (CRIAÇÃO DAS ROTAS PARA CADASTRO DE OPERADOR)
+
 /**
  * Rota para logout do sistema
  */
