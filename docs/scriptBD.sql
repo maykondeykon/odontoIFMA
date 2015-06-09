@@ -28,7 +28,7 @@ USE `mydb` ;
 -- -----------------------------------------------------
 -- Table `mydb`.`tipo_paciente`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`tipo_paciente` (
+CREATE TABLE IF NOT EXISTS `odontoifma`.`tipo_paciente` (
   `id` INT(11) NOT NULL,
   `descricao` VARCHAR(255) NOT NULL,
   PRIMARY KEY (`id`),
