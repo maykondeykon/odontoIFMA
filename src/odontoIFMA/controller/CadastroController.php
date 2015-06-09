@@ -130,14 +130,12 @@ class CadastroController extends AbstractController
         if ($this->app['request']->getMethod() == 'POST') {
             $request = $this->app['request']->request;
             $dados = $request->all();
-            $repoCampus = $this->em->getRepository('odontoIFMA\entity\Campus');           
-            $campus = $repoCampus->findBy(array('id' => $dados[campus_id]));
-            $dados[campus_id] = $campus[0];
-            print_r($dados);
-            //print_r(gettype($dados[campus_id]));
-            
 
-            $this->insert($dados);            
+            $repoCampus = $this->em->getRepository('odontoIFMA\entity\Campus');           
+            $campus = $repoCampus->find($dados['campus_id']); // Recupera o objeto a partir do ID
+            $dados['campus'] = $campus; // Cria uma nova entrada no array com o nome do atributo da entidade
+
+            $this->insert($dados);
 
             return $this->msgSuccess($params);
         }else{
