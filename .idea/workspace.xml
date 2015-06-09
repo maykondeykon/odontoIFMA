@@ -62,11 +62,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CadastroController.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="CadastroController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/odontoIFMA/controller/CadastroController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.4074073" vertical-offset="1483" max-vertical-offset="3204">
-              <caret line="90" column="38" selection-start-line="90" selection-start-column="20" selection-end-line="90" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.19424461" vertical-offset="756" max-vertical-offset="2862">
+              <caret line="49" column="34" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Operador.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/odontoIFMA/entity/Operador.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-66.666664" vertical-offset="432" max-vertical-offset="2358">
+              <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -117,21 +127,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="app.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44964027" vertical-offset="704" max-vertical-offset="1800">
-              <caret line="54" column="56" selection-start-line="54" selection-start-column="56" selection-end-line="54" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="sb-admin.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/css/sb-admin.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3917" max-vertical-offset="4500">
-              <caret line="236" column="21" selection-start-line="236" selection-start-column="16" selection-end-line="236" selection-end-column="21" />
+            <state vertical-scroll-proportion="-9.925926" vertical-offset="866" max-vertical-offset="1800">
+              <caret line="64" column="57" selection-start-line="64" selection-start-column="57" selection-end-line="64" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -204,8 +204,8 @@
         <option value="$PROJECT_DIR$/src/odontoIFMA/views/template/templateSemMenu.twig" />
         <option value="$PROJECT_DIR$/src/odontoIFMA/views/index/login.twig" />
         <option value="$PROJECT_DIR$/public/css/sb-admin.css" />
-        <option value="$PROJECT_DIR$/app.php" />
         <option value="$PROJECT_DIR$/src/odontoIFMA/views/template/template.twig" />
+        <option value="$PROJECT_DIR$/app.php" />
         <option value="$PROJECT_DIR$/src/odontoIFMA/controller/CadastroController.php" />
         <option value="$PROJECT_DIR$/app.php" />
       </list>
@@ -701,7 +701,13 @@
       <option name="project" value="LOCAL" />
       <updated>1433813741069</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Hotfix nome do método para salvar o tipo operador">
+      <created>1433814170359</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1433814170359</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -799,7 +805,8 @@
     <MESSAGE value="Atualização do template separando os menus laterais e superiores.&#10;Criação da rota home." />
     <MESSAGE value="Adicionada rota para logout." />
     <MESSAGE value="Hotfix do método salvarPaciente." />
-    <option name="LAST_COMMIT_MESSAGE" value="Hotfix do método salvarPaciente." />
+    <MESSAGE value="Hotfix nome do método para salvar o tipo operador" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hotfix nome do método para salvar o tipo operador" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1016,13 +1023,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/entity/Operador.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2250" max-vertical-offset="2376">
-          <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/odontoIFMA/entity/Acesso.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="900" max-vertical-offset="2484">
@@ -1181,18 +1181,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/controller/CadastroController.php">
+    <entry file="file://$PROJECT_DIR$/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.4074073" vertical-offset="1483" max-vertical-offset="3204">
-          <caret line="90" column="38" selection-start-line="90" selection-start-column="20" selection-end-line="90" selection-end-column="38" />
+        <state vertical-scroll-proportion="-9.925926" vertical-offset="866" max-vertical-offset="1800">
+          <caret line="64" column="57" selection-start-line="64" selection-start-column="57" selection-end-line="64" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app.php">
+    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/entity/Operador.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44964027" vertical-offset="704" max-vertical-offset="1800">
-          <caret line="54" column="56" selection-start-line="54" selection-start-column="56" selection-end-line="54" selection-end-column="56" />
+        <state vertical-scroll-proportion="-66.666664" vertical-offset="432" max-vertical-offset="2358">
+          <caret line="125" column="0" selection-start-line="125" selection-start-column="0" selection-end-line="125" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/controller/CadastroController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.19424461" vertical-offset="756" max-vertical-offset="2862">
+          <caret line="49" column="34" selection-start-line="49" selection-start-column="20" selection-end-line="49" selection-end-column="34" />
           <folding />
         </state>
       </provider>

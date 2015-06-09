@@ -62,7 +62,7 @@ $app->get('/cadastro/operador', function () use ($app) {
 })->bind('cadOperador');
 
 $app->post('/cadastro/salvar/operador', function () use($app){
-    return $app['cadastro.controller']->salvarCadastroOperador(); 
+    return $app['cadastro.controller']->salvarOperador();
 });
 
 // FIM DA ALTERAÇÃO FEITA POR ROBERTO 07/06/2015 (CRIAÇÃO DAS ROTAS PARA CADASTRO DE OPERADOR)

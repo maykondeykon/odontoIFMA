@@ -15,19 +15,6 @@ class CadastroController extends AbstractController
 
     public function index()
     {
-        $dados = [
-            'descricao' => 'servidor2',
-            'id' => '5'
-        ];
-
-        $this->entity = 'odontoIFMA\entity\TipoOperador';
-
-//        $entity = $this->insert($dados);
-
-//        $entity = $this->update($dados);
-
-//        print_r($this->delete(5));
-
         return $this->app['twig']->render('index/index.twig', array());
     }
 
@@ -52,15 +39,15 @@ class CadastroController extends AbstractController
         return $this->app['twig']->render('cadastro/campus.twig', array("active_page" => "cadTipoCampus"));
     }
 
-// INÍCIO ALTERAÇÃO FEITA POR ROBERTO 07/06/2015 (CRIAÇÃO FUNÇÃO Operador E salvarCadastroOperador)
+// INÍCIO ALTERAÇÃO FEITA POR ROBERTO 07/06/2015 (CRIAÇÃO FUNÇÃO Operador E salvarOperador)
 
-     public function Operador()
+    public function Operador()
     {
         return $this->app['twig']->render('cadastro/operador.twig', array("active_page" => "cadOperador"));
     }
 
 
-    public function salvarCadastroOperador()
+    public function salvarOperador()
     {
         $this->entity = 'odontoIFMA\entity\Operador'; //Define a entidade que será usada
         //Define os parâmetros que serão usados na renderização da tela com retorno da operação
@@ -80,13 +67,12 @@ class CadastroController extends AbstractController
             $this->insert($dados);
 
             return $this->msgSuccess($params);
-        }else{
+        } else {
             throw new \Exception("Método inválido.");
         }
-
     }
 
-// FIM ALTERAÇÃO FEITA POR ROBERTO 07/06/2015 (CRIAÇÃO FUNÇÃO Operador E salvarCadastroOperador)
+// FIM ALTERAÇÃO FEITA POR ROBERTO 07/06/2015 (CRIAÇÃO FUNÇÃO Operador E salvarOperador)
 
     public function salvarTipoOperador()
     {
@@ -108,15 +94,14 @@ class CadastroController extends AbstractController
             $this->insert($dados);
 
             return $this->msgSuccess($params);
-        }else{
+        } else {
             throw new \Exception("Método inválido.");
         }
-
     }
 
     public function salvarPaciente()
     {
-         $this->entity = 'odontoIFMA\entity\Paciente'; //Define a entidade que será usada
+        $this->entity = 'odontoIFMA\entity\Paciente'; //Define a entidade que será usada
         //Define os parâmetros que serão usados na renderização da tela com retorno da operação
         $params = array(
             'message' => 'Paciente cadastrado com sucesso.', //Mensagem a ser exibida
@@ -131,21 +116,21 @@ class CadastroController extends AbstractController
             $request = $this->app['request']->request;
             $dados = $request->all();
 
-            $repoCampus = $this->em->getRepository('odontoIFMA\entity\Campus');           
+            $repoCampus = $this->em->getRepository('odontoIFMA\entity\Campus');
             $campus = $repoCampus->find($dados['campus_id']); // Recupera o objeto a partir do ID
             $dados['campus'] = $campus; // Cria uma nova entrada no array com o nome do atributo da entidade
 
             $this->insert($dados);
 
             return $this->msgSuccess($params);
-        }else{
+        } else {
             throw new \Exception("Método inválido.");
         }
     }
 
     public function salvarCampus()
     {
-         $this->entity = 'odontoIFMA\entity\Campus'; //Define a entidade que será usada
+        $this->entity = 'odontoIFMA\entity\Campus'; //Define a entidade que será usada
         //Define os parâmetros que serão usados na renderização da tela com retorno da operação
         $params = array(
             'message' => 'Campus cadastrado com sucesso.', //Mensagem a ser exibida
@@ -159,16 +144,12 @@ class CadastroController extends AbstractController
         if ($this->app['request']->getMethod() == 'POST') {
             $request = $this->app['request']->request;
             $dados = $request->all();
-            print_r($dados);
 
-            $this->insert($dados);            
+            $this->insert($dados);
 
             return $this->msgSuccess($params);
-        }else{
+        } else {
             throw new \Exception("Método inválido.");
         }
-
-        
-
     }
 }
