@@ -36,7 +36,7 @@ $app->get('/cadastro/tipo-operador', function () use ($app) {
 })->bind('cadTipoOperador');
 
 $app->post('/cadastro/salvar/tipo-operador', function () use($app){
-    return $app['cadastro.controller']->salvarOperador();
+    return $app['cadastro.controller']->salvarTipoOperador();
 });
 
 $app->get('/cadastro/paciente', function () use ($app) {

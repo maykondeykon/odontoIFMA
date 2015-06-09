@@ -88,7 +88,7 @@ class CadastroController extends AbstractController
 
 // FIM ALTERAÇÃO FEITA POR ROBERTO 07/06/2015 (CRIAÇÃO FUNÇÃO Operador E salvarCadastroOperador)
 
-    public function salvarOperador()
+    public function salvarTipoOperador()
     {
         $this->entity = 'odontoIFMA\entity\TipoOperador'; //Define a entidade que será usada
         //Define os parâmetros que serão usados na renderização da tela com retorno da operação
