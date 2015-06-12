@@ -52,7 +52,7 @@ DEFAULT CHARACTER SET = utf8;
 -- Table `odontoifma`.`acesso`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `odontoifma`.`acesso` (
-  `id` INT(11) NOT NULL,
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
   `login` VARCHAR(255) NOT NULL,
   `senha` VARCHAR(255) NOT NULL,
   `operador_id` INT(11) NOT NULL,

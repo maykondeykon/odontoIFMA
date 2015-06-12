@@ -42,6 +42,12 @@ class Operador
      */
     private $tipo;
 
+    /**
+     * @var Acesso $acesso
+     * @ORM\OneToOne(targetEntity="Acesso", mappedBy="operador" ,cascade={"persist", "remove"})
+     */
+    private $acesso;
+
     public function __construct(array $data = array())
     {
         (new Hydrator\ClassMethods())->hydrate($data, $this);
@@ -122,6 +128,22 @@ class Operador
     {
         $this->tipo = $tipo;
         return $this;
+    }
+
+    /**
+     * @return Acesso
+     */
+    public function getAcesso()
+    {
+        return $this->acesso;
+    }
+
+    /**
+     * @param Acesso $acesso
+     */
+    public function setAcesso($acesso)
+    {
+        $this->acesso = $acesso;
     }
 
 }

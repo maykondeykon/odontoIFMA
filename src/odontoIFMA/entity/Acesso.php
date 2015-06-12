@@ -34,10 +34,11 @@ class Acesso
     private $senha;
 
     /**
-     * @var Operador @ORM\ManyToOne(targetEntity="Operador")
+     * @var Operador $operador
+     * @ORM\OneToOne(targetEntity="Operador", inversedBy="acesso")
      * @ORM\JoinColumns({
-     *      @ORM\JoinColumn(name="operador_id", referencedColumnName="id")
-     *      })
+     * @ORM\JoinColumn(name="operador_id", referencedColumnName="id")
+     * })
      */
     private $operador;
 

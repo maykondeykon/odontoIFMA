@@ -4,6 +4,7 @@ require_once __DIR__ . "/bootstrap.php";
 
 use odontoIFMA\controller\IndexController;
 use odontoIFMA\controller\CadastroController;
+use odontoIFMA\controller\TesteController;
 
 /**
  * Controllers
@@ -16,11 +17,19 @@ $app['cadastro.controller'] = $app->share(function () use($app) {
     return new CadastroController($app);
 });
 
+$app['teste.controller'] = $app->share(function () use($app) {
+    return new TesteController($app);
+});
+
 /**
  * Rotas
  */
 $app->get('/', function () use ($app) {
     return $app['index.controller']->index();
+});
+
+$app->get('/teste/{tipo}', function ($tipo) use ($app) {
+    return $app['teste.controller']->$tipo();
 });
 
 $app->post('/login', function () use($app){
