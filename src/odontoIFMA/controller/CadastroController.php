@@ -39,11 +39,14 @@ class CadastroController extends AbstractController
         return $this->app['twig']->render('cadastro/campus.twig', array("active_page" => "cadTipoCampus"));
     }
 
-// INÍCIO ALTERAÇÃO FEITA POR ROBERTO 07/06/2015 (CRIAÇÃO FUNÇÃO Operador E salvarOperador)
-
     public function Operador()
     {
-        return $this->app['twig']->render('cadastro/operador.twig', array("active_page" => "cadOperador"));
+      $repoTipoOperador = $this->em->getRepository('odontoIFMA\entity\TipoOperador'); // Obtêm o repositório da entidade
+      $listaTipoOperador = $repoTipoOperador->findAll(); // Recupera a lista de todos os itens da entidade
+        return $this->app['twig']->render('cadastro/operador.twig', array(
+          "active_page" => "cadOperador",
+          'listaTipoOperador' => $listaTipoOperador
+        ));
     }
 
 
@@ -64,6 +67,10 @@ class CadastroController extends AbstractController
             $request = $this->app['request']->request;
             $dados = $request->all();
 
+            $repoTipoOperador = $this->em->getRepository('odontoIFMA\entity\TipoOperador');
+            $tipo_operador = $repoTipoOperador->find($dados['tipo_operador_id']); // Recupera o objeto a partir do ID
+            $dados['tipo_operador'] = $tipo_operador; // Cria uma nova entrada no array com o nome do atributo da entidade
+
             $this->insert($dados);
 
             return $this->msgSuccess($params);
@@ -71,8 +78,6 @@ class CadastroController extends AbstractController
             throw new \Exception("Método inválido.");
         }
     }
-
-// FIM ALTERAÇÃO FEITA POR ROBERTO 07/06/2015 (CRIAÇÃO FUNÇÃO Operador E salvarOperador)
 
     public function salvarTipoOperador()
     {

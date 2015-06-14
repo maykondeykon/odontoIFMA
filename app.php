@@ -33,7 +33,7 @@ $app->get('/teste/{tipo}', function ($tipo) use ($app) {
 });
 
 $app->post('/login', function () use($app){
-    return $app['index.controller']->login(); 
+    return $app['index.controller']->login();
 });
 
 $app->get('/home', function () use ($app) {
@@ -53,7 +53,7 @@ $app->get('/cadastro/paciente', function () use ($app) {
 })->bind('cadTipoPaciente');
 
 $app->post('/cadastro/salvar/paciente', function () use($app){
-    return $app['cadastro.controller']->salvarPaciente(); 
+    return $app['cadastro.controller']->salvarPaciente();
 });
 
 $app->get('/cadastro/campus', function () use ($app) {
@@ -61,10 +61,8 @@ $app->get('/cadastro/campus', function () use ($app) {
 })->bind('cadTipoCampus');
 
 $app->post('/cadastro/salvar/campus', function () use($app){
-    return $app['cadastro.controller']->salvarCampus(); 
+    return $app['cadastro.controller']->salvarCampus();
 });
-
-// INÍCIO ALTERAÇÃO FEITA POR ROBERTO 07/06/2015 (CRIAÇÃO DAS ROTAS PARA CADASTRO DE OPERADOR)
 
 $app->get('/cadastro/operador', function () use ($app) {
     return $app['cadastro.controller']->Operador();
@@ -73,8 +71,6 @@ $app->get('/cadastro/operador', function () use ($app) {
 $app->post('/cadastro/salvar/operador', function () use($app){
     return $app['cadastro.controller']->salvarOperador();
 });
-
-// FIM DA ALTERAÇÃO FEITA POR ROBERTO 07/06/2015 (CRIAÇÃO DAS ROTAS PARA CADASTRO DE OPERADOR)
 
 /**
  * Rota para logout do sistema

@@ -1,17 +1,25 @@
 {% extends 'template/templateSemMenu.twig' %}
 {% block content %}
 
-    <h1 class="page-header">
-        Login
-    </h1>
 
-    <div class="col-md-3 col-md-offset-4 min-height">
+    <div class="col-md-1">
+      <img class="page-header" src='/img/odontoifma-logo.png' width="200" height="260">
+    </div>
+
+
+    <div class="col-md-3 col-md-offset-2 min-height">
         <form class="form-signin" method="post" action="/login">
-            <h2 class="form-signin-heading"></h2>
+            <h2 class="form-signin-heading">Seja bem-vindo!</h2>
+            <h4 class="form-signin-heading">Insira o seu usuário e senha para efetuar o login.</h4>
+
             <label for="login" class="sr-only">Usuário</label>
-            <input type="text" id="login" name="login" class="form-control" placeholder="Login" required autofocus>
+            <input type="text" id="login" name="login" class="form-control" placeholder="Usuário" required autofocus>
+
             <label for="senha" class="sr-only">Senha</label>
             <input type="password" id="senha" name="senha" class="form-control top5" placeholder="Senha" required>
+
+            <h5>Esqueceu a senha? <a href="">Clique aqui</a></h5>
+
             <button class="btn btn-lg btn-primary btn-block top10" name="entrar" type="submit">Entrar</button>
         </form>
     </div>

@@ -22,6 +22,19 @@
             </div>
         </div>
 
+        <div class="form-group">
+            <label for="campus_id" class="col-sm-2 control-label">Tipo Operador</label>
+
+            <div class="col-sm-4">
+                <select class="form-control" name="tipo_operador_id" id="tipo_operador_id">
+                    <option value="">Selecione</option>
+                    {% for item in listaTipoOperador %}
+                        <option value={{ item.getId }}>{{ item.getDescricao }}</option> {% endfor %}
+                </select>
+            </div>
+        </div>
+
+
         <input type="hidden" id="id" name="id">
 
         <div class="form-group">
