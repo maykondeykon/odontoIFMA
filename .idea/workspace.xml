@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ade7ce8-f0a8-49ad-858e-881229dc6532" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/odontoIFMA/controller/AbstractController.php" afterPath="$PROJECT_DIR$/src/odontoIFMA/controller/AbstractController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/odontoIFMA/controller/CadastroController.php" afterPath="$PROJECT_DIR$/src/odontoIFMA/controller/CadastroController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/odontoIFMA/entity/Paciente.php" afterPath="$PROJECT_DIR$/src/odontoIFMA/entity/Paciente.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/odontoIFMA/controller/TesteController.php" afterPath="$PROJECT_DIR$/src/odontoIFMA/controller/TesteController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.php" afterPath="$PROJECT_DIR$/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/scripts.js" afterPath="$PROJECT_DIR$/public/js/scripts.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/odontoIFMA/views/template/templateSemMenu.twig" afterPath="$PROJECT_DIR$/src/odontoIFMA/views/template/templateSemMenu.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/jquery-ui-1.10.4.custom.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="odontoSys.iws" />
@@ -76,7 +70,7 @@
       <file leaf-file-name="anamnese.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/odontoIFMA/views/cadastro/anamnese.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-45.333332" vertical-offset="1458" max-vertical-offset="2898">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1458" max-vertical-offset="2898">
               <caret line="149" column="75" selection-start-line="149" selection-start-column="75" selection-end-line="149" selection-end-column="75" />
               <folding />
             </state>
@@ -86,8 +80,8 @@
       <file leaf-file-name="scripts.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/js/scripts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.92783505" vertical-offset="0" max-vertical-offset="1548">
-              <caret line="45" column="80" selection-start-line="45" selection-start-column="80" selection-end-line="45" selection-end-column="80" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="1548">
+              <caret line="25" column="61" selection-start-line="25" selection-start-column="61" selection-end-line="25" selection-end-column="61" />
               <folding />
             </state>
           </provider>
@@ -96,7 +90,7 @@
       <file leaf-file-name="CadastroController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/odontoIFMA/controller/CadastroController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.0" vertical-offset="2574" max-vertical-offset="3456">
+            <state vertical-scroll-proportion="0.0" vertical-offset="2574" max-vertical-offset="3456">
               <caret line="180" column="34" selection-start-line="180" selection-start-column="34" selection-end-line="180" selection-end-column="34" />
               <folding>
                 <marker date="1434566521514" expanded="true" signature="7361:7438" placeholder="SELECT pacie..." />
@@ -118,7 +112,7 @@
       <file leaf-file-name="templateSemMenu.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/odontoIFMA/views/template/templateSemMenu.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.666666" vertical-offset="0" max-vertical-offset="1980">
+            <state vertical-scroll-proportion="0.0" vertical-offset="558" max-vertical-offset="1980">
               <caret line="31" column="113" selection-start-line="31" selection-start-column="113" selection-end-line="31" selection-end-column="113" />
               <folding />
             </state>
@@ -128,7 +122,7 @@
       <file leaf-file-name="app.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.666666" vertical-offset="684" max-vertical-offset="2034">
+            <state vertical-scroll-proportion="0.0" vertical-offset="684" max-vertical-offset="2034">
               <caret line="74" column="28" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="28" />
               <folding />
             </state>
@@ -138,7 +132,7 @@
       <file leaf-file-name="TesteController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/odontoIFMA/controller/TesteController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-27.518518" vertical-offset="427" max-vertical-offset="1368">
+            <state vertical-scroll-proportion="0.0" vertical-offset="427" max-vertical-offset="1368">
               <caret line="67" column="47" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="47" />
               <folding>
                 <marker date="1434562528691" expanded="true" signature="1552:1597" placeholder="SELECT * FRO..paciente..." />
@@ -165,7 +159,7 @@
       <file leaf-file-name="Paciente.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/odontoIFMA/entity/Paciente.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-20.666666" vertical-offset="1944" max-vertical-offset="4950">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1944" max-vertical-offset="4950">
               <caret line="140" column="78" selection-start-line="140" selection-start-column="78" selection-end-line="140" selection-end-column="78" />
               <folding />
             </state>
@@ -175,7 +169,7 @@
       <file leaf-file-name="AbstractController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/odontoIFMA/controller/AbstractController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-22.0" vertical-offset="828" max-vertical-offset="1764">
+            <state vertical-scroll-proportion="0.0" vertical-offset="828" max-vertical-offset="1764">
               <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
               <folding />
             </state>
@@ -670,7 +664,13 @@
       <option name="project" value="LOCAL" />
       <updated>1434552619854</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Implementado autocomplete de pacientes">
+      <created>1434567343214</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1434567343214</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -695,30 +695,30 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="27" width="1682" height="1024" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24175824" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963374" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32225913" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32300162" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852387" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23870574" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15567766" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32300162" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32225913" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852387" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32569557" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -778,7 +778,8 @@
     <MESSAGE value="Entidades mapeadas: DoencasPreexistentes, Higiene, HistoriaMedica, Parafuncionais, QueixaPrincipal, TipoHabito." />
     <MESSAGE value="Criado cotroller e rota de teste.&#10;Criado teste do método para inserir operador.&#10;Alterado ScriptBD." />
     <MESSAGE value="Adicionada listagem de tipos de hábitos para o form anamnese" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adicionada listagem de tipos de hábitos para o form anamnese" />
+    <MESSAGE value="Implementado autocomplete de pacientes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implementado autocomplete de pacientes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1016,7 +1017,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="710" max-vertical-offset="2142">
           <caret line="52" column="8" selection-start-line="52" selection-start-column="8" selection-end-line="67" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1101,7 +1101,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-11.222222" vertical-offset="183" max-vertical-offset="1458">
           <caret line="27" column="77" selection-start-line="27" selection-start-column="77" selection-end-line="27" selection-end-column="77" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1109,7 +1108,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="4248">
           <caret line="125" column="31" selection-start-line="0" selection-start-column="0" selection-end-line="230" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1117,7 +1115,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="108">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1125,7 +1122,6 @@
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -1199,14 +1195,15 @@
               <point x="0.0" y="37.0" />
             </edge>
           </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="151.0" y="326.5" />
+          <settings layout="Hierarchic Group" zoom="1.0" x="151.0" y="327.0" />
           <SelectedNodes>
             <node>d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.historia_medica</node>
           </SelectedNodes>
           <Categories>
-            <Category>Key columns</Category>
             <Category>Columns</Category>
+            <Category>Key columns</Category>
           </Categories>
+          <SCOPE>All</SCOPE>
         </state>
       </provider>
     </entry>
@@ -1214,7 +1211,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-20.333334" vertical-offset="495" max-vertical-offset="1368">
           <caret line="59" column="32" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1222,7 +1218,6 @@
       <provider editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -1233,7 +1228,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/odontoIFMA/entity/Paciente.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.666666" vertical-offset="1944" max-vertical-offset="4950">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1944" max-vertical-offset="4950">
           <caret line="140" column="78" selection-start-line="140" selection-start-column="78" selection-end-line="140" selection-end-column="78" />
           <folding />
         </state>
@@ -1254,7 +1249,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/odontoIFMA/controller/AbstractController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.0" vertical-offset="828" max-vertical-offset="1764">
+        <state vertical-scroll-proportion="0.0" vertical-offset="828" max-vertical-offset="1764">
           <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
           <folding />
         </state>
@@ -1262,7 +1257,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-22.666666" vertical-offset="684" max-vertical-offset="2034">
+        <state vertical-scroll-proportion="0.0" vertical-offset="684" max-vertical-offset="2034">
           <caret line="74" column="28" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="28" />
           <folding />
         </state>
@@ -1278,7 +1273,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/odontoIFMA/views/template/templateSemMenu.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-20.666666" vertical-offset="0" max-vertical-offset="1980">
+        <state vertical-scroll-proportion="0.0" vertical-offset="558" max-vertical-offset="1980">
           <caret line="31" column="113" selection-start-line="31" selection-start-column="113" selection-end-line="31" selection-end-column="113" />
           <folding />
         </state>
@@ -1286,7 +1281,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/odontoIFMA/controller/TesteController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-27.518518" vertical-offset="427" max-vertical-offset="1368">
+        <state vertical-scroll-proportion="0.0" vertical-offset="427" max-vertical-offset="1368">
           <caret line="67" column="47" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="47" />
           <folding>
             <marker date="1434562528691" expanded="true" signature="1552:1597" placeholder="SELECT * FRO..paciente..." />
@@ -1296,7 +1291,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/odontoIFMA/views/cadastro/anamnese.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-45.333332" vertical-offset="1458" max-vertical-offset="2898">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1458" max-vertical-offset="2898">
           <caret line="149" column="75" selection-start-line="149" selection-start-column="75" selection-end-line="149" selection-end-column="75" />
           <folding />
         </state>
@@ -1304,7 +1299,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/odontoIFMA/controller/CadastroController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.0" vertical-offset="2574" max-vertical-offset="3456">
+        <state vertical-scroll-proportion="0.0" vertical-offset="2574" max-vertical-offset="3456">
           <caret line="180" column="34" selection-start-line="180" selection-start-column="34" selection-end-line="180" selection-end-column="34" />
           <folding>
             <marker date="1434566521514" expanded="true" signature="7361:7438" placeholder="SELECT pacie..." />
@@ -1314,8 +1309,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/scripts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.92783505" vertical-offset="0" max-vertical-offset="1548">
-          <caret line="45" column="80" selection-start-line="45" selection-start-column="80" selection-end-line="45" selection-end-column="80" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="1548">
+          <caret line="25" column="61" selection-start-line="25" selection-start-column="61" selection-end-line="25" selection-end-column="61" />
           <folding />
         </state>
       </provider>
