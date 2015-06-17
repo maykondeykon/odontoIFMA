@@ -80,6 +80,10 @@ $app->get('/cadastro/anamnese', function () use ($app) {
     return $app['cadastro.controller']->Anamnese();
 })->bind('cadAnamnese');
 
+$app->post('/cadastro/salvar/anamnese', function () use($app){
+    return $app['cadastro.controller']->salvarAnamnese();
+});
+
 /**
  * Rota para logout do sistema
  */

@@ -39,7 +39,7 @@
                 <div class="tab-pane " id="historiaMedicaTab">
                     <table class="table table-condensed table-hover">
                         {% for item in listaDoencas %}
-                            <input type="hidden" id="" name="doencasPreexistente[]" value="{{ item.getId }}">
+                            {#<input type="hidden" id="" name="doencasPreexistente[]" value="{{ item.getId }}">#}
                             <tr>
                                 <td><strong>{{ item.getNome }}</strong></td>
                                 <td>
@@ -54,7 +54,7 @@
                                     {% if item.getFamiliar == 1 %}
                                         <div class="checkbox">
                                             <label>
-                                                <input type="checkbox" name="familiar-{{ item.getId }}" value="">
+                                                <input type="checkbox" name="familiar-{{ item.getId }}" value="1">
                                                 ANT. FAMILIAR
                                             </label>
                                         </div>
@@ -120,15 +120,15 @@
                 <div class="tab-pane " id="habitosParafuncionaisTab">
                     <table class="table table-condensed table-hover">
                         {% for item in listaHabitos %}
-                            <input type="hidden" id="" name="doencasPreexistente[]" value="{{ item.getId }}">
+                            {#<input type="hidden" id="" name="doencasPreexistente[]" value="{{ item.getId }}">#}
                             <tr>
                                 <td><strong>{{ item.getDescricao }}</strong></td>
                                 <td>
                                     <label class="radio-inline">
-                                        <input type="radio" name="estado-{{ item.getId }}" id="" value="0"> Não
+                                        <input type="radio" name="habito-{{ item.getId }}" id="" value="0"> Não
                                     </label>
                                     <label class="radio-inline">
-                                        <input type="radio" name="estado-{{ item.getId }}" id="" value="1"> Sim
+                                        <input type="radio" name="habito-{{ item.getId }}" id="" value="1"> Sim
                                     </label>
                                 </td>
 

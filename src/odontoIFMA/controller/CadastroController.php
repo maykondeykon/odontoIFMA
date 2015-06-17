@@ -173,6 +173,72 @@ class CadastroController extends AbstractController
         ));
     }
 
+    public function salvarAnamnese()
+    {
+        $this->entity = 'odontoIFMA\entity\Campus'; //Define a entidade que será usada
+
+        $repoTipoHabito = $this->em->getRepository('odontoIFMA\entity\TipoHabito');
+        $repoPaciente = $this->em->getRepository('odontoIFMA\entity\Paciente');
+
+        $params = array(
+            'message' => 'Campus cadastrado com sucesso.', //Mensagem a ser exibida
+            'titulo' => 'Sucesso!', // Título da mensagem
+            'tipo' => 'alert-success', // Define o tipo da mensagem, erro ou sucesso
+            'icon' => 'glyphicon-ok', // Ícone do título da mensagem
+            'active_page' => 'cadTipoCampus', // Define a página ativa no menu e breadcrumb
+            'btVoltar' => '/cadastro/campus' // Define a rota do botão voltar
+        );
+
+        if ($this->app['request']->getMethod() == 'POST') {
+            $request = $this->app['request']->request;
+            $dados = $request->all();
+
+            $paciente = $repoPaciente->find($dados['pacienteId']);
+
+//            var_dump($dados);
+
+            $habitos = array();
+            $i = 1;
+            foreach($dados as $dado){
+
+                if(isset($dados["estado-{$i}"])){
+                    echo "estado {$i} = ".$dados["estado-{$i}"]."<br>";
+                }
+
+                if(isset($dados["familiar-{$i}"])){
+                    echo "familiar {$i} = ".$dados["familiar-{$i}"]."<br>";
+                }
+
+                if(isset($dados["obs-{$i}"])){
+                    echo "Obs {$i} = ".$dados["obs-{$i}"]."<br>";
+                }
+
+                if(isset($dados["habito-{$i}"])){
+                    $habitos[$i] = $dados["habito-{$i}"];
+                    echo "Habito {$i} = ".$dados["habito-{$i}"]."<br>";
+                }
+            $i++;
+            }
+
+            foreach($habitos as $key => $value){
+                $habitos['habito'] = $repoTipoHabito->find($key);
+                $habitos['estado'] = $value;
+                $habitos['paciente'] = $paciente;
+
+                //insert($habitos)
+            }
+            var_dump($habitos);
+
+
+            die();
+//            $this->insert($dados);
+
+            return $this->msgSuccess($params);
+        } else {
+            throw new \Exception("Método inválido.");
+        }
+    }
+
     public function getPacientesJson()
     {
         $request = $this->app['request']->request;
