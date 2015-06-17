@@ -237,6 +237,10 @@ ul.alert-dropdown {
     min-height: 330px;
 }
 
+.textareaNoResize{
+    resize: none;
+}
+
 .top5 { margin-top:5px; }
 .top7 { margin-top:7px; }
 .top10 { margin-top:10px; }

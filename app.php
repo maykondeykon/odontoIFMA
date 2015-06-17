@@ -72,6 +72,10 @@ $app->post('/cadastro/salvar/operador', function () use($app){
     return $app['cadastro.controller']->salvarOperador();
 });
 
+$app->get('/cadastro/anamnese', function () use ($app) {
+    return $app['cadastro.controller']->Anamnese();
+})->bind('cadAnamnese');
+
 /**
  * Rota para logout do sistema
  */

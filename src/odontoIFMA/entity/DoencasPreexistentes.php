@@ -27,6 +27,12 @@ class DoencasPreexistentes
      */
     private $nome;
 
+    /**
+     * @var integer $familiar
+     * @ORM\Column(name="familiar", type="integer", nullable=true)
+     */
+    private $familiar;
+
     public function __construct(array $data = array())
     {
         (new Hydrator\ClassMethods())->hydrate($data, $this);
@@ -67,6 +73,22 @@ class DoencasPreexistentes
     public function setNome($nome)
     {
         $this->nome = mb_strtoupper(trim($nome), 'UTF-8');
+    }
+
+    /**
+     * @return int
+     */
+    public function getFamiliar()
+    {
+        return $this->familiar;
+    }
+
+    /**
+     * @param int $familiar
+     */
+    public function setFamiliar($familiar)
+    {
+        $this->familiar = $familiar;
     }
 
 }
