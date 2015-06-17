@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8ade7ce8-f0a8-49ad-858e-881229dc6532" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/odontoIFMA/views/cadastro/anamnese.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/new odontoifma.mwb" afterPath="$PROJECT_DIR$/docs/new odontoifma.mwb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/odontoIFMA/controller/AbstractController.php" afterPath="$PROJECT_DIR$/src/odontoIFMA/controller/AbstractController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/odontoIFMA/controller/CadastroController.php" afterPath="$PROJECT_DIR$/src/odontoIFMA/controller/CadastroController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/odontoIFMA/entity/DoencasPreexistentes.php" afterPath="$PROJECT_DIR$/src/odontoIFMA/entity/DoencasPreexistentes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/odontoIFMA/entity/QueixaPricipal.php" afterPath="$PROJECT_DIR$/src/odontoIFMA/entity/QueixaPricipal.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/odontoIFMA/entity/Paciente.php" afterPath="$PROJECT_DIR$/src/odontoIFMA/entity/Paciente.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/odontoIFMA/controller/TesteController.php" afterPath="$PROJECT_DIR$/src/odontoIFMA/controller/TesteController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.php" afterPath="$PROJECT_DIR$/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/css/sb-admin.css" afterPath="$PROJECT_DIR$/public/css/sb-admin.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/docs/scriptBD.sql" afterPath="$PROJECT_DIR$/docs/scriptBD.sql" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/odontoIFMA/views/template/template.twig" afterPath="$PROJECT_DIR$/src/odontoIFMA/views/template/template.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/scripts.js" afterPath="$PROJECT_DIR$/public/js/scripts.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/odontoIFMA/views/template/templateSemMenu.twig" afterPath="$PROJECT_DIR$/src/odontoIFMA/views/template/templateSemMenu.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="odontoSys.iws" />
@@ -44,6 +41,12 @@
         <option name="myItemId" />
         <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
       </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
+      </PATH_ELEMENT>
       <PATH_ELEMENT>
         <option name="myItemId" value="MySQL - @localhost" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
@@ -60,24 +63,6 @@
       </PATH_ELEMENT>
       <PATH_ELEMENT>
         <option name="myItemId" value="odontoifma" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-    </PATH>
-    <PATH>
-      <PATH_ELEMENT>
-        <option name="myItemId" />
-        <option name="myItemType" value="com.intellij.database.view.DbRootNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="MySQL - @localhost" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="odontoifma" />
-        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
-      </PATH_ELEMENT>
-      <PATH_ELEMENT>
-        <option name="myItemId" value="doencas_preexistentes" />
         <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
       </PATH_ELEMENT>
     </PATH>
@@ -91,28 +76,107 @@
       <file leaf-file-name="anamnese.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/odontoIFMA/views/cadastro/anamnese.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1194" max-vertical-offset="3420">
-              <caret line="77" column="99" selection-start-line="77" selection-start-column="99" selection-end-line="77" selection-end-column="99" />
+            <state vertical-scroll-proportion="-45.333332" vertical-offset="1458" max-vertical-offset="2898">
+              <caret line="149" column="75" selection-start-line="149" selection-start-column="75" selection-end-line="149" selection-end-column="75" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="template.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/odontoIFMA/views/template/template.twig">
+      <file leaf-file-name="scripts.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/js/scripts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5430108" vertical-offset="183" max-vertical-offset="1458">
-              <caret line="27" column="77" selection-start-line="27" selection-start-column="77" selection-end-line="27" selection-end-column="77" />
+            <state vertical-scroll-proportion="0.92783505" vertical-offset="0" max-vertical-offset="1548">
+              <caret line="45" column="80" selection-start-line="45" selection-start-column="80" selection-end-line="45" selection-end-column="80" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="paciente.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/odontoIFMA/views/cadastro/paciente.twig">
+      <file leaf-file-name="CadastroController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/odontoIFMA/controller/CadastroController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="710" max-vertical-offset="2142">
-              <caret line="52" column="8" selection-start-line="52" selection-start-column="8" selection-end-line="67" selection-end-column="14" />
+            <state vertical-scroll-proportion="-24.0" vertical-offset="2574" max-vertical-offset="3456">
+              <caret line="180" column="34" selection-start-line="180" selection-start-column="34" selection-end-line="180" selection-end-column="34" />
+              <folding>
+                <marker date="1434566521514" expanded="true" signature="7361:7438" placeholder="SELECT pacie..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sb-admin.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/css/sb-admin.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="4383" max-vertical-offset="5364">
+              <caret line="290" column="0" selection-start-line="290" selection-start-column="0" selection-end-line="290" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="templateSemMenu.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/odontoIFMA/views/template/templateSemMenu.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-20.666666" vertical-offset="0" max-vertical-offset="1980">
+              <caret line="31" column="113" selection-start-line="31" selection-start-column="113" selection-end-line="31" selection-end-column="113" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-22.666666" vertical-offset="684" max-vertical-offset="2034">
+              <caret line="74" column="28" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="28" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TesteController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/odontoIFMA/controller/TesteController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-27.518518" vertical-offset="427" max-vertical-offset="1368">
+              <caret line="67" column="47" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="47" />
+              <folding>
+                <marker date="1434562528691" expanded="true" signature="1552:1597" placeholder="SELECT * FRO..paciente..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="odontoifma.paciente" pinned="false" current-in-tab="false">
+        <entry file="dbDummy://dbtable:/86ffa777/d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2/odontoifma..paciente">
+          <provider editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Paciente.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/odontoIFMA/entity/Paciente.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-20.666666" vertical-offset="1944" max-vertical-offset="4950">
+              <caret line="140" column="78" selection-start-line="140" selection-start-column="78" selection-end-line="140" selection-end-column="78" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/odontoIFMA/controller/AbstractController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-22.0" vertical-offset="828" max-vertical-offset="1764">
+              <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -143,8 +207,6 @@
         <option value="$PROJECT_DIR$/src/odontoIFMA/entity/TipoOperador.php" />
         <option value="$PROJECT_DIR$/src/odontoIFMA/views/success/success.twig" />
         <option value="$PROJECT_DIR$/bootstrap.php" />
-        <option value="$PROJECT_DIR$/src/odontoIFMA/controller/AbstractController.php" />
-        <option value="$PROJECT_DIR$/public/js/scripts.js" />
         <option value="$PROJECT_DIR$/src/odontoIFMA/views/cadastro/tipoOperador.twig" />
         <option value="$PROJECT_DIR$/src/odontoIFMA/views/cadastro/campus.twig" />
         <option value="$PROJECT_DIR$/src/odontoIFMA/entity/Campus.php" />
@@ -153,26 +215,30 @@
         <option value="$PROJECT_DIR$/src/odontoIFMA/views/template/navbar.twig" />
         <option value="$PROJECT_DIR$/src/odontoIFMA/controller/IndexController.php" />
         <option value="$PROJECT_DIR$/src/odontoIFMA/views/error/error.twig" />
-        <option value="$PROJECT_DIR$/src/odontoIFMA/views/template/templateSemMenu.twig" />
         <option value="$PROJECT_DIR$/src/odontoIFMA/views/index/login.twig" />
         <option value="$PROJECT_DIR$/src/odontoIFMA/entity/TipoHabito.php" />
         <option value="$PROJECT_DIR$/src/odontoIFMA/entity/Parafuncionais.php" />
-        <option value="$PROJECT_DIR$/src/odontoIFMA/entity/Paciente.php" />
         <option value="$PROJECT_DIR$/src/odontoIFMA/entity/Higiene.php" />
         <option value="db-console:/86ffa777/d7258286-fefa-4cc3-afed-578ebf299aa3/" />
         <option value="$PROJECT_DIR$/src/odontoIFMA/entity/Acesso.php" />
         <option value="$PROJECT_DIR$/src/odontoIFMA/entity/Operador.php" />
-        <option value="$PROJECT_DIR$/app.php" />
-        <option value="$PROJECT_DIR$/app.php" />
         <option value="$PROJECT_DIR$/docs/scriptBD.sql" />
         <option value="$PROJECT_DIR$/src/odontoIFMA/entity/QueixaPricipal.php" />
-        <option value="$PROJECT_DIR$/public/css/sb-admin.css" />
         <option value="$PROJECT_DIR$/src/odontoIFMA/entity/DoencasPreexistentes.php" />
-        <option value="$PROJECT_DIR$/src/odontoIFMA/controller/TesteController.php" />
-        <option value="$PROJECT_DIR$/src/odontoIFMA/controller/CadastroController.php" />
         <option value="$PROJECT_DIR$/src/odontoIFMA/entity/HistoriaMedica.php" />
-        <option value="$PROJECT_DIR$/src/odontoIFMA/views/cadastro/anamnese.twig" />
         <option value="$PROJECT_DIR$/src/odontoIFMA/views/template/template.twig" />
+        <option value="db-console:/86ffa777/d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2/" />
+        <option value="$PROJECT_DIR$/docs/tipo_habito_insert.sql" />
+        <option value="$PROJECT_DIR$/src/odontoIFMA/entity/Paciente.php" />
+        <option value="$PROJECT_DIR$/src/odontoIFMA/controller/AbstractController.php" />
+        <option value="$PROJECT_DIR$/src/odontoIFMA/controller/TesteController.php" />
+        <option value="$PROJECT_DIR$/app.php" />
+        <option value="$PROJECT_DIR$/app.php" />
+        <option value="$PROJECT_DIR$/public/css/sb-admin.css" />
+        <option value="$PROJECT_DIR$/src/odontoIFMA/views/cadastro/anamnese.twig" />
+        <option value="$PROJECT_DIR$/src/odontoIFMA/views/template/templateSemMenu.twig" />
+        <option value="$PROJECT_DIR$/src/odontoIFMA/controller/CadastroController.php" />
+        <option value="$PROJECT_DIR$/public/js/scripts.js" />
       </list>
     </option>
   </component>
@@ -181,9 +247,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" interpreter_name="PHP 5.6" />
   <component name="ProjectFrameBounds">
+    <option name="x" value="-1" />
     <option name="y" value="27" />
-    <option name="width" value="1366" />
-    <option name="height" value="741" />
+    <option name="width" value="1682" />
+    <option name="height" value="1024" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -208,6 +275,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -317,6 +385,10 @@
               <option name="myItemId" value="odontoIFMA" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="entity" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -368,6 +440,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="odontoIFMA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="odontoIFMA" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="css" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -388,7 +478,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -397,13 +486,14 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/docs" />
     <property name="recentsLimit" value="5" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="FullScreen" value="false" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///home/maykon/public_html/odontoIFMA/bootstrap.php" />
     <property name="dynamic.classpath" value="false" />
+    <property name="Console.TableResult.DefaultCopyAction" value="SQL Insert Statements" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -417,30 +507,30 @@
     </key>
   </component>
   <component name="RunManager" selected="PHP Built-in Web Server.odontoIFMA">
-    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner />
-      <method />
-    </configuration>
     <configuration default="true" type="PhpBuiltInWebServerConfigurationType" factoryName="PHP Built-in Web Server">
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
-    <configuration default="true" type="com.intellij.database.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
-      <option name="VM_PARAMETERS" value="" />
-      <option name="USER_CFG_CLASS" />
-      <option name="CONTEXT_PROVIDER" />
+    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+      <method />
+    </configuration>
+    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner />
+      <method />
+    </configuration>
+    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
       <method />
     </configuration>
     <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
       <BehatRunner />
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
+    <configuration default="true" type="com.intellij.database.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
+      <option name="VM_PARAMETERS" value="" />
+      <option name="USER_CFG_CLASS" />
+      <option name="CONTEXT_PROVIDER" />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
@@ -574,7 +664,13 @@
       <option name="project" value="LOCAL" />
       <updated>1434079064350</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Adicionada listagem de tipos de hábitos para o form anamnese">
+      <created>1434552619854</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1434552619854</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TodoView" selected-index="0">
@@ -598,55 +694,55 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="27" width="1366" height="741" extended-state="0" />
+    <frame x="-1" y="27" width="1682" height="1024" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32300162" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963374" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28625378" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20166163" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32225913" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32300162" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852387" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23870574" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15567766" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32569557" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32300162" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32300162" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32569557" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28625378" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32963374" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19561933" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32300162" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3289689" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32225913" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32300162" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32852387" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35347986" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15567766" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32569557" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -681,7 +777,8 @@
     <MESSAGE value="Adicionados arquivos do projeto e da entrevista" />
     <MESSAGE value="Entidades mapeadas: DoencasPreexistentes, Higiene, HistoriaMedica, Parafuncionais, QueixaPrincipal, TipoHabito." />
     <MESSAGE value="Criado cotroller e rota de teste.&#10;Criado teste do método para inserir operador.&#10;Alterado ScriptBD." />
-    <option name="LAST_COMMIT_MESSAGE" value="Criado cotroller e rota de teste.&#10;Criado teste do método para inserir operador.&#10;Alterado ScriptBD." />
+    <MESSAGE value="Adicionada listagem de tipos de hábitos para o form anamnese" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adicionada listagem de tipos de hábitos para o form anamnese" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -788,13 +885,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/scripts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1062">
-          <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/odontoIFMA/entity/TipoOperador.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="902" max-vertical-offset="1458">
@@ -837,13 +927,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/views/template/templateSemMenu.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="594" max-vertical-offset="1908">
-          <caret line="48" column="46" selection-start-line="48" selection-start-column="46" selection-end-line="48" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/odontoIFMA/controller/IndexController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="218" max-vertical-offset="918">
@@ -858,41 +941,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/86ffa777/d7258286-fefa-4cc3-afed-578ebf299aa3/odontoifma..campus">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/86ffa777/d7258286-fefa-4cc3-afed-578ebf299aa3/odontoifma..paciente">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/odontoIFMA/views/cadastro/tipoOperador.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="47" max-vertical-offset="630">
           <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/entity/TipoHabito.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="771" max-vertical-offset="1386">
-          <caret line="71" column="1" selection-start-line="71" selection-start-column="1" selection-end-line="71" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -917,25 +969,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://db-console:/86ffa777/d7258286-fefa-4cc3-afed-578ebf299aa3/">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="108">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/86ffa777/d7258286-fefa-4cc3-afed-578ebf299aa3/odontoifma..operador">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/odontoIFMA/entity/Operador.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="540" max-vertical-offset="2754">
@@ -943,36 +976,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/controller/AbstractController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="144" max-vertical-offset="1512">
-          <caret line="52" column="13" selection-start-line="52" selection-start-column="13" selection-end-line="52" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="dbDummy://dbtable:/86ffa777/d7258286-fefa-4cc3-afed-578ebf299aa3/odontoifma..tipo_operador">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/odontoIFMA/entity/QueixaPricipal.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="486" max-vertical-offset="1836">
           <caret line="27" column="19" selection-start-line="27" selection-start-column="12" selection-end-line="27" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/sb-admin.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3919" max-vertical-offset="5292">
-          <caret line="240" column="17" selection-start-line="240" selection-start-column="17" selection-end-line="240" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -997,46 +1004,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/controller/TesteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.407408" vertical-offset="304" max-vertical-offset="1170">
-          <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/docs/scriptBD.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1887" max-vertical-offset="4248">
-          <caret line="112" column="46" selection-start-line="112" selection-start-column="46" selection-end-line="112" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.518518" vertical-offset="292" max-vertical-offset="1998">
-          <caret line="35" column="45" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/controller/CadastroController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.3703704" vertical-offset="8" max-vertical-offset="2250">
-          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/phpstorm.jar!/resources/html5-schema/html5/block.rnc">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3327616" vertical-offset="3856" max-vertical-offset="4554">
           <caret line="225" column="16" selection-start-line="225" selection-start-column="16" selection-end-line="225" selection-end-column="16" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/entity/Paciente.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0323741" vertical-offset="1134" max-vertical-offset="4950">
-          <caret line="65" column="4" selection-start-line="65" selection-start-column="4" selection-end-line="68" selection-end-column="7" />
         </state>
       </provider>
     </entry>
@@ -1054,23 +1026,25 @@
           <ID>DATABASE</ID>
           <OriginalElement>d7258286-fefa-4cc3-afed-578ebf299aa3.schema:odontoifma</OriginalElement>
           <nodes>
-            <node x="324.75" y="0.0">d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.campus</node>
-            <node x="662.5" y="201.0">d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.doencas_preexistentes</node>
-            <node x="0.0" y="733.0">d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.operador</node>
-            <node x="630.0" y="424.0">d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.historia_medica</node>
-            <node x="244.75" y="124.0">d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.paciente</node>
-            <node x="17.0" y="435.0">d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.parafuncionais</node>
-            <node x="369.0" y="446.0">d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.queixa_principal</node>
             <node x="0.0" y="901.0">d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.acesso</node>
+            <node x="324.75" y="0.0">d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.campus</node>
             <node x="10.5" y="609.0">d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.tipo_operador</node>
+            <node x="244.75" y="124.0">d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.paciente</node>
+            <node x="0.0" y="733.0">d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.operador</node>
             <node x="183.0" y="424.0">d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.higiene</node>
+            <node x="630.0" y="424.0">d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.historia_medica</node>
+            <node x="662.5" y="201.0">d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.doencas_preexistentes</node>
+            <node x="369.0" y="446.0">d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.queixa_principal</node>
+            <node x="17.0" y="435.0">d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.parafuncionais</node>
             <node x="0.0" y="212.0">d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.tipo_habito</node>
           </nodes>
           <notes />
           <edges>
-            <edge source="d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.operador" target="d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.tipo_operador">
-              <point x="0.0" y="-59.0" />
-              <point x="0.0" y="37.0" />
+            <edge source="d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.historia_medica" target="d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.paciente">
+              <point x="-41.5" y="-70.0" />
+              <point x="671.5" y="394.0" />
+              <point x="477.5" y="394.0" />
+              <point x="99.75" y="125.0" />
             </edge>
             <edge source="d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.higiene" target="d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.paciente">
               <point x="0.0" y="-70.0" />
@@ -1078,35 +1052,33 @@
               <point x="344.5" y="404.0" />
               <point x="-33.25" y="125.0" />
             </edge>
-            <edge source="d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.acesso" target="d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.operador">
-              <point x="0.0" y="-59.0" />
-              <point x="0.0" y="59.0" />
-            </edge>
             <edge source="d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.queixa_principal" target="d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.paciente">
               <point x="0.0" y="-48.0" />
               <point x="489.5" y="404.0" />
               <point x="411.0" y="404.0" />
               <point x="33.25" y="125.0" />
             </edge>
-            <edge source="d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.parafuncionais" target="d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.paciente">
-              <point x="36.5" y="-59.0" />
-              <point x="126.5" y="394.0" />
-              <point x="278.0" y="394.0" />
-              <point x="-99.75" y="125.0" />
+            <edge source="d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.historia_medica" target="d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.doencas_preexistentes">
+              <point x="41.5" y="-70.0" />
+              <point x="0.0" y="48.0" />
             </edge>
             <edge source="d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.paciente" target="d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.campus">
               <point x="0.0" y="-125.0" />
               <point x="0.0" y="37.0" />
             </edge>
-            <edge source="d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.historia_medica" target="d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.paciente">
-              <point x="-41.5" y="-70.0" />
-              <point x="671.5" y="394.0" />
-              <point x="477.5" y="394.0" />
-              <point x="99.75" y="125.0" />
+            <edge source="d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.operador" target="d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.tipo_operador">
+              <point x="0.0" y="-59.0" />
+              <point x="0.0" y="37.0" />
             </edge>
-            <edge source="d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.historia_medica" target="d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.doencas_preexistentes">
-              <point x="41.5" y="-70.0" />
-              <point x="0.0" y="48.0" />
+            <edge source="d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.acesso" target="d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.operador">
+              <point x="0.0" y="-59.0" />
+              <point x="0.0" y="59.0" />
+            </edge>
+            <edge source="d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.parafuncionais" target="d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.paciente">
+              <point x="36.5" y="-59.0" />
+              <point x="126.5" y="394.0" />
+              <point x="278.0" y="394.0" />
+              <point x="-99.75" y="125.0" />
             </edge>
             <edge source="d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.parafuncionais" target="d7258286-fefa-4cc3-afed-578ebf299aa3.table:odontoifma.tipo_habito">
               <point x="-36.5" y="-59.0" />
@@ -1125,18 +1097,225 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/views/cadastro/anamnese.twig">
+    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/views/template/template.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1194" max-vertical-offset="3420">
-          <caret line="77" column="99" selection-start-line="77" selection-start-column="99" selection-end-line="77" selection-end-column="99" />
+        <state vertical-scroll-proportion="-11.222222" vertical-offset="183" max-vertical-offset="1458">
+          <caret line="27" column="77" selection-start-line="27" selection-start-column="77" selection-end-line="27" selection-end-column="77" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/views/template/template.twig">
+    <entry file="file://$PROJECT_DIR$/docs/scriptBD.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5430108" vertical-offset="183" max-vertical-offset="1458">
-          <caret line="27" column="77" selection-start-line="27" selection-start-column="77" selection-end-line="27" selection-end-column="77" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="4248">
+          <caret line="125" column="31" selection-start-line="0" selection-start-column="0" selection-end-line="230" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://db-console:/86ffa777/d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2/">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="108">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/86ffa777/d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2/odontoifma..tipo_habito">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.schema:odontoifma">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.schema:odontoifma</OriginalElement>
+          <nodes>
+            <node x="236.5" y="424.0">d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.higiene</node>
+            <node x="0.0" y="733.0">d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.operador</node>
+            <node x="422.5" y="446.0">d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.queixa_principal</node>
+            <node x="739.5" y="212.0">d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.tipo_habito</node>
+            <node x="0.0" y="901.0">d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.acesso</node>
+            <node x="683.5" y="435.0">d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.parafuncionais</node>
+            <node x="10.5" y="609.0">d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.tipo_operador</node>
+            <node x="298.25" y="124.0">d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.paciente</node>
+            <node x="378.25" y="0.0">d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.campus</node>
+            <node x="0.0" y="201.0">d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.doencas_preexistentes</node>
+            <node x="50.5" y="424.0">d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.historia_medica</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.historia_medica" target="d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.doencas_preexistentes">
+              <point x="-41.5" y="-70.0" />
+              <point x="0.0" y="48.0" />
+            </edge>
+            <edge source="d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.parafuncionais" target="d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.paciente">
+              <point x="-36.5" y="-59.0" />
+              <point x="720.0" y="394.0" />
+              <point x="531.0" y="394.0" />
+              <point x="99.75" y="125.0" />
+            </edge>
+            <edge source="d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.parafuncionais" target="d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.tipo_habito">
+              <point x="36.5" y="-59.0" />
+              <point x="0.0" y="37.0" />
+            </edge>
+            <edge source="d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.queixa_principal" target="d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.paciente">
+              <point x="0.0" y="-48.0" />
+              <point x="543.0" y="404.0" />
+              <point x="464.5" y="404.0" />
+              <point x="33.25" y="125.0" />
+            </edge>
+            <edge source="d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.higiene" target="d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.paciente">
+              <point x="0.0" y="-70.0" />
+              <point x="319.5" y="404.0" />
+              <point x="398.0" y="404.0" />
+              <point x="-33.25" y="125.0" />
+            </edge>
+            <edge source="d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.acesso" target="d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.operador">
+              <point x="0.0" y="-59.0" />
+              <point x="0.0" y="59.0" />
+            </edge>
+            <edge source="d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.historia_medica" target="d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.paciente">
+              <point x="41.5" y="-70.0" />
+              <point x="175.0" y="394.0" />
+              <point x="331.5" y="394.0" />
+              <point x="-99.75" y="125.0" />
+            </edge>
+            <edge source="d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.paciente" target="d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.campus">
+              <point x="0.0" y="-125.0" />
+              <point x="0.0" y="37.0" />
+            </edge>
+            <edge source="d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.operador" target="d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.tipo_operador">
+              <point x="0.0" y="-59.0" />
+              <point x="0.0" y="37.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="151.0" y="326.5" />
+          <SelectedNodes>
+            <node>d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2.table:odontoifma.historia_medica</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/entity/TipoHabito.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.333334" vertical-offset="495" max-vertical-offset="1368">
+          <caret line="59" column="32" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/86ffa777/d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2/odontoifma..doencas_preexistentes">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/entity/Paciente.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.666666" vertical-offset="1944" max-vertical-offset="4950">
+          <caret line="140" column="78" selection-start-line="140" selection-start-column="78" selection-end-line="140" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/86ffa777/d4eacaba-8e98-4a13-aa7f-6a3e8cf76eb2/odontoifma..paciente">
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="108">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/controller/AbstractController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.0" vertical-offset="828" max-vertical-offset="1764">
+          <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.666666" vertical-offset="684" max-vertical-offset="2034">
+          <caret line="74" column="28" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/sb-admin.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4383" max-vertical-offset="5364">
+          <caret line="290" column="0" selection-start-line="290" selection-start-column="0" selection-end-line="290" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/views/template/templateSemMenu.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.666666" vertical-offset="0" max-vertical-offset="1980">
+          <caret line="31" column="113" selection-start-line="31" selection-start-column="113" selection-end-line="31" selection-end-column="113" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/controller/TesteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-27.518518" vertical-offset="427" max-vertical-offset="1368">
+          <caret line="67" column="47" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="47" />
+          <folding>
+            <marker date="1434562528691" expanded="true" signature="1552:1597" placeholder="SELECT * FRO..paciente..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/views/cadastro/anamnese.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-45.333332" vertical-offset="1458" max-vertical-offset="2898">
+          <caret line="149" column="75" selection-start-line="149" selection-start-column="75" selection-end-line="149" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/odontoIFMA/controller/CadastroController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-24.0" vertical-offset="2574" max-vertical-offset="3456">
+          <caret line="180" column="34" selection-start-line="180" selection-start-column="34" selection-end-line="180" selection-end-column="34" />
+          <folding>
+            <marker date="1434566521514" expanded="true" signature="7361:7438" placeholder="SELECT pacie..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/scripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.92783505" vertical-offset="0" max-vertical-offset="1548">
+          <caret line="45" column="80" selection-start-line="45" selection-start-column="80" selection-end-line="45" selection-end-column="80" />
           <folding />
         </state>
       </provider>

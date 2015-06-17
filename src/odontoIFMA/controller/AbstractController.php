@@ -71,6 +71,20 @@ abstract class AbstractController
         return $entity;
     }
 
+    public function findLike($sql, $param)
+    {
+        try {
+            $stmt = $this->em->getConnection()->prepare($sql);
+            $stmt->bindValue('param', '%' . $param . '%', \PDO::PARAM_STR);
+            $stmt->execute();
+
+            return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        } catch (\Exception $exc) {
+            throw $exc;
+        }
+
+    }
+
     public function msgSuccess(array $params)
     {
         return $this->app['twig']->render('success/success.twig', $params);

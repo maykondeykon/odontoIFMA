@@ -59,4 +59,15 @@ class TesteController extends AbstractController
         return "doencasPreexistentes";
     }
 
+    public function testeGetPaciente()
+    {
+        $sql = "SELECT * FROM paciente WHERE nome LIKE :param";
+
+        $pacientes = $this->findLike($sql,'maykon');
+
+        var_dump($this->app->json($pacientes));
+
+        return "Pacientes";
+    }
+
 }

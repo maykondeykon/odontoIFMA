@@ -22,6 +22,33 @@ $(function () {
 
     $('.cel').mask(SPMaskBehavior, spOptions);
 
+    /**
+     * Retorna lista de pacientes com base no texto informado
+     * @param string
+     * @return Json
+     */
+    var cache = {};
+    $( "#pacienteNome" ).autocomplete({
+        minLength: 2,
+        source: function( request, response ) {
+            var term = request.term;
+            if ( term in cache ) {
+                response( cache[ term ] );
+                return;
+            }
+            $.post( "/get-json/getPacientesJson", request, function( data, status, xhr ) {
+                cache[ term ] = data;
+                response( data );
+            });
+        },
+        select : function(event, ui) {
+            this.value = ui.item.value;
+            $('#pacienteId').val(ui.item.id);//Adiciona o id do paciente ao form
+
+            return false;
+        }
+    });
+
 });//<--Fim da function
 
 $(document).ready(function() {

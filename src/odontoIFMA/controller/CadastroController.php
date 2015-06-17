@@ -41,11 +41,11 @@ class CadastroController extends AbstractController
 
     public function Operador()
     {
-      $repoTipoOperador = $this->em->getRepository('odontoIFMA\entity\TipoOperador'); // Obtêm o repositório da entidade
-      $listaTipoOperador = $repoTipoOperador->findAll(); // Recupera a lista de todos os itens da entidade
+        $repoTipoOperador = $this->em->getRepository('odontoIFMA\entity\TipoOperador'); // Obtêm o repositório da entidade
+        $listaTipoOperador = $repoTipoOperador->findAll(); // Recupera a lista de todos os itens da entidade
         return $this->app['twig']->render('cadastro/operador.twig', array(
-          "active_page" => "cadOperador",
-          'listaTipoOperador' => $listaTipoOperador
+            "active_page" => "cadOperador",
+            'listaTipoOperador' => $listaTipoOperador
         ));
     }
 
@@ -171,5 +171,17 @@ class CadastroController extends AbstractController
             'listaDoencas' => $listaDoencas,
             'listaHabitos' => $listaHabitos
         ));
+    }
+
+    public function getPacientesJson()
+    {
+        $request = $this->app['request']->request;
+        $dados = $request->all();
+
+        $sql = "SELECT paciente.*,paciente.nome as value FROM paciente WHERE nome LIKE :param";
+        $pacientes = $this->findLike($sql, $dados['param']);
+
+        return $this->app->json($pacientes);
+
     }
 }

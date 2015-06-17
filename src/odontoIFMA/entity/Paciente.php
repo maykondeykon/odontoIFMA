@@ -138,7 +138,7 @@ class Paciente
      */
     public function setDtNascimento($dtNascimento)
     {
-        $this->dtNascimento = (new \DateTime($dtNascimento));
+        $this->dtNascimento = date_create_from_format('d/m/Y', $dtNascimento);
         return $this;
     }
 

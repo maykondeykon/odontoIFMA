@@ -72,6 +72,10 @@ $app->post('/cadastro/salvar/operador', function () use($app){
     return $app['cadastro.controller']->salvarOperador();
 });
 
+$app->post('/get-json/{tipo}', function ($tipo) use($app){
+    return $app['cadastro.controller']->$tipo();
+});
+
 $app->get('/cadastro/anamnese', function () use ($app) {
     return $app['cadastro.controller']->Anamnese();
 })->bind('cadAnamnese');
