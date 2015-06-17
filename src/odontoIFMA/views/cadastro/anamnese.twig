@@ -75,7 +75,7 @@
                         <label for="escovacao" class="col-sm-2 control-label">Escovação</label>
                         <div class="col-sm-1">
                             <input type="number" class="form-control uppercase" name="escovacao"
-                                   id="escovacao" placeholder="Escovação" value="0" min="0" max="10">
+                                   id="escovacao" value="0" min="0" max="10">
                         </div>
                     </div>
 
@@ -84,12 +84,12 @@
 
                         <div class="col-sm-4">
                             <div class="radio-inline">
-                                <label>
+                                <label class="fontWeightInitial">
                                     <input type="radio" name="fio_dental" value="0"> Não
                                 </label>
                             </div>
                             <div class="radio-inline">
-                                <label>
+                                <label class="fontWeightInitial">
                                     <input type="radio" name="fio_dental" value="1"> Sim
                                 </label>
                             </div>
@@ -101,12 +101,12 @@
 
                         <div class="col-sm-4">
                             <div class="radio-inline">
-                                <label>
+                                <label class="fontWeightInitial">
                                     <input type="radio" name="bochecho" value="0"> Não
                                 </label>
                             </div>
                             <div class="radio-inline">
-                                <label>
+                                <label class="fontWeightInitial">
                                     <input type="radio" name="bochecho" value="1"> Sim
                                 </label>
                             </div>
@@ -118,55 +118,26 @@
                 <br>
 
                 <div class="tab-pane " id="habitosParafuncionaisTab">
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label">Sexo </label>
+                    <table class="table table-condensed table-hover">
+                        {% for item in listaHabitos %}
+                            <input type="hidden" id="" name="doencasPreexistente[]" value="{{ item.getId }}">
+                            <tr>
+                                <td><strong>{{ item.getDescricao }}</strong></td>
+                                <td>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="estado-{{ item.getId }}" id="" value="0"> Não
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="estado-{{ item.getId }}" id="" value="1"> Sim
+                                    </label>
+                                </td>
 
-                        <div class="col-sm-4">
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="sexo" value="masculino"> Masculino
-                                </label>
-                            </div>
-                            <div class="radio">
-                                <label>
-                                    <input type="radio" name="sexo" value="feminino"> Feminino
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="raca" class="col-sm-2 control-label">Raça </label>
-
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control uppercase" name="raca"
-                                   id="raca" placeholder="Pra que tem esse campo" value="">
-                        </div>
-                    </div>
+                            </tr>
+                        {% endfor %}
+                    </table>
 
                     <div class="form-group">
-                        <label for="matricula" class="col-sm-2 control-label">Matricula </label>
-
-                        <div class="col-sm-4">
-                            <input type="text" class="form-control uppercase" name="matricula"
-                                   id="matricula" placeholder="Matricula" value="">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="campus_id" class="col-sm-2 control-label">Campus </label>
-
-                        <div class="col-sm-4">
-                            <select class="form-control" name="campus_id" id="campus_id">
-                                <option value="">Selecione</option>
-                                {% for item in listaCampus %}
-                                    <option value={{ item.getId }}>{{ item.getNome }}</option> {% endfor %}
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <div class="col-sm-offset-2 col-sm-8">
+                        <div class="col-sm-8">
                             <button type="submit" class="btn btn-primary">
                                 <span class="glyphicon glyphicon-ok"></span> Salvar
                             </button>

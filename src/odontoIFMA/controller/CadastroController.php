@@ -162,9 +162,14 @@ class CadastroController extends AbstractController
     {
         $repoDoencas = $this->em->getRepository('odontoIFMA\entity\DoencasPreexistentes'); // Obtêm o repositório da entidade
         $listaDoencas = $repoDoencas->findAll(); // Recupera a lista de todos os itens da entidade
+
+        $repoTipoHabito = $this->em->getRepository('odontoIFMA\entity\TipoHabito'); // Obtêm o repositório da entidade
+        $listaHabitos = $repoTipoHabito->findAll(); // Recupera a lista de todos os itens da entidade
+
         return $this->app['twig']->render('cadastro/anamnese.twig', array(
             "active_page" => "cadAnamnese",
-            'listaDoencas' => $listaDoencas
+            'listaDoencas' => $listaDoencas,
+            'listaHabitos' => $listaHabitos
         ));
     }
 }
