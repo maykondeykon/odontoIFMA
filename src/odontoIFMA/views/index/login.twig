@@ -12,11 +12,17 @@
             <h2 class="form-signin-heading">Seja bem-vindo!</h2>
             <h4 class="form-signin-heading">Insira o seu usuário e senha para efetuar o login.</h4>
 
-            <label for="login" class="sr-only">Usuário</label>
-            <input type="text" id="login" name="login" class="form-control" placeholder="Usuário" required autofocus>
 
-            <label for="senha" class="sr-only">Senha</label>
-            <input type="password" id="senha" name="senha" class="form-control top5" placeholder="Senha" required>
+            <div class="input-group margin-bottom-sm">
+                <span class="input-group-addon"><i class="fa fa-user fa-fw"></i></span>
+                <input type="text" id="login" name="login" class="form-control" placeholder="Usuário" required>
+            </div>
+
+
+            <div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-key fa-fw"></i></span>
+                <input type="password" id="senha" name="senha" class="form-control" placeholder="Senha" required>
+            </div>
 
             <h5>Esqueceu a senha? <a href="">Clique aqui</a></h5>
 
