@@ -4,6 +4,7 @@ namespace odontoIFMA\controller;
 
 use odontoIFMA\entity\Acesso;
 use odontoIFMA\entity\TipoOperador;
+use odontoIFMA\entity\HistoriaMedica;
 
 class CadastroController extends AbstractController
 {
@@ -179,6 +180,7 @@ class CadastroController extends AbstractController
 
         $repoTipoHabito = $this->em->getRepository('odontoIFMA\entity\TipoHabito');
         $repoPaciente = $this->em->getRepository('odontoIFMA\entity\Paciente');
+        $repoDoencas = $this->em->getRepository('odontoIFMA\entity\DoencasPreexistentes');
 
         $params = array(
             'message' => 'Campus cadastrado com sucesso.', //Mensagem a ser exibida
@@ -197,40 +199,65 @@ class CadastroController extends AbstractController
 
 //            var_dump($dados);
 
-            $habitos = array();
+            $dadosHigiene = array(
+//                'paciente' => $paciente,
+                'escovacao' => $dados['escovacao'],
+                'fioDental' => $dados['fio_dental'],
+                'bochecho' => $dados['bochecho'],
+            );
+
+            $dadosQueixa = array(
+                'queixa' => $dados['queixa'],
+//                'paciente' => $paciente,
+            );
+
+            $dadosParafuncionais = array();
+            $dadosHistoria = array();
             $i = 1;
-            foreach($dados as $dado){
+            foreach ($dados as $dado) {
 
-                if(isset($dados["estado-{$i}"])){
-                    echo "estado {$i} = ".$dados["estado-{$i}"]."<br>";
+                if (isset($dados["estado-{$i}"])) {
+                    $dadosHistoria[$i] = array(
+                        'doencasPreexistente' => $repoDoencas->find($i),
+                        'paciente' => $paciente,
+                        'estado' => $dados["estado-{$i}"],
+                        'antFamiliar' => $dados["familiar-{$i}"],
+                        'obs' => $dados["obs-{$i}"]
+                    );
                 }
 
-                if(isset($dados["familiar-{$i}"])){
-                    echo "familiar {$i} = ".$dados["familiar-{$i}"]."<br>";
+                if (isset($dados["habito-{$i}"])) {
+                    $dadosParafuncionais[$i] = array(
+                        'habito' => $repoTipoHabito->find($i),
+                        'estado' => $dados["habito-{$i}"],
+                        'paciente' => $paciente
+                    );
                 }
-
-                if(isset($dados["obs-{$i}"])){
-                    echo "Obs {$i} = ".$dados["obs-{$i}"]."<br>";
-                }
-
-                if(isset($dados["habito-{$i}"])){
-                    $habitos[$i] = $dados["habito-{$i}"];
-                    echo "Habito {$i} = ".$dados["habito-{$i}"]."<br>";
-                }
-            $i++;
+                $i++;
             }
 
-            foreach($habitos as $key => $value){
-                $habitos['habito'] = $repoTipoHabito->find($key);
-                $habitos['estado'] = $value;
-                $habitos['paciente'] = $paciente;
+            $this->em->getConnection()->beginTransaction();
+            try {
+                foreach($dadosHistoria as $item){
+                    $entity = new HistoriaMedica($item);
+                    $this->em->persist($entity);
+                    $this->em->flush();
+                    $this->em->clear();
+                }
 
-                //insert($habitos)
+
+                $this->em->getConnection()->commit();
+            } catch (\Exception $exc) {
+                $this->em->getConnection()->rollback();
+                $this->em->close();
+                throw $exc;
             }
-            var_dump($habitos);
 
 
-            die();
+//            print_r($dadosParafuncionais);
+//
+//
+//            die();
 //            $this->insert($dados);
 
             return $this->msgSuccess($params);

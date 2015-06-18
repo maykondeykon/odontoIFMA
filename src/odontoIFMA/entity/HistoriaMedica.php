@@ -23,9 +23,9 @@ class HistoriaMedica
 
     /**
      * @var Paciente $doencasPreexistente
-     * @ORM\ManyToOne(targetEntity="DoencasPreexistente")
+     * @ORM\ManyToOne(targetEntity="DoencasPreexistentes")
      * @ORM\JoinColumns({
-     * @ORM\JoinColumn(name="doencas_preexistente", referencedColumnName="id")
+     * @ORM\JoinColumn(name="doenca_preexistente", referencedColumnName="id")
      * })
      */
     private $doencasPreexistente;
@@ -37,10 +37,10 @@ class HistoriaMedica
     private $estado;
 
     /**
-     * @var string $qual
-     * @ORM\Column(name="qual", type="string", length=255, nullable=true)
+     * @var string $obs
+     * @ORM\Column(name="obs", type="string", length=255, nullable=true)
      */
-    private $qual;
+    private $obs;
 
     /**
      * @var Paciente $paciente
@@ -50,6 +50,12 @@ class HistoriaMedica
      * })
      */
     private $paciente;
+
+    /**
+     * @var integer $antFamiliar
+     * @ORM\Column(name="ant_familiar", type="integer", nullable=true)
+     */
+    private $antFamiliar;
 
     public function __construct(array $data = array())
     {
@@ -112,17 +118,17 @@ class HistoriaMedica
     /**
      * @return string
      */
-    public function getQual()
+    public function getObs()
     {
-        return $this->qual;
+        return $this->obs;
     }
 
     /**
-     * @param string $qual
+     * @param string $obs
      */
-    public function setQual($qual)
+    public function setObs($obs)
     {
-        $this->qual = $qual;
+        $this->obs = $obs;
     }
 
     /**
@@ -139,6 +145,22 @@ class HistoriaMedica
     public function setPaciente($paciente)
     {
         $this->paciente = $paciente;
+    }
+
+    /**
+     * @return int
+     */
+    public function getAntFamiliar()
+    {
+        return $this->antFamiliar;
+    }
+
+    /**
+     * @param int $antFamiliar
+     */
+    public function setAntFamiliar($antFamiliar)
+    {
+        $this->antFamiliar = $antFamiliar;
     }
 
 }

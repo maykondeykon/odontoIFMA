@@ -61,6 +61,7 @@ abstract class AbstractController
         try {
             $this->em->persist($entity);
             $this->em->flush();
+            $this->em->clear();
             $this->em->getConnection()->commit();
         } catch (\Exception $exc) {
             $this->em->getConnection()->rollback();
