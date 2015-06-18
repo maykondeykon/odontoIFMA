@@ -44,7 +44,7 @@ class HistoriaMedica
 
     /**
      * @var Paciente $paciente
-     * @ORM\ManyToOne(targetEntity="Paciente")
+     * @ORM\ManyToOne(targetEntity="Paciente", inversedBy="historiaMedica")
      * @ORM\JoinColumns({
      * @ORM\JoinColumn(name="paciente", referencedColumnName="id")
      * })

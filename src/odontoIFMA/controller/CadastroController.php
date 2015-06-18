@@ -5,6 +5,9 @@ namespace odontoIFMA\controller;
 use odontoIFMA\entity\Acesso;
 use odontoIFMA\entity\TipoOperador;
 use odontoIFMA\entity\HistoriaMedica;
+use odontoIFMA\entity\Parafuncionais;
+use odontoIFMA\entity\QueixaPricipal;
+use odontoIFMA\entity\Higiene;
 
 class CadastroController extends AbstractController
 {
@@ -176,31 +179,32 @@ class CadastroController extends AbstractController
 
     public function salvarAnamnese()
     {
-        $this->entity = 'odontoIFMA\entity\Campus'; //Define a entidade que será usada
-
         $repoTipoHabito = $this->em->getRepository('odontoIFMA\entity\TipoHabito');
         $repoPaciente = $this->em->getRepository('odontoIFMA\entity\Paciente');
         $repoDoencas = $this->em->getRepository('odontoIFMA\entity\DoencasPreexistentes');
 
         $params = array(
-            'message' => 'Campus cadastrado com sucesso.', //Mensagem a ser exibida
+            'message' => 'Anamnese cadastrada com sucesso.', //Mensagem a ser exibida
             'titulo' => 'Sucesso!', // Título da mensagem
             'tipo' => 'alert-success', // Define o tipo da mensagem, erro ou sucesso
             'icon' => 'glyphicon-ok', // Ícone do título da mensagem
-            'active_page' => 'cadTipoCampus', // Define a página ativa no menu e breadcrumb
-            'btVoltar' => '/cadastro/campus' // Define a rota do botão voltar
+            'active_page' => 'cadAnamnese', // Define a página ativa no menu e breadcrumb
+            'btVoltar' => '/cadastro/anamnese' // Define a rota do botão voltar
         );
 
         if ($this->app['request']->getMethod() == 'POST') {
             $request = $this->app['request']->request;
             $dados = $request->all();
 
-            $paciente = $repoPaciente->find($dados['pacienteId']);
+            if(isset($dados['pacienteId'])){
+                $paciente = $repoPaciente->find($dados['pacienteId']); // Recupera o objeto Paciente
+            }else{
+                throw new \Exception("Id do paciente não informado.");
+            }
 
-//            var_dump($dados);
-
+//          ---- Filtragem dos dados ----
             $dadosHigiene = array(
-//                'paciente' => $paciente,
+                'paciente' => $paciente,
                 'escovacao' => $dados['escovacao'],
                 'fioDental' => $dados['fio_dental'],
                 'bochecho' => $dados['bochecho'],
@@ -208,7 +212,7 @@ class CadastroController extends AbstractController
 
             $dadosQueixa = array(
                 'queixa' => $dados['queixa'],
-//                'paciente' => $paciente,
+                'paciente' => $paciente,
             );
 
             $dadosParafuncionais = array();
@@ -235,31 +239,31 @@ class CadastroController extends AbstractController
                 }
                 $i++;
             }
+//          ---- /Filtragem dos dados ----
 
-            $this->em->getConnection()->beginTransaction();
-            try {
-                foreach($dadosHistoria as $item){
-                    $entity = new HistoriaMedica($item);
-                    $this->em->persist($entity);
-                    $this->em->flush();
-                    $this->em->clear();
+//          ---- Inserção dos dados ----
+            if ($paciente) {
+                foreach ($dadosParafuncionais as $p) {
+                    $parafunional = new Parafuncionais($p);
+                    $paciente->setParafuncionais($parafunional);
                 }
 
+                foreach ($dadosHistoria as $h) {
+                    $historia = new HistoriaMedica($h);
+                    $paciente->setHistoriaMedica($historia);
+                }
 
-                $this->em->getConnection()->commit();
-            } catch (\Exception $exc) {
-                $this->em->getConnection()->rollback();
-                $this->em->close();
-                throw $exc;
+                $queixa = new QueixaPricipal($dadosQueixa);
+                $paciente->setQueixaPrincipal($queixa);
+
+                $higiene = new Higiene($dadosHigiene);
+                $paciente->setHigiene($higiene);
+
+                $this->persist($paciente);
+            } else {
+                throw new \Exception("Paciente não localizado.");
             }
-
-
-//            print_r($dadosParafuncionais);
-//
-//
-//            die();
-//            $this->insert($dados);
-
+//          ---- /Inserção dos dados ----
             return $this->msgSuccess($params);
         } else {
             throw new \Exception("Método inválido.");
