@@ -77,12 +77,13 @@ class CadastroController extends AbstractController
             $tipo_operador = $repoTipoOperador->find($dados['tipo_operador']); // Recupera o objeto a partir do ID
             $dados['tipo'] = $tipo_operador; // Cria uma nova entrada no array com o nome do atributo da entidade
 
-            $operador = new $this->entity($dados);
-            $operador->setTipo($tipo_operador);
-
             $acesso->setLogin($dados['login']);
             $acesso->setSenha($dados['senha']);
-            $acesso->setOperador($dados['tipo']);
+
+            $dados['acesso'] = $acesso;
+
+            $operador = new $this->entity($dados);
+            $acesso->setOperador($operador);
 
             $this->persist($operador);
 
@@ -205,9 +206,9 @@ class CadastroController extends AbstractController
             $request = $this->app['request']->request;
             $dados = $request->all();
 
-            if(isset($dados['pacienteId'])){
+            if (isset($dados['pacienteId'])) {
                 $paciente = $repoPaciente->find($dados['pacienteId']); // Recupera o objeto Paciente
-            }else{
+            } else {
                 throw new \Exception("Id do paciente não informado.");
             }
 
