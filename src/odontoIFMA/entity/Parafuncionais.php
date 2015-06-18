@@ -39,7 +39,7 @@ class Parafuncionais
 
     /**
      * @var Paciente $paciente
-     * @ORM\ManyToOne(targetEntity="Paciente")
+     * @ORM\ManyToOne(targetEntity="Paciente", inversedBy="parafuncionais")
      * @ORM\JoinColumns({
      * @ORM\JoinColumn(name="paciente", referencedColumnName="id")
      * })

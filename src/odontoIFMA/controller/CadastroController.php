@@ -4,6 +4,10 @@ namespace odontoIFMA\controller;
 
 use odontoIFMA\entity\Acesso;
 use odontoIFMA\entity\TipoOperador;
+use odontoIFMA\entity\HistoriaMedica;
+use odontoIFMA\entity\Parafuncionais;
+use odontoIFMA\entity\QueixaPricipal;
+use odontoIFMA\entity\Higiene;
 
 class CadastroController extends AbstractController
 {
@@ -41,11 +45,11 @@ class CadastroController extends AbstractController
 
     public function Operador()
     {
-      $repoTipoOperador = $this->em->getRepository('odontoIFMA\entity\TipoOperador'); // Obtêm o repositório da entidade
-      $listaTipoOperador = $repoTipoOperador->findAll(); // Recupera a lista de todos os itens da entidade
+        $repoTipoOperador = $this->em->getRepository('odontoIFMA\entity\TipoOperador'); // Obtêm o repositório da entidade
+        $listaTipoOperador = $repoTipoOperador->findAll(); // Recupera a lista de todos os itens da entidade
         return $this->app['twig']->render('cadastro/operador.twig', array(
-          "active_page" => "cadOperador",
-          'listaTipoOperador' => $listaTipoOperador
+            "active_page" => "cadOperador",
+            'listaTipoOperador' => $listaTipoOperador
         ));
     }
 
@@ -165,5 +169,125 @@ class CadastroController extends AbstractController
         } else {
             throw new \Exception("Método inválido.");
         }
+    }
+
+    public function Anamnese()
+    {
+        $repoDoencas = $this->em->getRepository('odontoIFMA\entity\DoencasPreexistentes'); // Obtêm o repositório da entidade
+        $listaDoencas = $repoDoencas->findAll(); // Recupera a lista de todos os itens da entidade
+
+        $repoTipoHabito = $this->em->getRepository('odontoIFMA\entity\TipoHabito'); // Obtêm o repositório da entidade
+        $listaHabitos = $repoTipoHabito->findAll(); // Recupera a lista de todos os itens da entidade
+
+        return $this->app['twig']->render('cadastro/anamnese.twig', array(
+            "active_page" => "cadAnamnese",
+            'listaDoencas' => $listaDoencas,
+            'listaHabitos' => $listaHabitos
+        ));
+    }
+
+    public function salvarAnamnese()
+    {
+        $repoTipoHabito = $this->em->getRepository('odontoIFMA\entity\TipoHabito');
+        $repoPaciente = $this->em->getRepository('odontoIFMA\entity\Paciente');
+        $repoDoencas = $this->em->getRepository('odontoIFMA\entity\DoencasPreexistentes');
+
+        $params = array(
+            'message' => 'Anamnese cadastrada com sucesso.', //Mensagem a ser exibida
+            'titulo' => 'Sucesso!', // Título da mensagem
+            'tipo' => 'alert-success', // Define o tipo da mensagem, erro ou sucesso
+            'icon' => 'glyphicon-ok', // Ícone do título da mensagem
+            'active_page' => 'cadAnamnese', // Define a página ativa no menu e breadcrumb
+            'btVoltar' => '/cadastro/anamnese' // Define a rota do botão voltar
+        );
+
+        if ($this->app['request']->getMethod() == 'POST') {
+            $request = $this->app['request']->request;
+            $dados = $request->all();
+
+            if(isset($dados['pacienteId'])){
+                $paciente = $repoPaciente->find($dados['pacienteId']); // Recupera o objeto Paciente
+            }else{
+                throw new \Exception("Id do paciente não informado.");
+            }
+
+//          ---- Filtragem dos dados ----
+            $dadosHigiene = array(
+                'paciente' => $paciente,
+                'escovacao' => $dados['escovacao'],
+                'fioDental' => $dados['fio_dental'],
+                'bochecho' => $dados['bochecho'],
+            );
+
+            $dadosQueixa = array(
+                'queixa' => $dados['queixa'],
+                'paciente' => $paciente,
+            );
+
+            $dadosParafuncionais = array();
+            $dadosHistoria = array();
+            $i = 1;
+            foreach ($dados as $dado) {
+
+                if (isset($dados["estado-{$i}"])) {
+                    $dadosHistoria[$i] = array(
+                        'doencasPreexistente' => $repoDoencas->find($i),
+                        'paciente' => $paciente,
+                        'estado' => $dados["estado-{$i}"],
+                        'antFamiliar' => $dados["familiar-{$i}"],
+                        'obs' => $dados["obs-{$i}"]
+                    );
+                }
+
+                if (isset($dados["habito-{$i}"])) {
+                    $dadosParafuncionais[$i] = array(
+                        'habito' => $repoTipoHabito->find($i),
+                        'estado' => $dados["habito-{$i}"],
+                        'paciente' => $paciente
+                    );
+                }
+                $i++;
+            }
+//          ---- /Filtragem dos dados ----
+
+//          ---- Inserção dos dados ----
+            if ($paciente) {
+                foreach ($dadosParafuncionais as $p) {
+                    $parafunional = new Parafuncionais($p);
+                    $paciente->setParafuncionais($parafunional);
+                }
+
+                foreach ($dadosHistoria as $h) {
+                    $historia = new HistoriaMedica($h);
+                    $paciente->setHistoriaMedica($historia);
+                }
+
+                $queixa = new QueixaPricipal($dadosQueixa);
+                $paciente->setQueixaPrincipal($queixa);
+
+                $higiene = new Higiene($dadosHigiene);
+                $paciente->setHigiene($higiene);
+
+                $this->persist($paciente);
+            } else {
+                throw new \Exception("Paciente não localizado.");
+            }
+//          ---- /Inserção dos dados ----
+            return $this->msgSuccess($params);
+        } else {
+            throw new \Exception("Método inválido.");
+        }
+    }
+
+    public function getPacientesJson()
+    {
+        $request = $this->app['request']->request;
+        $dados = $request->all();
+
+        $sql = "SELECT paciente.*,paciente.nome as value FROM paciente WHERE nome LIKE :param";
+        $pacientes = $this->findLike($sql, $dados['param']);
+
+        return $this->app->json($pacientes);
+
     }
 }

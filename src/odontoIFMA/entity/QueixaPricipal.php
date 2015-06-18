@@ -9,13 +9,13 @@ use Zend\Stdlib\Hydrator;
  * Class QueixaPricipal
  * @package odontoIFMA\entity
  * @ORM\Entity
- * @ORM\Table(name="queixa_pricipal")
+ * @ORM\Table(name="queixa_principal")
  */
 class QueixaPricipal
 {
     /**
      * @var integer $id
-     * @ORM\Column(name="idqueixa_principal", type="integer", nullable=false)
+     * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -29,7 +29,7 @@ class QueixaPricipal
 
     /**
      * @var Paciente $paciente
-     * @ORM\ManyToOne(targetEntity="Paciente")
+     * @ORM\ManyToOne(targetEntity="Paciente", inversedBy="queixaPrincipal")
      * @ORM\JoinColumns({
      * @ORM\JoinColumn(name="paciente", referencedColumnName="id")
      * })

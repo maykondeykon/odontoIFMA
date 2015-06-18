@@ -1,0 +1,156 @@
+{% extends 'template/template.twig' %}
+{% block content %}
+
+    <div id="content">
+        <form class="form-horizontal form-padrao" id="formAnamnese" method="post" action="/cadastro/salvar/anamnese">
+            <ul id="tabs" class="nav nav-tabs" data-tabs="tabs">
+                <li class="active"><a href="#queixaPricipalTab" data-toggle="tab">Queixa principal</a></li>
+                <li><a href="#historiaMedicaTab" data-toggle="tab">História médica</a></li>
+                <li><a href="#habitosHigieneTab" data-toggle="tab">Hábitos de higiene</a></li>
+                <li><a href="#habitosParafuncionaisTab" data-toggle="tab">Hábitos parafuncionais</a></li>
+            </ul>
+
+            <div id="my-tab-content" class="tab-content">
+                <br>
+
+                <div class="tab-pane active" id="queixaPricipalTab">
+                    <div class="form-group">
+                        <label for="pacienteNome" class="col-sm-2 control-label">Paciente</label>
+
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control uppercase" name="pacienteNome"
+                                   id="pacienteNome" placeholder="Paciente" value="">
+                        </div>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="queixa" class="col-sm-2 control-label">Queixa principal</label>
+
+                        <div class="col-sm-8">
+                            <textarea class="form-control uppercase textareaNoResize" name="queixa" id="queixa"
+                                      placeholder="Queixa principal" rows="3"></textarea>
+                        </div>
+                    </div>
+                </div> {# Fim queixaPrincipal#}
+
+                <br>
+
+                <div class="tab-pane " id="historiaMedicaTab">
+                    <table class="table table-condensed table-hover">
+                        {% for item in listaDoencas %}
+                            {#<input type="hidden" id="" name="doencasPreexistente[]" value="{{ item.getId }}">#}
+                            <tr>
+                                <td><strong>{{ item.getNome }}</strong></td>
+                                <td>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="estado-{{ item.getId }}" id="" value="0"> Não
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="estado-{{ item.getId }}" id="" value="1"> Sim
+                                    </label>
+                                </td>
+                                <td>
+                                    {% if item.getFamiliar == 1 %}
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" name="familiar-{{ item.getId }}" value="1">
+                                                ANT. FAMILIAR
+                                            </label>
+                                        </div>
+                                    {% else %}
+                                        <input type="text" class="form-control" name="obs-{{ item.getId }}"
+                                               id="" placeholder="Obs" value="">
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </table>
+                </div> {# Fim historiaMedica#}
+
+                <br>
+
+                <div class="tab-pane " id="habitosHigieneTab">
+                    <div class="form-group">
+                        <label for="escovacao" class="col-sm-2 control-label">Escovação</label>
+                        <div class="col-sm-1">
+                            <input type="number" class="form-control uppercase" name="escovacao"
+                                   id="escovacao" value="0" min="0" max="10">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Fio dental </label>
+
+                        <div class="col-sm-4">
+                            <div class="radio-inline">
+                                <label class="fontWeightInitial">
+                                    <input type="radio" name="fio_dental" value="0"> Não
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label class="fontWeightInitial">
+                                    <input type="radio" name="fio_dental" value="1"> Sim
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-2 control-label">Bochecho </label>
+
+                        <div class="col-sm-4">
+                            <div class="radio-inline">
+                                <label class="fontWeightInitial">
+                                    <input type="radio" name="bochecho" value="0"> Não
+                                </label>
+                            </div>
+                            <div class="radio-inline">
+                                <label class="fontWeightInitial">
+                                    <input type="radio" name="bochecho" value="1"> Sim
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> {# Fim habitosHigiene#}
+
+                <br>
+
+                <div class="tab-pane " id="habitosParafuncionaisTab">
+                    <table class="table table-condensed table-hover">
+                        {% for item in listaHabitos %}
+                            {#<input type="hidden" id="" name="doencasPreexistente[]" value="{{ item.getId }}">#}
+                            <tr>
+                                <td><strong>{{ item.getDescricao }}</strong></td>
+                                <td>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="habito-{{ item.getId }}" id="" value="0"> Não
+                                    </label>
+                                    <label class="radio-inline">
+                                        <input type="radio" name="habito-{{ item.getId }}" id="" value="1"> Sim
+                                    </label>
+                                </td>
+
+                            </tr>
+                        {% endfor %}
+                    </table>
+
+                    <div class="form-group">
+                        <div class="col-sm-8">
+                            <button type="submit" class="btn btn-primary">
+                                <span class="glyphicon glyphicon-ok"></span> Salvar
+                            </button>
+                            <a class="btn btn-default" href="/home"><i
+                                        class="glyphicon glyphicon-remove"></i> Cancelar</a>
+                        </div>
+                    </div>
+
+                    {#Hiddens#}
+                    <input type="hidden" id="pacienteId" name="pacienteId">
+                </div> {# Fim habitosParafuncionais#}
+            </div> {# Fim tab-content#}
+        </form>
+    </div> {# Fim Content#}
+
+{% endblock %}

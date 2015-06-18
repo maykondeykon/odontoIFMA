@@ -1,6 +1,7 @@
 <?php
 namespace odontoIFMA\entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Zend\Stdlib\Hydrator;
 
@@ -78,9 +79,37 @@ class Paciente
      */
     private $campus;
 
+    /**
+     * @var Parafuncionais $parafuncionais
+     * @ORM\OneToMany(targetEntity="Parafuncionais", mappedBy="paciente" ,cascade={"persist", "remove"})
+     **/
+    private $parafuncionais;
+
+    /**
+     * @var QueixaPricipal $queixaPrincipal
+     * @ORM\OneToMany(targetEntity="QueixaPricipal", mappedBy="paciente" ,cascade={"persist", "remove"})
+     **/
+    private $queixaPrincipal;
+
+    /**
+     * @var Higiene $higiene
+     * @ORM\OneToOne(targetEntity="Higiene", mappedBy="paciente" ,cascade={"persist", "remove"})
+     */
+    private $higiene;
+
+    /**
+     * @var HistoriaMedica $historiaMedica
+     * @ORM\OneToMany(targetEntity="HistoriaMedica", mappedBy="paciente" ,cascade={"persist", "remove"})
+     **/
+    private $historiaMedica;
+
     public function __construct(array $data = array())
     {
         (new Hydrator\ClassMethods())->hydrate($data, $this);
+
+        $this->parafuncionais = new ArrayCollection();
+        $this->queixaPrincipal = new ArrayCollection();
+        $this->historiaMedica = new ArrayCollection();
     }
 
     public function toArray()
@@ -120,7 +149,7 @@ class Paciente
      */
     public function setNome($nome)
     {
-        $this->nome = $nome;
+        $this->nome = ucwords(mb_strtolower(trim($nome), 'UTF-8'));
         return $this;
     }
 
@@ -138,7 +167,7 @@ class Paciente
      */
     public function setDtNascimento($dtNascimento)
     {
-        $this->dtNascimento = (new \DateTime($dtNascimento));
+        $this->dtNascimento = date_create_from_format('d/m/Y', $dtNascimento);
         return $this;
     }
 
@@ -174,7 +203,7 @@ class Paciente
      */
     public function setNaturalidade($naturalidade)
     {
-        $this->naturalidade = $naturalidade;
+        $this->naturalidade = mb_strtoupper(trim($naturalidade), 'UTF-8');
         return $this;
     }
 
@@ -210,7 +239,7 @@ class Paciente
      */
     public function setSexo($sexo)
     {
-        $this->sexo = $sexo;
+        $this->sexo = mb_strtoupper(trim($sexo), 'UTF-8');
         return $this;
     }
 
@@ -228,7 +257,7 @@ class Paciente
      */
     public function setRaca($raca)
     {
-        $this->raca = $raca;
+        $this->raca = mb_strtoupper(trim($raca), 'UTF-8');
         return $this;
     }
 
@@ -246,7 +275,7 @@ class Paciente
      */
     public function setMatricula($matricula)
     {
-        $this->matricula = $matricula;
+        $this->matricula = mb_strtoupper(trim($matricula), 'UTF-8');
         return $this;
     }
 
@@ -265,6 +294,78 @@ class Paciente
     public function setCampus($campus)
     {
         $this->campus = $campus;
+        return $this;
+    }
+
+    /**
+     * @return Parafuncionais
+     */
+    public function getParafuncionais()
+    {
+        return $this->parafuncionais;
+    }
+
+    /**
+     * @param Parafuncionais $parafuncionais
+     * @return $this
+     */
+    public function setParafuncionais(Parafuncionais $parafuncionais)
+    {
+        $this->parafuncionais[] = $parafuncionais;
+        return $this;
+    }
+
+    /**
+     * @return QueixaPricipal
+     */
+    public function getQueixaPrincipal()
+    {
+        return $this->queixaPrincipal;
+    }
+
+    /**
+     * @param QueixaPricipal $queixaPrincipal
+     * @return $this
+     */
+    public function setQueixaPrincipal(QueixaPricipal $queixaPrincipal)
+    {
+        $this->queixaPrincipal[] = $queixaPrincipal;
+        return $this;
+    }
+
+    /**
+     * @return Higiene
+     */
+    public function getHigiene()
+    {
+        return $this->higiene;
+    }
+
+    /**
+     * @param Higiene $higiene
+     * @return $this
+     */
+    public function setHigiene(Higiene $higiene)
+    {
+        $this->higiene = $higiene;
+        return $this;
+    }
+
+    /**
+     * @return HistoriaMedica
+     */
+    public function getHistoriaMedica()
+    {
+        return $this->historiaMedica;
+    }
+
+    /**
+     * @param HistoriaMedica $historiaMedica
+     * @return $this
+     */
+    public function setHistoriaMedica(HistoriaMedica $historiaMedica)
+    {
+        $this->historiaMedica[] = $historiaMedica;
         return $this;
     }
 

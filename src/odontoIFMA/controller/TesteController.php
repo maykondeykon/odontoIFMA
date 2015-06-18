@@ -46,4 +46,28 @@ class TesteController extends AbstractController
         return "testeAcesso";
     }
 
+    public function doencasPreexistentes()
+    {
+        $this->entity = 'odontoIFMA\entity\DoencasPreexistentes';
+
+        $repoDoencas = $this->em->getRepository($this->entity);
+
+        $doencas = $repoDoencas->findAll();
+
+        var_dump($doencas);
+
+        return "doencasPreexistentes";
+    }
+
+    public function testeGetPaciente()
+    {
+        $sql = "SELECT * FROM paciente WHERE nome LIKE :param";
+
+        $pacientes = $this->findLike($sql,'maykon');
+
+        var_dump($this->app->json($pacientes));
+
+        return "Pacientes";
+    }
+
 }
