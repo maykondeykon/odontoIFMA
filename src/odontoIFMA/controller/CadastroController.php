@@ -52,7 +52,9 @@ class CadastroController extends AbstractController
 
     public function salvarOperador()
     {
-        $this->entity = 'odontoIFMA\entity\Operador'; //Define a entidade que será usada
+        $this->entity = 'odontoIFMA\entity\Operador';
+        $acesso = new Acesso();
+
         //Define os parâmetros que serão usados na renderização da tela com retorno da operação
         $params = array(
             'message' => 'Operador cadastrado com sucesso.', //Mensagem a ser exibida
@@ -68,10 +70,17 @@ class CadastroController extends AbstractController
             $dados = $request->all();
 
             $repoTipoOperador = $this->em->getRepository('odontoIFMA\entity\TipoOperador');
-            $tipo_operador = $repoTipoOperador->find($dados['tipo_operador_id']); // Recupera o objeto a partir do ID
-            $dados['tipo_operador'] = $tipo_operador; // Cria uma nova entrada no array com o nome do atributo da entidade
+            $tipo_operador = $repoTipoOperador->find($dados['tipo_operador']); // Recupera o objeto a partir do ID
+            $dados['tipo'] = $tipo_operador; // Cria uma nova entrada no array com o nome do atributo da entidade
 
-            $this->insert($dados);
+            $operador = new $this->entity($dados);
+            $operador->setTipo($tipo_operador);
+
+            $acesso->setLogin($dados['login']);
+            $acesso->setSenha($dados['senha']);
+            $acesso->setOperador($dados['tipo']);
+
+            $this->persist($operador);
 
             return $this->msgSuccess($params);
         } else {

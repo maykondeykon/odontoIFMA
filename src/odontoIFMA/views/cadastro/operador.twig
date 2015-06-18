@@ -5,6 +5,15 @@
     <form class="form-horizontal form-padrao" id="formOperador" method="post" action="/cadastro/salvar/operador">
 
         <div class="form-group">
+            <label for="nome" class="col-sm-2 control-label">Nome</label>
+
+            <div class="col-sm-8 col-md-3">
+                <input type="text" class="form-control uppercase" name="nome"
+                       id="nome" placeholder="" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
             <label for="login" class="col-sm-2 control-label">Usuário</label>
 
             <div class="col-sm-8 col-md-3">
@@ -23,13 +32,23 @@
         </div>
 
         <div class="form-group">
-            <label for="campus_id" class="col-sm-2 control-label">Tipo Operador</label>
+            <label for="documento" class="col-sm-2 control-label">Documento</label>
+
+            <div class="col-sm-8 col-md-3">
+                <input type="text" class="form-control uppercase" name="documento"
+                       id="documento" placeholder="Campo não obrigatório" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="campus_id" class="col-sm-2 control-label">Tipo</label>
 
             <div class="col-sm-4">
-                <select class="form-control" name="tipo_operador_id" id="tipo_operador_id">
+                <select class="form-control" name="tipo_operador" id="tipo_operador">
                     <option value="">Selecione</option>
                     {% for item in listaTipoOperador %}
-                        <option value={{ item.getId }}>{{ item.getDescricao }}</option> {% endfor %}
+                        <option value={{ item.getId }}>{{ item.getDescricao }}</option>
+                    {% endfor %}
                 </select>
             </div>
         </div>
