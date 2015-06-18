@@ -28,10 +28,6 @@ $app->get('/', function () use ($app) {
     return $app['index.controller']->index();
 });
 
-$app->get('/teste/{tipo}', function ($tipo) use ($app) {
-    return $app['teste.controller']->$tipo();
-});
-
 $app->post('/login', function () use($app){
     return $app['index.controller']->login();
 });
@@ -44,44 +40,44 @@ $app->get('/cadastro/tipo-operador', function () use ($app) {
     return $app['cadastro.controller']->tipoOperador();
 })->bind('cadTipoOperador');
 
-$app->post('/cadastro/salvar/tipo-operador', function () use($app){
-    return $app['cadastro.controller']->salvarTipoOperador();
-});
-
 $app->get('/cadastro/paciente', function () use ($app) {
     return $app['cadastro.controller']->tipoPaciente();
 })->bind('cadTipoPaciente');
-
-$app->post('/cadastro/salvar/paciente', function () use($app){
-    return $app['cadastro.controller']->salvarPaciente();
-});
 
 $app->get('/cadastro/campus', function () use ($app) {
     return $app['cadastro.controller']->tipoCampus();
 })->bind('cadTipoCampus');
 
-$app->post('/cadastro/salvar/campus', function () use($app){
-    return $app['cadastro.controller']->salvarCampus();
-});
-
 $app->get('/cadastro/operador', function () use ($app) {
     return $app['cadastro.controller']->Operador();
 })->bind('cadOperador');
 
-$app->post('/cadastro/salvar/operador', function () use($app){
-    return $app['cadastro.controller']->salvarOperador();
-});
-
-$app->post('/get-json/{tipo}', function ($tipo) use($app){
-    return $app['cadastro.controller']->$tipo();
-});
 
 $app->get('/cadastro/anamnese', function () use ($app) {
     return $app['cadastro.controller']->Anamnese();
 })->bind('cadAnamnese');
 
-$app->post('/cadastro/salvar/anamnese', function () use($app){
-    return $app['cadastro.controller']->salvarAnamnese();
+/**
+ * Rota dinâmica para ser usada em métodos que retornam Json.
+ */
+$app->post('/get-json/{tipo}', function ($tipo) use($app){
+    return $app['cadastro.controller']->$tipo();
+});
+
+/**
+ * Rota dinâmica para testes.
+ * Substituir o campo "{tipo}" pelo método em TesteController
+ */
+$app->get('/teste/{tipo}', function ($tipo) use ($app) {
+    return $app['teste.controller']->$tipo();
+});
+
+/**
+ * Rota dinâmica para salvamento de cadastros.
+ * Substituir na action do formulário o campo "{tipo}" pelo método em CadastroController
+ */
+$app->post('/cadastro/salvar/{tipo}', function ($tipo) use($app){
+    return $app['cadastro.controller']->$tipo();
 });
 
 /**
@@ -92,7 +88,7 @@ $app->get('/logout', function () use ($app, $em) {
 });
 
 /**
- * Rota para captura de exceções
+ * Método para captura de exceções
  */
 $app->error(function (\Exception $e)use ($app) {
     $titulo = 'Um erro ocorreu!';
