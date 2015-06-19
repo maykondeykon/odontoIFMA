@@ -4,6 +4,7 @@ namespace odontoIFMA\controller;
 
 use odontoIFMA\entity\Acesso;
 use odontoIFMA\entity\TipoOperador;
+use odontoIFMA\entity\Permissao;
 
 class IndexController extends AbstractController
 {
@@ -21,6 +22,7 @@ class IndexController extends AbstractController
     public function login()
     {
         $acesso = new Acesso();
+        $permissao = new Permissao();
         $this->entity = 'odontoIFMA\entity\Acesso';
         $repoAcesso = $this->em->getRepository($this->entity);
 
@@ -35,7 +37,8 @@ class IndexController extends AbstractController
                 if($senhaEnc == $usuario->getSenha()){
                     $dadosUser = array(
                         'nome' => $usuario->getOperador()->getNome(),
-                        'perfil' => $usuario->getOperador()->getTipo()->getDescricao()
+                        'perfil' => $usuario->getOperador()->getTipo()->getDescricao(),
+                        'recursos' => $permissao->getPermissoes($usuario->getOperador()->getTipo()->getDescricao())
                     );
                     $this->app['session']->set('usuario', $dadosUser);
 

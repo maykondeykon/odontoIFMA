@@ -74,7 +74,7 @@ class TesteController extends AbstractController
     public function testePermissao()
     {
         $permissao = new Permissao();
-//        print_r($permissao->getPermissoes('ATENDENTE'));
+        print_r($this->app['session']->get('usuario')['recursos']);
 
         if($permissao->isValid('cadTipoCampus','ADMINISTRADOR')){
             echo "Permitido";
