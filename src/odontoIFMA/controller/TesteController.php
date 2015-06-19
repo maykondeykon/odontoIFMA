@@ -5,6 +5,7 @@ namespace odontoIFMA\controller;
 use odontoIFMA\entity\Acesso;
 use odontoIFMA\entity\TipoOperador;
 use odontoIFMA\entity\Operador;
+use odontoIFMA\entity\Permissao;
 
 class TesteController extends AbstractController
 {
@@ -68,6 +69,49 @@ class TesteController extends AbstractController
         var_dump($this->app->json($pacientes));
 
         return "Pacientes";
+    }
+
+    public function testePermissao()
+    {
+        $permissao = new Permissao();
+//        print_r($permissao->getPermissoes('ATENDENTE'));
+
+        if($permissao->isValid('cadTipoCampus','ADMINISTRADOR')){
+            echo "Permitido";
+        }else{
+            echo "Não permitido";
+        }
+
+        return "";
+    }
+
+    public function testeLogin()
+    {
+        $acesso = new Acesso();
+        $this->entity = 'odontoIFMA\entity\Acesso';
+        $repoAcesso = $this->em->getRepository($this->entity);
+
+        $user = 'maykon';
+        $senha = '123';
+        $senhaEnc = $acesso->encryptPassword($senha);
+        $usuario = $repoAcesso->findOneBy(array('login' => $user));
+
+        if($usuario){
+            if($senhaEnc == $usuario->getSenha()){
+                $dadosUser = array(
+                    'nome' => $usuario->getOperador()->getNome(),
+                    'perfil' => $usuario->getOperador()->getTipo()->getDescricao()
+                );
+                print_r($dadosUser);
+                echo "acesso";
+            }else{
+                echo "não permitido";
+            }
+        }else{
+            throw new \Exception("Usuário ou senha inválidos.");
+        }
+
+        return "";
     }
 
 }

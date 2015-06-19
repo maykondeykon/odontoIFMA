@@ -83,7 +83,8 @@ $app->post('/cadastro/salvar/{tipo}', function ($tipo) use($app){
 /**
  * Rota para logout do sistema
  */
-$app->get('/logout', function () use ($app, $em) {
+$app->get('/logout', function () use ($app) {
+    $app['session']->clear();
     return $app->redirect('/');
 });
 

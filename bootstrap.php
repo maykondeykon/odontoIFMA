@@ -9,6 +9,7 @@ use Doctrine\Common\Annotations\AnnotationRegistry;
 use Doctrine\Common\Annotations\AnnotationReader;
 use Doctrine\Common\ClassLoader;
 
+
 $config = new Configuration();
 $cache = new Cache();
 $config->setQueryCacheImpl($cache);
@@ -40,6 +41,7 @@ Doctrine\DBAL\Types\Type::overrideType("datetime", "Doctrine\\DBAL\\Types\\VarDa
 $app = new Application();
 
 $app->register(new Silex\Provider\ServiceControllerServiceProvider());
+$app->register(new Silex\Provider\SessionServiceProvider());
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
     'twig.path' => __DIR__ . "/src/odontoIFMA/views"

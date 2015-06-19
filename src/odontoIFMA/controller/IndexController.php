@@ -19,24 +19,34 @@ class IndexController extends AbstractController
     }
 
     public function login()
-    {   
-        $this->entity = 'odontoIFMA\entity\Acesso'; //Define a entidade que será usada
-
-        $login = 'admin';
-        $senha = 'admin';
+    {
+        $acesso = new Acesso();
+        $this->entity = 'odontoIFMA\entity\Acesso';
+        $repoAcesso = $this->em->getRepository($this->entity);
 
         if ($this->app['request']->getMethod() == 'POST') {
             $request = $this->app['request']->request;
             $dados = $request->all();
 
-            if ($dados['login'] == $login && $dados['senha'] == $senha) {
-                return $this->app->redirect("/home");
+            $senhaEnc = $acesso->encryptPassword($dados['senha']);
+            $usuario = $repoAcesso->findOneBy(array('login' => $dados['login']));
+
+            if($usuario){
+                if($senhaEnc == $usuario->getSenha()){
+                    $dadosUser = array(
+                        'nome' => $usuario->getOperador()->getNome(),
+                        'perfil' => $usuario->getOperador()->getTipo()->getDescricao()
+                    );
+                    $this->app['session']->set('usuario', $dadosUser);
+
+                    return $this->app->redirect("/home");
+                }else{
+                    throw new \Exception("Usuário ou senha inválidos.");
+                }
             }else{
-                throw new \Exception("Usuário ou senha inválidos!");
+                throw new \Exception("Usuário ou senha inválidos.");
             }
-           
-        }else{
-            throw new \Exception("Método inválido.");
+
         }
     }
 
