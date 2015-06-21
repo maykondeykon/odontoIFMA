@@ -43,6 +43,21 @@ class CadastroController extends AbstractController
         return $this->app['twig']->render('cadastro/campus.twig', array("active_page" => "cadTipoCampus"));
     }
 
+    public function Atendimento()
+    {
+        $repoCampus = $this->em->getRepository('odontoIFMA\entity\Campus'); // Obtêm o repositório da entidade
+        $listaCampus = $repoCampus->findAll(); // Recupera a lista de todos os itens da entidade
+
+        $repoPaciente = $this->em->getRepository('odontoIFMA\entity\Paciente'); // Obtêm o repositório da entidade
+        $listaPaciente = $repoPaciente->findAll(); // Recupera a lista de todos os itens da entidade        
+
+        return $this->app['twig']->render('cadastro/atendimento.twig', array(
+            "active_page" => "cadAtendimento",
+            'listaPaciente' => $listaPaciente, // Passa a lista para a view
+            'listaCampus' => $listaCampus // Passa a lista para a view
+            ));
+    }
+
     public function Operador()
     {
         $repoTipoOperador = $this->em->getRepository('odontoIFMA\entity\TipoOperador'); // Obtêm o repositório da entidade
@@ -137,6 +152,38 @@ class CadastroController extends AbstractController
 
             $repoCampus = $this->em->getRepository('odontoIFMA\entity\Campus');
             $campus = $repoCampus->find($dados['campus_id']); // Recupera o objeto a partir do ID
+            $dados['campus'] = $campus; // Cria uma nova entrada no array com o nome do atributo da entidade
+
+            $this->insert($dados);
+
+            return $this->msgSuccess($params);
+        } else {
+            throw new \Exception("Método inválido.");
+        }
+    }
+
+    public function salvarAtendimento()
+    {
+        $this->entity = 'odontoIFMA\entity\Atendimento'; //Define a entidade que será usada
+        //Define os parâmetros que serão usados na renderização da tela com retorno da operação
+        $params = array(
+            'message' => 'Atendimento agendado com sucesso.', //Mensagem a ser exibida
+            'titulo' => 'Sucesso!', // Título da mensagem
+            'tipo' => 'alert-success', // Define o tipo da mensagem, erro ou sucesso
+            'icon' => 'glyphicon-ok', // Ícone do título da mensagem
+            'active_page' => 'cadAtendimento', // Define a página ativa no menu e breadcrumb
+            'btVoltar' => '/cadastro/atendimento' // Define a rota do botão voltar
+        );
+
+        if ($this->app['request']->getMethod() == 'POST') {
+            $request = $this->app['request']->request;
+            $dados = $request->all();           
+
+            $repoPaciente = $this->em->getRepository('odontoIFMA\entity\Paciente');
+            $paciente = $repoPaciente->find($dados['paciente_id']); // Recupera o objeto a partir do ID
+            $repoCampus = $this->em->getRepository('odontoIFMA\entity\Campus');
+            $campus = $repoCampus->find($dados['paciente_campus_id']); // Recupera o objeto a partir do ID
+            $dados['paciente'] = $paciente; // Cria uma nova entrada no array com o nome do atributo da entidade
             $dados['campus'] = $campus; // Cria uma nova entrada no array com o nome do atributo da entidade
 
             $this->insert($dados);

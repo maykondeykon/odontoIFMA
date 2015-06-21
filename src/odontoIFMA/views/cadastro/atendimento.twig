@@ -1,0 +1,63 @@
+{% extends 'template/template.twig' %}
+{% block content %}
+
+
+    <form class="form-horizontal form-padrao" id="formAtendimento" method="post" action="/cadastro/salvar/salvarAtendimento">
+
+         <div class="form-group">
+            <label for="paciente_id" class="col-sm-2 control-label">Paciente </label>
+
+            <div class="col-sm-4">
+                <select class="form-control" name="paciente_id" id="paciente_id">
+                    <option value="">Selecione</option>
+                    {% for item in listaPaciente %}
+                        <option value={{ item.getId }}>{{ item.getNome }}</option> {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="descricao" class="col-sm-2 control-label">Atendimento</label>
+
+            <div class="col-sm-8">
+                <input type="text" class="form-control uppercase" name="descricao"
+                       id="descricao" placeholder="Descrição" value="">
+            </div>
+        </div>
+
+         <div class="form-group">
+            <label for="data" class="col-sm-2 control-label">Data</label>
+
+            <div class="col-sm-3">
+                <input type="text" class="form-control uppercase datepicker" name="data"
+                       id="data" placeholder="Data do atendimento" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="paciente_campus_id" class="col-sm-2 control-label">Campus </label>
+
+            <div class="col-sm-4">
+                <select class="form-control" name="paciente_campus_id" id="paciente_campus_id">
+                    <option value="">Selecione</option>
+                    {% for item in listaCampus %}
+                        <option value={{ item.getId }}>{{ item.getNome }}</option> {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <input type="hidden" id="id" name="id">
+        
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-8">
+                <button type="submit" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-ok"></span> Salvar
+                </button>
+                <a class="btn btn-default" href="/home"><i
+                            class="glyphicon glyphicon-remove"></i> Cancelar</a>
+            </div>
+        </div>
+
+    </form>
+
+{% endblock %}
