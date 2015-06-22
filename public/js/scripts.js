@@ -28,7 +28,7 @@ $(function () {
      * @return Json
      */
     var cache = {};
-    $( "#pacienteNome" ).autocomplete({
+    $( ".pacienteNome" ).autocomplete({
         minLength: 2,
         source: function( request, response ) {
             var term = request.term;
@@ -43,7 +43,7 @@ $(function () {
         },
         select : function(event, ui) {
             this.value = ui.item.value;
-            $('#pacienteId').val(ui.item.id);//Adiciona o id do paciente ao form
+            $('.pacienteId').val(ui.item.id);//Adiciona o id do paciente ao form
 
             return false;
         }
