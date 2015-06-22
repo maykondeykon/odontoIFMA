@@ -332,7 +332,7 @@ class CadastroController extends AbstractController
         $request = $this->app['request']->request;
         $dados = $request->all();
 
-        $sql = "SELECT paciente.*,paciente.nome as value FROM paciente WHERE nome LIKE :param";
+        $sql = "SELECT paciente.*,campus.nome AS campus,DATE_FORMAT(data_nasc,'%d/%m/%Y') AS data_nasc, paciente.nome as value FROM paciente JOIN campus ON campus.id = paciente.campus_id WHERE paciente.nome LIKE :param";
         $pacientes = $this->findLike($sql, $dados['param']);
 
         return $this->app->json($pacientes);

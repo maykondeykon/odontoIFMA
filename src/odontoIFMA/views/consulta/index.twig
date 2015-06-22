@@ -1,0 +1,66 @@
+{% extends 'template/template.twig' %}
+{% block content %}
+
+    <form class="form" id="formConsulta">
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <select name="consultaPor" id="consultaPor" class="form-control">
+                        <option value="">Consultar por</option>
+                        <option value="paciente">Paciente</option>
+                        <option value="atendimento">Atendimento</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="form-group" id="buscaPorTermo">
+                    <input type="text" class="form-control" style="" id="termo" name="termo" placeholder=""
+                           readonly>
+                </div>
+
+                <div class="row" id="buscaPorDataGroup" style="display: none;">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control datepicker" id="dataIni" name="dataIni"
+                                   placeholder="Início">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" class="form-control datepicker" id="dataFim" name="dataFim"
+                                   placeholder="Fim">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-2">
+                <button type="button" class="btn btn-success" id="btBuscar">Buscar</button>
+            </div>
+        </div>
+
+    </form>
+
+    <div class='row text-center' style="display: none" id="carregando"><i class='fa fa-refresh fa-spin fa-2x '></i></div> {#Ícone carregando#}
+    <div id="panelConsulta" style="display: none">
+        <div class="panel-footer ">
+            <table class="table table-bordered table-hover dataTable" width="100%" cellspacing="0"
+                   style="font-size: 13px;">
+                <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Data nascimento</th>
+                    <th>Matrícula</th>
+                    <th>Campus</th>
+                    <th>Ação</th>
+                </tr>
+                </thead>
+                <tbody id="tableResult">
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}

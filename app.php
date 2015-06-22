@@ -4,6 +4,7 @@ require_once __DIR__ . "/bootstrap.php";
 
 use odontoIFMA\controller\IndexController;
 use odontoIFMA\controller\CadastroController;
+use odontoIFMA\controller\ConsultaController;
 use odontoIFMA\controller\TesteController;
 
 /**
@@ -15,6 +16,10 @@ $app['index.controller'] = $app->share(function () use($app) {
 
 $app['cadastro.controller'] = $app->share(function () use($app) {
     return new CadastroController($app);
+});
+
+$app['consulta.controller'] = $app->share(function () use($app) {
+    return new ConsultaController($app);
 });
 
 $app['teste.controller'] = $app->share(function () use($app) {
@@ -52,7 +57,6 @@ $app->get('/cadastro/operador', function () use ($app) {
     return $app['cadastro.controller']->Operador();
 })->bind('cadOperador');
 
-
 $app->get('/cadastro/anamnese', function () use ($app) {
     return $app['cadastro.controller']->Anamnese();
 })->bind('cadAnamnese');
@@ -64,6 +68,10 @@ $app->get('/cadastro/atendimento', function () use ($app) {
 $app->get('/editar/{tipo}/{id}', function ($tipo, $id) use ($app) {
     return $app['cadastro.controller']->$tipo();
 })->bind('editarCadastro');
+
+$app->get('/consultas', function () use ($app) {
+    return $app['consulta.controller']->index();
+})->bind('consultas');
 
 /**
  * Rota dinâmica para ser usada em métodos que retornam Json.
