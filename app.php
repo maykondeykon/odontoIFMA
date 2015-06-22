@@ -61,6 +61,10 @@ $app->get('/cadastro/atendimento', function () use ($app) {
     return $app['cadastro.controller']->Atendimento();
 })->bind('cadAtendimento');
 
+$app->get('/editar/{tipo}/{id}', function ($tipo, $id) use ($app) {
+    return $app['cadastro.controller']->$tipo();
+})->bind('editarCadastro');
+
 /**
  * Rota dinâmica para ser usada em métodos que retornam Json.
  */
