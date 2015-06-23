@@ -55,6 +55,13 @@ class IndexController extends AbstractController
 
     public function home()
     {
+//        if($this->getPermissao()){
+//            echo "Permitido";
+//        }else{
+//            echo "Não permitido";
+//        }
+//        die();
+        $this->getPermissao();
         return $this->app['twig']->render('index/home.twig', array("active_page" => "home"));
     }
 }

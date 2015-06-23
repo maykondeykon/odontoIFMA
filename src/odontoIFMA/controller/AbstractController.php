@@ -1,7 +1,7 @@
 <?php
 
 namespace odontoIFMA\controller;
-
+use odontoIFMA\entity\Permissao;
 
 abstract class AbstractController
 {
@@ -70,6 +70,25 @@ abstract class AbstractController
         }
 
         return $entity;
+    }
+
+    protected function getPermissao()
+    {
+        if (null == $this->app['session']->get('usuario')) {
+            throw new \Exception("Não permitido.", 403);
+        }
+
+        $callers=debug_backtrace();
+        $metodo = $callers[1]['function'];
+        $perfil = $this->app['session']->get('usuario')['perfil'];
+
+        $permissao = new Permissao();
+
+        if($permissao->isValid($metodo,$perfil)){
+            return;
+        }else{
+            throw new \Exception("Não permitido.");
+        }
     }
 
     public function findLike($sql, $param)

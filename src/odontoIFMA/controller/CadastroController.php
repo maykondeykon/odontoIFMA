@@ -24,27 +24,31 @@ class CadastroController extends AbstractController
 
     public function tipoOperador()
     {
+        $this->getPermissao();
         return $this->app['twig']->render('cadastro/tipoOperador.twig', array("active_page" => "cadTipoOperador"));
     }
 
-    public function tipoPaciente()
+    public function paciente()
     {
+        $this->getPermissao();
         $repoCampus = $this->em->getRepository('odontoIFMA\entity\Campus'); // Obtêm o repositório da entidade
         $listaCampus = $repoCampus->findAll(); // Recupera a lista de todos os itens da entidade
 
         return $this->app['twig']->render('cadastro/paciente.twig', array(
-            "active_page" => "cadTipoPaciente",
+            "active_page" => "cadPaciente",
             'listaCampus' => $listaCampus // Passa a lista para a view
         ));
     }
 
     public function tipoCampus()
     {
+        $this->getPermissao();
         return $this->app['twig']->render('cadastro/campus.twig', array("active_page" => "cadTipoCampus"));
     }
 
-    public function Atendimento()
+    public function atendimento()
     {
+        $this->getPermissao();
         $repoCampus = $this->em->getRepository('odontoIFMA\entity\Campus'); // Obtêm o repositório da entidade
         $listaCampus = $repoCampus->findAll(); // Recupera a lista de todos os itens da entidade
 
@@ -58,8 +62,9 @@ class CadastroController extends AbstractController
             ));
     }
 
-    public function Operador()
+    public function operador()
     {
+        $this->getPermissao();
         $repoTipoOperador = $this->em->getRepository('odontoIFMA\entity\TipoOperador'); // Obtêm o repositório da entidade
         $listaTipoOperador = $repoTipoOperador->findAll(); // Recupera a lista de todos os itens da entidade
         return $this->app['twig']->render('cadastro/operador.twig', array(
@@ -219,8 +224,9 @@ class CadastroController extends AbstractController
         }
     }
 
-    public function Anamnese()
+    public function anamnese()
     {
+        $this->getPermissao();
         $repoDoencas = $this->em->getRepository('odontoIFMA\entity\DoencasPreexistentes'); // Obtêm o repositório da entidade
         $listaDoencas = $repoDoencas->findAll(); // Recupera a lista de todos os itens da entidade
 

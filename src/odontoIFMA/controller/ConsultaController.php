@@ -11,9 +11,10 @@ class ConsultaController extends AbstractController
         $this->em = $app['em'];
     }
 
-    public function index()
+    public function consultas()
     {
-        return $this->app['twig']->render('consulta/index.twig', array("active_page" => "consultas"));
+        $this->getPermissao();
+        return $this->app['twig']->render('consulta/consultas.twig', array("active_page" => "consultas"));
     }
 
 }

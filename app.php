@@ -46,23 +46,23 @@ $app->get('/cadastro/tipo-operador', function () use ($app) {
 })->bind('cadTipoOperador');
 
 $app->get('/cadastro/paciente', function () use ($app) {
-    return $app['cadastro.controller']->tipoPaciente();
-})->bind('cadTipoPaciente');
+    return $app['cadastro.controller']->paciente();
+})->bind('cadPaciente');
 
 $app->get('/cadastro/campus', function () use ($app) {
     return $app['cadastro.controller']->tipoCampus();
 })->bind('cadTipoCampus');
 
 $app->get('/cadastro/operador', function () use ($app) {
-    return $app['cadastro.controller']->Operador();
+    return $app['cadastro.controller']->operador();
 })->bind('cadOperador');
 
 $app->get('/cadastro/anamnese', function () use ($app) {
-    return $app['cadastro.controller']->Anamnese();
+    return $app['cadastro.controller']->anamnese();
 })->bind('cadAnamnese');
 
 $app->get('/cadastro/atendimento', function () use ($app) {
-    return $app['cadastro.controller']->Atendimento();
+    return $app['cadastro.controller']->atendimento();
 })->bind('cadAtendimento');
 
 $app->get('/editar/{tipo}/{id}', function ($tipo, $id) use ($app) {
@@ -70,7 +70,7 @@ $app->get('/editar/{tipo}/{id}', function ($tipo, $id) use ($app) {
 })->bind('editarCadastro');
 
 $app->get('/consultas', function () use ($app) {
-    return $app['consulta.controller']->index();
+    return $app['consulta.controller']->consultas();
 })->bind('consultas');
 
 /**
@@ -111,11 +111,16 @@ $app->error(function (\Exception $e)use ($app) {
     $titulo = 'Um erro ocorreu!';
     $tipo = 'alert-danger';
     $icon = 'glyphicon-remove';
+    if($e->getCode() == 403){
+        $btVoltar = '/';
+    }
+
     return $app['twig']->render('error/error.twig', array(
         'message' => $e->getMessage(),
         'titulo' => $titulo,
         'tipo' => $tipo,
-        'icon' => $icon
+        'icon' => $icon,
+        'btVoltar' => $btVoltar
     ));
 });
 

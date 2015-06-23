@@ -17,11 +17,13 @@ class TesteController extends AbstractController
 
     public function index()
     {
+        $this->getPermissao();
         return $this->app['twig']->render('index/login.twig', array("active_page" => "login"));
     }
 
     public function testeAcesso()
     {
+        $this->getPermissao();
         $this->entity = 'odontoIFMA\entity\Operador'; //Define a entidade que será usada
 
         $acesso = new Acesso();
@@ -49,6 +51,7 @@ class TesteController extends AbstractController
 
     public function doencasPreexistentes()
     {
+        $this->getPermissao();
         $this->entity = 'odontoIFMA\entity\DoencasPreexistentes';
 
         $repoDoencas = $this->em->getRepository($this->entity);
@@ -62,6 +65,7 @@ class TesteController extends AbstractController
 
     public function testeGetPaciente()
     {
+        $this->getPermissao();
         $sql = "SELECT * FROM paciente WHERE nome LIKE :param";
 
         $pacientes = $this->findLike($sql,'maykon');
@@ -73,11 +77,20 @@ class TesteController extends AbstractController
 
     public function testePermissao()
     {
+        $this->getPermissao();
         $permissao = new Permissao();
-        print_r($this->app['session']->get('usuario')['recursos']);
-//        print_r($permissao->getPermissoes('ATENDENTE'));
+//        print_r($this->app['session']->get('usuario')['recursos']);
+        print_r($this->app['session']->get('usuario')['perfil']);
+//        print_r($permissao->getPermissoes('ADMINISTRADOR'));
 
-        if($permissao->isValid('cadTipoCampus','ADMINISTRADOR')){
+        $request = $this->app['request'];
+
+//        print_r($request->getRequestUri());
+
+        $metodo =  substr(__METHOD__, strpos(__METHOD__, "::") + 2);
+        $perfil = $this->app['session']->get('usuario')['perfil'];
+
+        if($permissao->isValid($metodo,$perfil)){
             echo "Permitido";
         }else{
             echo "Não permitido";
@@ -88,6 +101,7 @@ class TesteController extends AbstractController
 
     public function testeLogin()
     {
+        $this->getPermissao();
         $acesso = new Acesso();
         $this->entity = 'odontoIFMA\entity\Acesso';
         $repoAcesso = $this->em->getRepository($this->entity);
