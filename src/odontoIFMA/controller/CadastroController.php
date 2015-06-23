@@ -17,17 +17,18 @@ class CadastroController extends AbstractController
         $this->em = $app['em'];
     }
 
-    public function index()
-    {
-        return $this->app['twig']->render('index/index.twig', array());
-    }
-
+    /**
+     * @return mixed Retorna tela de cadastro de tipo de operador
+     */
     public function tipoOperador()
     {
         $this->getPermissao();
         return $this->app['twig']->render('cadastro/tipoOperador.twig', array("active_page" => "cadTipoOperador"));
     }
 
+    /**
+     * @return mixed Retorna tela de cadastro de pacientes
+     */
     public function paciente()
     {
         $this->getPermissao();
@@ -40,12 +41,18 @@ class CadastroController extends AbstractController
         ));
     }
 
+    /**
+     * @return mixed Retorna tela de cadastro de campus
+     */
     public function tipoCampus()
     {
         $this->getPermissao();
         return $this->app['twig']->render('cadastro/campus.twig', array("active_page" => "cadTipoCampus"));
     }
 
+    /**
+     * @return mixed Retorna tela de cadastro de atendimento
+     */
     public function atendimento()
     {
         $this->getPermissao();
@@ -62,6 +69,9 @@ class CadastroController extends AbstractController
             ));
     }
 
+    /**
+     * @return mixed Retorna tela de cadastro de operador
+     */
     public function operador()
     {
         $this->getPermissao();
@@ -73,7 +83,11 @@ class CadastroController extends AbstractController
         ));
     }
 
-
+    /**
+     * Salva o operador no Banco de dados
+     * @return mixed Retorna confirmação de cadastro
+     * @throws \Exception Se o método não for POST
+     */
     public function salvarOperador()
     {
         $this->entity = 'odontoIFMA\entity\Operador';
@@ -113,6 +127,11 @@ class CadastroController extends AbstractController
         }
     }
 
+    /**
+     * Salva o tipo de operador no Banco de dados
+     * @return mixed Retorna confirmação de cadastro
+     * @throws \Exception Se o método não for POST
+     */
     public function salvarTipoOperador()
     {
         $this->entity = 'odontoIFMA\entity\TipoOperador'; //Define a entidade que será usada
@@ -138,6 +157,11 @@ class CadastroController extends AbstractController
         }
     }
 
+    /**
+     * Salva o paciente no Banco de dados
+     * @return mixed Retorna confirmação de cadastro
+     * @throws \Exception Se o método não for POST
+     */
     public function salvarPaciente()
     {
         $this->entity = 'odontoIFMA\entity\Paciente'; //Define a entidade que será usada
@@ -167,6 +191,11 @@ class CadastroController extends AbstractController
         }
     }
 
+    /**
+     * Salva o atendimento no Banco de dados
+     * @return mixed Retorna confirmação de cadastro
+     * @throws \Exception Se o método não for POST
+     */
     public function salvarAtendimento()
     {
         $this->entity = 'odontoIFMA\entity\Atendimento'; //Define a entidade que será usada
@@ -199,6 +228,11 @@ class CadastroController extends AbstractController
         }
     }
 
+    /**
+     * Salva o campus no Banco de dados
+     * @return mixed Retorna confirmação de cadastro
+     * @throws \Exception Se o método não for POST
+     */
     public function salvarCampus()
     {
         $this->entity = 'odontoIFMA\entity\Campus'; //Define a entidade que será usada
@@ -224,6 +258,9 @@ class CadastroController extends AbstractController
         }
     }
 
+    /**
+     * @return mixed Retorna tela de cadastro da anamnese
+     */
     public function anamnese()
     {
         $this->getPermissao();
@@ -240,6 +277,13 @@ class CadastroController extends AbstractController
         ));
     }
 
+    /**
+     * Salva a anamnese no Banco de dados
+     * @return mixed Retorna confirmação de cadastro
+     * @throws \Exception Se o Id do paciente não informado
+     * @throws \Exception Se o Paciente não for localizado
+     * @throws \Exception Se o método não for POST
+     */
     public function salvarAnamnese()
     {
         $repoTipoHabito = $this->em->getRepository('odontoIFMA\entity\TipoHabito');
@@ -333,6 +377,10 @@ class CadastroController extends AbstractController
         }
     }
 
+    /**
+     * @param string param - parte do nome do paciente
+     * @return mixed Retorna lista de pacientes no formato Json
+     */
     public function getPacientesJson()
     {
         $request = $this->app['request']->request;

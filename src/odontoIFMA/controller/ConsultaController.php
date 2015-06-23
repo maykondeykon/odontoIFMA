@@ -11,6 +11,9 @@ class ConsultaController extends AbstractController
         $this->em = $app['em'];
     }
 
+    /**
+     * @return mixed Retorna a tela de consultas
+     */
     public function consultas()
     {
         $this->getPermissao();
