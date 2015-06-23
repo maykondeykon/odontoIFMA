@@ -44,8 +44,10 @@ $app->register(new Silex\Provider\ServiceControllerServiceProvider());
 $app->register(new Silex\Provider\SessionServiceProvider());
 $app->register(new Silex\Provider\UrlGeneratorServiceProvider());
 $app->register(new Silex\Provider\TwigServiceProvider(), array(
-    'twig.path' => __DIR__ . "/src/odontoIFMA/views"
+    'twig.path' => __DIR__ . "/src/odontoIFMA/views",
+    'debug'=> true,
 ));
+$app['twig']->addExtension(new Twig_Extension_Debug());
 $app['em'] = EntityManager::create(
     $params,
     $config
