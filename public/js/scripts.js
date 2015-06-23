@@ -23,7 +23,7 @@ $(function () {
     $('.cel').mask(SPMaskBehavior, spOptions);
 
     /**
-     * Retorna lista de pacientes com base no texto informado
+     * Retorna lista de pacientes com base no texto informado dinâmicamente
      * @param string
      * @return Json
      */
@@ -49,6 +49,9 @@ $(function () {
         }
     });
 
+    /**
+     * Alterna os inputs ativos na tela de consulta
+     */
     $("#formConsulta #consultaPor").change(function () {
 
         switch ($(this).val()) {
@@ -69,6 +72,10 @@ $(function () {
 
     });
 
+    /**
+     * Realiza consulta no banco de dados de acordo com o termo informado
+     * @return Tabela com os dados populados
+     */
     var dt = 0;
     $("#btBuscar").click(function () {
 
@@ -106,6 +113,9 @@ $(function () {
         });
     });
 
+    /**
+     * Habilita o plugin dataTable
+     */
     function dataTable() {
         $('.dataTable').dataTable({
             "order": [],

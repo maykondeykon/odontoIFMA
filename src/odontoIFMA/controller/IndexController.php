@@ -14,11 +14,19 @@ class IndexController extends AbstractController
         $this->em = $app['em'];
     }
 
+    /**
+     * @return mixed Tela de login
+     */
     public function index()
     {
         return $this->app['twig']->render('index/login.twig', array("active_page" => "login"));
     }
 
+    /**
+     * Autentica os dados do login
+     * @return mixed Direciona para a tela principal
+     * @throws \Exception Caso o usuário ou senha sejam inválidos
+     */
     public function login()
     {
         $acesso = new Acesso();
@@ -44,23 +52,20 @@ class IndexController extends AbstractController
 
                     return $this->app->redirect("/home");
                 }else{
-                    throw new \Exception("Usuário ou senha inválidos.");
+                    throw new \Exception("Usuário ou senha inválidos.", 403);
                 }
             }else{
-                throw new \Exception("Usuário ou senha inválidos.");
+                throw new \Exception("Usuário ou senha inválidos.", 403);
             }
 
         }
     }
 
+    /**
+     * @return mixed Tela inicial
+     */
     public function home()
     {
-//        if($this->getPermissao()){
-//            echo "Permitido";
-//        }else{
-//            echo "Não permitido";
-//        }
-//        die();
         $this->getPermissao();
         return $this->app['twig']->render('index/home.twig', array("active_page" => "home"));
     }

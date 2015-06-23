@@ -5,11 +5,25 @@ use odontoIFMA\entity\Permissao;
 
 abstract class AbstractController
 {
+    /**
+     * @var object $app Recebe instância da aplicação
+     */
     protected $app;
+    /**
+     * @var object $em Recebe instância do entity manager do Doctrine
+     */
     protected $em;
+    /**
+     * @var String $entity Recebe o nome da entidade a ser instânciada
+     */
     protected $entity;
 
-    public function insert($dados)
+    /**
+     * @param array $dados Dados para criação do objeto a ser persistido
+     * @return object Retorna o objeto persistido
+     * @throws \Exception Se os dados estiverem vazios
+     */
+    public function insert(array $dados)
     {
         if (null != $dados) {
             $entity = new $this->entity($dados);
@@ -20,6 +34,11 @@ abstract class AbstractController
         throw new \Exception("Dados vazios.");
     }
 
+    /**
+     * @param array $dados Dados para localizar e atualizar o objeto
+     * @return object Retorna o objeto atualizado
+     * @throws \Exception Se os dados estiverem vazios ou o objeto não puder ser encontrado
+     */
     public function update(array $dados)
     {
         if (null != $dados && isset($dados['id'])) {
@@ -35,9 +54,9 @@ abstract class AbstractController
     }
 
     /**
-     * @param Integer $id
-     * @return Integer / null
-     * @throws \Exception
+     * @param Integer $id Id do objeto a ser deletado
+     * @return Integer O Id deletado
+     * @throws \Exception Se o objeto não for encontrado ou o Id não for definido
      */
     public function delete($id)
     {
@@ -55,6 +74,11 @@ abstract class AbstractController
         throw new \Exception("Id indefinido.");
     }
 
+    /**
+     * @param object $entity Objeto a ser persistido no banco de dados
+     * @return object O objeto persistido
+     * @throws \Exception Caso ocorra erro durante a persistência
+     */
     protected function persist($entity)
     {
         $this->em->getConnection()->beginTransaction();
@@ -72,6 +96,11 @@ abstract class AbstractController
         return $entity;
     }
 
+    /**
+     * Checa se existe sessão aberta e se o perfil do usuário tem permissão para acessar o recurso
+     * @throws \Exception Se não houver sessão aberta ou não houver permissão de acesso
+     * @return void
+     */
     protected function getPermissao()
     {
         if (null == $this->app['session']->get('usuario')) {
@@ -91,6 +120,12 @@ abstract class AbstractController
         }
     }
 
+    /**
+     * @param string $sql A query a ser usada na consulta
+     * @param string $param O parâmetro de busca
+     * @return array Resultado da consulta
+     * @throws \Exception Caso ocorra erro durante a consulta
+     */
     public function findLike($sql, $param)
     {
         try {
@@ -105,6 +140,10 @@ abstract class AbstractController
 
     }
 
+    /**
+     * @param array $params Dados para exibição na mensagem
+     * @return mixed Tela de sucesso
+     */
     public function msgSuccess(array $params)
     {
         return $this->app['twig']->render('success/success.twig', $params);

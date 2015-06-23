@@ -27,7 +27,7 @@ $app['teste.controller'] = $app->share(function () use($app) {
 });
 
 /**
- * Rotas
+ * Rotas com direcionamento para métodos nos controllers
  */
 $app->get('/', function () use ($app) {
     return $app['index.controller']->index();
