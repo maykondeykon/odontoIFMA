@@ -1,4 +1,7 @@
 <?php
+/**
+ * Entidade Higiene
+ */
 
 namespace odontoIFMA\entity;
 
@@ -14,6 +17,7 @@ use Zend\Stdlib\Hydrator;
 class Higiene
 {
     /**
+     * Atributo id
      * @var integer $id
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
@@ -22,6 +26,7 @@ class Higiene
     private $id;
 
     /**
+     * Atributo paciente
      * @var Paciente $paciente
      * @ORM\OneToOne(targetEntity="Paciente", inversedBy="higiene")
      * @ORM\JoinColumns({
@@ -31,34 +36,46 @@ class Higiene
     private $paciente;
 
     /**
+     * Atributo escovacao
      * @var integer $escovacao ;
      * @ORM\Column(name="escovacao", type="integer", nullable=true)
      */
     private $escovacao;
 
     /**
+     * Atributo fioDental
      * @var boolean $fioDental
      * @ORM\Column(name="fio_dental", type="boolean", nullable=false)
      */
     private $fioDental;
 
     /**
+     * Atributo bochecho
      * @var boolean $bochecho
      * @ORM\Column(name="bochecho", type="boolean", nullable=false)
      */
     private $bochecho;
 
+    /**
+     * Inicializa entidade
+     * @param array $data Dados para popular entidade
+     */
     public function __construct(array $data = array())
     {
         (new Hydrator\ClassMethods())->hydrate($data, $this);
     }
 
+    /**
+     * Converte a entidade em array
+     * @return array
+     */
     public function toArray()
     {
         return (new Hydrator\ClassMethods())->extract($this);
     }
 
     /**
+     * Retorna atributo id
      * @return int
      */
     public function getId()
@@ -67,6 +84,7 @@ class Higiene
     }
 
     /**
+     * Seta atributo id
      * @param int $id
      */
     public function setId($id)
@@ -75,6 +93,7 @@ class Higiene
     }
 
     /**
+     * Retorna atributo paciente
      * @return Paciente
      */
     public function getPaciente()
@@ -83,6 +102,7 @@ class Higiene
     }
 
     /**
+     * Seta atributo paciente
      * @param Paciente $paciente
      */
     public function setPaciente($paciente)
@@ -91,6 +111,7 @@ class Higiene
     }
 
     /**
+     * Retorna atributo escovacao
      * @return int
      */
     public function getEscovacao()
@@ -99,6 +120,7 @@ class Higiene
     }
 
     /**
+     * Seta atributo escovacao
      * @param int $escovacao
      */
     public function setEscovacao($escovacao)
@@ -107,6 +129,7 @@ class Higiene
     }
 
     /**
+     * Retorna atributo fioDental
      * @return boolean
      */
     public function isFioDental()
@@ -115,6 +138,7 @@ class Higiene
     }
 
     /**
+     * Seta atributo fioDental
      * @param boolean $fioDental
      */
     public function setFioDental($fioDental)
@@ -123,6 +147,7 @@ class Higiene
     }
 
     /**
+     * Retorna atributo bochecho
      * @return boolean
      */
     public function isBochecho()
@@ -131,6 +156,7 @@ class Higiene
     }
 
     /**
+     * Seta atributo bochecho
      * @param boolean $bochecho
      */
     public function setBochecho($bochecho)

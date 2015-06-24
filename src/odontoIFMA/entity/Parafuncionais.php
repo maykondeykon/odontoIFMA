@@ -1,4 +1,7 @@
 <?php
+/**
+ * Entidade Parafuncionais
+ */
 
 namespace odontoIFMA\entity;
 
@@ -15,6 +18,7 @@ class Parafuncionais
 {
 
     /**
+     * Atributo id
      * @var integer $id
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
@@ -23,6 +27,7 @@ class Parafuncionais
     private $id;
 
     /**
+     * Atributo habito
      * @var TipoHabito $habito
      * @ORM\ManyToOne(targetEntity="TipoHabito")
      * @ORM\JoinColumns({
@@ -32,12 +37,14 @@ class Parafuncionais
     private $habito;
 
     /**
+     * Atributo estado
      * @var boolean $estado
      * @ORM\Column(name="estado", type="boolean", nullable=false)
      */
     private $estado;
 
     /**
+     * Atributo paciente
      * @var Paciente $paciente
      * @ORM\ManyToOne(targetEntity="Paciente", inversedBy="parafuncionais")
      * @ORM\JoinColumns({
@@ -46,17 +53,26 @@ class Parafuncionais
      */
     private $paciente;
 
+    /**
+     * Inicializa entidade
+     * @param array $data Dados para popular entidade
+     */
     public function __construct(array $data = array())
     {
         (new Hydrator\ClassMethods())->hydrate($data, $this);
     }
 
+    /**
+     * Converte a entidade em array
+     * @return array
+     */
     public function toArray()
     {
         return (new Hydrator\ClassMethods())->extract($this);
     }
 
     /**
+     * Retorna atributo id
      * @return int
      */
     public function getId()
@@ -65,6 +81,7 @@ class Parafuncionais
     }
 
     /**
+     * Seta atributo id
      * @param int $id
      */
     public function setId($id)
@@ -73,6 +90,7 @@ class Parafuncionais
     }
 
     /**
+     * Retorna atributo habito
      * @return TipoHabito
      */
     public function getHabito()
@@ -81,6 +99,7 @@ class Parafuncionais
     }
 
     /**
+     * Seta atributo habito
      * @param TipoHabito $habito
      */
     public function setHabito($habito)
@@ -89,6 +108,7 @@ class Parafuncionais
     }
 
     /**
+     * Retorna atributo estado
      * @return boolean
      */
     public function isEstado()
@@ -97,6 +117,7 @@ class Parafuncionais
     }
 
     /**
+     * Seta atributo estado
      * @param boolean $estado
      */
     public function setEstado($estado)
@@ -105,7 +126,8 @@ class Parafuncionais
     }
 
     /**
-     * @return Paciente
+     * Retorna atributo paciente
+     * @return object Paciente
      */
     public function getPaciente()
     {
@@ -113,6 +135,7 @@ class Parafuncionais
     }
 
     /**
+     * Seta atributo paciente
      * @param Paciente $paciente
      */
     public function setPaciente($paciente)

@@ -1,4 +1,7 @@
 <?php
+/**
+ * Entidade DoencasPreexistentes
+ */
 
 namespace odontoIFMA\entity;
 
@@ -14,6 +17,7 @@ use Zend\Stdlib\Hydrator;
 class DoencasPreexistentes
 {
     /**
+     * Atributo id
      * @var integer $id
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
@@ -22,28 +26,39 @@ class DoencasPreexistentes
     private $id;
 
     /**
+     * Atributo nome
      * @var string $nome
      * @ORM\Column(name="nome", type="string", length=255, nullable=false)
      */
     private $nome;
 
     /**
+     * Atributo familiar
      * @var integer $familiar
      * @ORM\Column(name="familiar", type="integer", nullable=true)
      */
     private $familiar;
 
+    /**
+     * Inicializa entidade
+     * @param array $data Dados para popular entidade
+     */
     public function __construct(array $data = array())
     {
         (new Hydrator\ClassMethods())->hydrate($data, $this);
     }
 
+    /**
+     * Converte a entidade em array
+     * @return array
+     */
     public function toArray()
     {
         return (new Hydrator\ClassMethods())->extract($this);
     }
 
     /**
+     * Retorna atributo id
      * @return int
      */
     public function getId()
@@ -52,6 +67,7 @@ class DoencasPreexistentes
     }
 
     /**
+     * Seta atributo id
      * @param int $id
      */
     public function setId($id)
@@ -60,6 +76,7 @@ class DoencasPreexistentes
     }
 
     /**
+     * Retorna atributo nome
      * @return string
      */
     public function getNome()
@@ -68,6 +85,7 @@ class DoencasPreexistentes
     }
 
     /**
+     * Seta atributo nome
      * @param string $nome
      */
     public function setNome($nome)
@@ -76,6 +94,7 @@ class DoencasPreexistentes
     }
 
     /**
+     * Retorna atributo familiar
      * @return int
      */
     public function getFamiliar()
@@ -84,6 +103,7 @@ class DoencasPreexistentes
     }
 
     /**
+     * Seta atributo familiar
      * @param int $familiar
      */
     public function setFamiliar($familiar)

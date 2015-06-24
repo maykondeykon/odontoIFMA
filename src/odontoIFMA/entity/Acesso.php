@@ -1,4 +1,7 @@
 <?php
+/**
+ * Entidade Acesso
+ */
 
 namespace odontoIFMA\entity;
 
@@ -14,6 +17,7 @@ use Zend\Stdlib\Hydrator;
 class Acesso
 {
     /**
+     * Atributo id
      * @var integer $id
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
@@ -22,18 +26,21 @@ class Acesso
     private $id;
 
     /**
+     * Atributo login
      * @var string $login
      * @ORM\Column(name="login", type="string", length=255, nullable=false)
      */
     private $login;
 
     /**
+     * Atributo senha
      * @var string $senha
      * @ORM\Column(name="senha", type="string", length=255, nullable=false)
      */
     private $senha;
 
     /**
+     * Atributo operador
      * @var Operador $operador
      * @ORM\OneToOne(targetEntity="Operador", inversedBy="acesso")
      * @ORM\JoinColumns({
@@ -42,25 +49,43 @@ class Acesso
      */
     private $operador;
 
+    /**
+     * Atributo salt
+     * @var string $salt
+     */
     private $salt;
 
+    /**
+     * Inicializa entidade
+     * @param array $data Dados para popular entidade
+     */
     public function __construct(array $data = array())
     {
         (new Hydrator\ClassMethods())->hydrate($data, $this);
         $this->salt = base64_encode(hash("SHA256", '19|20)\d\d([- /.])(0[1-9]|1[012])\2([012][0-9]|3[01]', true));
     }
 
+    /**
+     * Encripta senha
+     * @param string $password
+     * @return string Senha criptografada
+     */
     public function encryptPassword($password)
     {
         return md5($this->salt . $password . $this->salt);
     }
 
+    /**
+     * Converte a entidade em array
+     * @return array
+     */
     public function toArray()
     {
         return (new Hydrator\ClassMethods())->extract($this);
     }
 
     /**
+     * Retorna atributo id
      * @return int
      */
     public function getId()
@@ -69,8 +94,9 @@ class Acesso
     }
 
     /**
+     * Seta atributo id
      * @param int $id
-     * @return $this
+     * @return object $this
      */
     public function setId($id)
     {
@@ -79,6 +105,7 @@ class Acesso
     }
 
     /**
+     * Retorna atributo login
      * @return string
      */
     public function getLogin()
@@ -87,8 +114,9 @@ class Acesso
     }
 
     /**
+     * Seta atributo login
      * @param string $login
-     * @return $this
+     * @return object $this
      */
     public function setLogin($login)
     {
@@ -97,6 +125,7 @@ class Acesso
     }
 
     /**
+     * Retorna atributo senha
      * @return string
      */
     public function getSenha()
@@ -105,8 +134,9 @@ class Acesso
     }
 
     /**
+     * Seta atributo senha
      * @param string $senha
-     * @return $this
+     * @return object $this
      */
     public function setSenha($senha)
     {
@@ -115,7 +145,8 @@ class Acesso
     }
 
     /**
-     * @return Operador
+     * Retorna atributo operador
+     * @return object Operador
      */
     public function getOperador()
     {
@@ -123,8 +154,9 @@ class Acesso
     }
 
     /**
+     * Seta atributo operador
      * @param Operador $operador
-     * @return $this
+     * @return object $this
      */
     public function setOperador($operador)
     {

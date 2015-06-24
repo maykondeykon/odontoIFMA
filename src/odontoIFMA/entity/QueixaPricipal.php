@@ -1,4 +1,7 @@
 <?php
+/**
+ * Entidade QueixaPricipal
+ */
 
 namespace odontoIFMA\entity;
 
@@ -14,6 +17,7 @@ use Zend\Stdlib\Hydrator;
 class QueixaPricipal
 {
     /**
+     * Atributo id
      * @var integer $id
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
@@ -22,12 +26,14 @@ class QueixaPricipal
     private $id;
 
     /**
+     * Atributo queixa
      * @var string $queixa
      * @ORM\Column(name="queixa", type="string", length=255, nullable=false)
      */
     private $queixa;
 
     /**
+     * Atributo paciente
      * @var Paciente $paciente
      * @ORM\ManyToOne(targetEntity="Paciente", inversedBy="queixaPrincipal")
      * @ORM\JoinColumns({
@@ -36,17 +42,26 @@ class QueixaPricipal
      */
     private $paciente;
 
+    /**
+     * Inicializa entidade
+     * @param array $data Dados para popular entidade
+     */
     public function __construct(array $data = array())
     {
         (new Hydrator\ClassMethods())->hydrate($data, $this);
     }
 
+    /**
+     * Converte a entidade em array
+     * @return array
+     */
     public function toArray()
     {
         return (new Hydrator\ClassMethods())->extract($this);
     }
 
     /**
+     * Retorna atributo id
      * @return int
      */
     public function getId()
@@ -55,6 +70,7 @@ class QueixaPricipal
     }
 
     /**
+     * Seta atributo id
      * @param int $id
      */
     public function setId($id)
@@ -63,6 +79,7 @@ class QueixaPricipal
     }
 
     /**
+     * Retorna atributo queixa
      * @return string
      */
     public function getQueixa()
@@ -71,6 +88,7 @@ class QueixaPricipal
     }
 
     /**
+     * Seta atributo queixa
      * @param string $queixa
      */
     public function setQueixa($queixa)
@@ -79,7 +97,8 @@ class QueixaPricipal
     }
 
     /**
-     * @return Paciente
+     * Retorna atributo paciente
+     * @return object Paciente
      */
     public function getPaciente()
     {
@@ -87,6 +106,7 @@ class QueixaPricipal
     }
 
     /**
+     * Seta atributo paciente
      * @param Paciente $paciente
      */
     public function setPaciente($paciente)

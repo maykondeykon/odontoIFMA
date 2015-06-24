@@ -1,4 +1,7 @@
 <?php
+/**
+ * Entidade Atendimento
+ */
 namespace odontoIFMA\entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -13,6 +16,7 @@ use Zend\Stdlib\Hydrator;
 class Atendimento
 {
     /**
+     * Atributo id
      * @var integer $id
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
@@ -21,24 +25,28 @@ class Atendimento
     private $id;
 
     /**
+     * Atributo data_agendamento
      * @var datetime $data_agendamento
      * @ORM\Column(name="data_agendamento", type="datetime", nullable=false)
      */
     private $data_agendamento;
 
-     /**
+    /**
+     * Atributo data_atendimento
      * @var datetime $data_atendimennto
      * @ORM\Column(name="data_atendimento", type="datetime", nullable=true)
      */
     private $data_atendimento;
 
     /**
+     * Atributo descricao
      * @var string $descricao
      * @ORM\Column(name="descricao", type="string", length=100, nullable=false)
      */
     private $descricao;
 
-        /**
+    /**
+     * Atributo paciente
      * @var Paciente $paciente
      * @ORM\ManyToOne(targetEntity="Paciente")
      * @ORM\JoinColumns({
@@ -47,17 +55,26 @@ class Atendimento
      */
     private $paciente;
 
+    /**
+     * Inicializa entidade
+     * @param array $data Dados para popular entidade
+     */
     public function __construct(array $data = array())
     {
         (new Hydrator\ClassMethods())->hydrate($data, $this);
     }
 
+    /**
+     * Converte a entidade em array
+     * @return array
+     */
     public function toArray()
     {
         return (new Hydrator\ClassMethods())->extract($this);
     }
 
     /**
+     * Retorna atributo id
      * @return int
      */
     public function getId()
@@ -66,6 +83,7 @@ class Atendimento
     }
 
     /**
+     * Seta atributo id
      * @param int $id
      * @return $this
      */
@@ -76,6 +94,7 @@ class Atendimento
     }
 
     /**
+     * Retorna atributo descricao
      * @return string
      */
     public function getDescricao()
@@ -84,8 +103,9 @@ class Atendimento
     }
 
     /**
+     * Seta atributo descricao
      * @param string $descricao
-     * @return $this
+     * @return object $this
      */
     public function setDescricao($descricao)
     {
@@ -94,6 +114,7 @@ class Atendimento
     }
 
     /**
+     * Retorna atributo data_agendamento
      * @return datetime
      */
     public function getDataAgendamento()
@@ -102,6 +123,7 @@ class Atendimento
     }
 
     /**
+     * Seta atributo data_agendamento
      * @param datetime $data_agendamento
      * @return $this
      */
@@ -111,7 +133,8 @@ class Atendimento
         return $this;
     }
 
-     /**
+    /**
+     * Retorna atributo data_atendimento
      * @return datetime
      */
     public function getDataAtendimento()
@@ -120,17 +143,19 @@ class Atendimento
     }
 
     /**
-     * @param datetime $data_agendamento
-     * @return $this
+     * Seta atributo data_atendimento
+     * @param $data_atendimento
+     * @return object $this
      */
     public function setDataAtendimento($data_atendimento)
     {
         $this->data_atendimento = date_create_from_format('d/m/Y', $data_atendimento);
         return $this;
     }
-    
-     /**
-     * @return Paciente
+
+    /**
+     * Retorna atributo paciente
+     * @return object Paciente
      */
     public function getPaciente()
     {
@@ -138,8 +163,9 @@ class Atendimento
     }
 
     /**
+     * Seta atributo paciente
      * @param Paciente $paciente
-     * @return $this
+     * @return object $this
      */
     public function setPaciente($paciente)
     {
@@ -148,5 +174,4 @@ class Atendimento
     }
 
 
-    
 }
