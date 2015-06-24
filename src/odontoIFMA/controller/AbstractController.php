@@ -1,8 +1,15 @@
 <?php
-
+/**
+ * Classe para abstração de funções
+ */
 namespace odontoIFMA\controller;
 use odontoIFMA\entity\Permissao;
 
+
+/**
+ * Class AbstractController
+ * @package odontoIFMA\controller
+ */
 abstract class AbstractController
 {
     /**
@@ -19,6 +26,7 @@ abstract class AbstractController
     protected $entity;
 
     /**
+     * Cria o objeto e insere no banco de dados
      * @param array $dados Dados para criação do objeto a ser persistido
      * @return object Retorna o objeto persistido
      * @throws \Exception Se os dados estiverem vazios
@@ -35,6 +43,7 @@ abstract class AbstractController
     }
 
     /**
+     * Recupera o objeto e atualiza
      * @param array $dados Dados para localizar e atualizar o objeto
      * @return object Retorna o objeto atualizado
      * @throws \Exception Se os dados estiverem vazios ou o objeto não puder ser encontrado
@@ -54,6 +63,7 @@ abstract class AbstractController
     }
 
     /**
+     * Deleta um objeto
      * @param Integer $id Id do objeto a ser deletado
      * @return Integer O Id deletado
      * @throws \Exception Se o objeto não for encontrado ou o Id não for definido
@@ -75,6 +85,7 @@ abstract class AbstractController
     }
 
     /**
+     * Persiste o objeto no banco de dados
      * @param object $entity Objeto a ser persistido no banco de dados
      * @return object O objeto persistido
      * @throws \Exception Caso ocorra erro durante a persistência
@@ -121,6 +132,7 @@ abstract class AbstractController
     }
 
     /**
+     * Executa consulta no banco de dados usando a cláusula LIKE
      * @param string $sql A query a ser usada na consulta
      * @param string $param O parâmetro de busca
      * @return array Resultado da consulta
@@ -141,6 +153,7 @@ abstract class AbstractController
     }
 
     /**
+     * Exibe mensagem de sucesso da operação
      * @param array $params Dados para exibição na mensagem
      * @return mixed Tela de sucesso
      */

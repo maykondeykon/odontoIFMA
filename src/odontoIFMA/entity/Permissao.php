@@ -1,9 +1,21 @@
 <?php
+/**
+ * Classe Permissao
+ */
 
 namespace odontoIFMA\entity;
 
+/**
+ * Class Permissao
+ * Controla as permissões do sistema
+ * @package odontoIFMA\entity
+ */
 class Permissao
 {
+    /**
+     * Array com todos os recursos do sistema, separados por perfil
+     * @var array
+     */
     private $permissoes = array(
         'ATENDENTE' => array(
             'recursos' => array(
@@ -32,6 +44,7 @@ class Permissao
     );
 
     /**
+     * Retorna os recursos permitidos do perfil
      * @param $perfil -- Perfil do usuário
      * @return array -- lista de todas os recursos desponíveis
      */
@@ -51,6 +64,7 @@ class Permissao
     }
 
     /**
+     * Retorna se perfil tem permissão para acessar o recurso dado
      * @param $rota -- recurso a testar
      * @param $perfil -- perfil para checagem
      * @return bool -- retorna true se possui permissão, false se não

@@ -1,4 +1,7 @@
 <?php
+/**
+ * Classe para manipulação dos métodos iniciais
+ */
 namespace odontoIFMA\controller;
 
 
@@ -6,8 +9,16 @@ use odontoIFMA\entity\Acesso;
 use odontoIFMA\entity\TipoOperador;
 use odontoIFMA\entity\Permissao;
 
+/**
+ * Class IndexController
+ * @package odontoIFMA\controller
+ */
 class IndexController extends AbstractController
 {
+    /**
+     * Inicialização da classe
+     * @param object $app Instância de app
+     */
     public function __construct($app)
     {
         $this->app = $app;
@@ -15,6 +26,7 @@ class IndexController extends AbstractController
     }
 
     /**
+     * Tela de login
      * @return mixed Tela de login
      */
     public function index()
@@ -62,6 +74,7 @@ class IndexController extends AbstractController
     }
 
     /**
+     * Tela home
      * @return mixed Tela inicial
      */
     public function home()

@@ -1,4 +1,7 @@
 <?php
+/**
+ * Classe para realização de testes
+ */
 namespace odontoIFMA\controller;
 
 
@@ -7,20 +10,38 @@ use odontoIFMA\entity\TipoOperador;
 use odontoIFMA\entity\Operador;
 use odontoIFMA\entity\Permissao;
 
+/**
+ * Class TesteController
+ * @package odontoIFMA\controller
+ */
 class TesteController extends AbstractController
 {
+    /**
+     * Inicialização da classe
+     * @param object $app Instância de app
+     */
     public function __construct($app)
     {
         $this->app = $app;
         $this->em = $app['em'];
     }
 
+    /**
+     * Teste da tela de login
+     * @return mixed
+     * @throws \Exception
+     */
     public function index()
     {
         $this->getPermissao();
         return $this->app['twig']->render('index/login.twig', array("active_page" => "login"));
     }
 
+    /**
+     * Teste do acesso
+     * @return string
+     * @throws \Exception
+     */
     public function testeAcesso()
     {
         $this->getPermissao();
@@ -49,6 +70,11 @@ class TesteController extends AbstractController
         return "testeAcesso";
     }
 
+    /**
+     * Teste de recuperação de doenças preexistentes
+     * @return string
+     * @throws \Exception
+     */
     public function doencasPreexistentes()
     {
         $this->getPermissao();
@@ -63,6 +89,11 @@ class TesteController extends AbstractController
         return "doencasPreexistentes";
     }
 
+    /**
+     * Teste de recuperação de pacientes
+     * @return string
+     * @throws \Exception
+     */
     public function testeGetPaciente()
     {
         $this->getPermissao();
@@ -75,6 +106,11 @@ class TesteController extends AbstractController
         return "Pacientes";
     }
 
+    /**
+     * Teste de permissão
+     * @return string
+     * @throws \Exception
+     */
     public function testePermissao()
     {
         $this->getPermissao();
@@ -99,6 +135,11 @@ class TesteController extends AbstractController
         return "";
     }
 
+    /**
+     * Teste de login
+     * @return string
+     * @throws \Exception
+     */
     public function testeLogin()
     {
         $this->getPermissao();

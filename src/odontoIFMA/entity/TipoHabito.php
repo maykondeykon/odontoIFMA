@@ -1,4 +1,7 @@
 <?php
+/**
+ * Entidade TipoHabito
+ */
 
 namespace odontoIFMA\entity;
 
@@ -15,6 +18,7 @@ use Zend\Stdlib\Hydrator;
 class TipoHabito
 {
     /**
+     * Atributo id
      * @var integer $id
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
@@ -23,22 +27,32 @@ class TipoHabito
     private $id;
 
     /**
+     * Atributo descricao
      * @var string $descricao
      * @ORM\Column(name="descricao", type="string", length=255, nullable=false)
      */
     private $descricao;
 
+    /**
+     * Inicializa entidade
+     * @param array $data Dados para popular entidade
+     */
     public function __construct(array $data = array())
     {
         (new Hydrator\ClassMethods())->hydrate($data, $this);
     }
 
+    /**
+     * Converte a entidade em array
+     * @return array
+     */
     public function toArray()
     {
         return (new Hydrator\ClassMethods())->extract($this);
     }
 
     /**
+     * Retorna atributo id
      * @return int
      */
     public function getId()
@@ -47,6 +61,7 @@ class TipoHabito
     }
 
     /**
+     * Seta atributo id
      * @param int $id
      */
     public function setId($id)
@@ -55,6 +70,7 @@ class TipoHabito
     }
 
     /**
+     * Retorna atributo descricao
      * @return string
      */
     public function getDescricao()
@@ -63,6 +79,7 @@ class TipoHabito
     }
 
     /**
+     * Seta atributo descricao
      * @param string $descricao
      */
     public function setDescricao($descricao)

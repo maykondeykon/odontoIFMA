@@ -1,4 +1,7 @@
 <?php
+/**
+ * Entidade Campus
+ */
 namespace odontoIFMA\entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -13,6 +16,7 @@ use Zend\Stdlib\Hydrator;
 class Campus
 {
     /**
+     * Atributo id
      * @var integer $id
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
@@ -21,22 +25,32 @@ class Campus
     private $id;
 
     /**
+     * Atributo nome
      * @var string $nome
      * @ORM\Column(name="nome", type="string", length=255, nullable=false)
      */
     private $nome;
 
+    /**
+     * Inicializa entidade
+     * @param array $data Dados para popular entidade
+     */
     public function __construct(array $data = array())
     {
         (new Hydrator\ClassMethods())->hydrate($data, $this);
     }
 
+    /**
+     * Converte a entidade em array
+     * @return array
+     */
     public function toArray()
     {
         return (new Hydrator\ClassMethods())->extract($this);
     }
 
     /**
+     * Retorna atributo id
      * @return int
      */
     public function getId()
@@ -45,8 +59,9 @@ class Campus
     }
 
     /**
+     * Seta atributo id
      * @param int $id
-     * @return $this
+     * @return object $this
      */
     public function setId($id)
     {
@@ -55,6 +70,7 @@ class Campus
     }
 
     /**
+     * Retorna atributo nome
      * @return string
      */
     public function getNome()
@@ -63,8 +79,9 @@ class Campus
     }
 
     /**
+     * Seta atributo nome
      * @param string $nome
-     * @return $this
+     * @return object $this
      */
     public function setNome($nome)
     {

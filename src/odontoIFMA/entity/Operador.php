@@ -1,4 +1,7 @@
 <?php
+/**
+ * Entidade Operador
+ */
 namespace odontoIFMA\entity;
 
 use Doctrine\ORM\Mapping as ORM;
@@ -14,6 +17,7 @@ use Zend\Stdlib\Hydrator;
 class Operador
 {
     /**
+     * Atributo id
      * @var integer $id
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
@@ -22,18 +26,21 @@ class Operador
     private $id;
 
     /**
+     * Atributo nome
      * @var string $nome
      * @ORM\Column(name="nome", type="string", length=255, nullable=false)
      */
     private $nome;
 
     /**
+     * Atributo documento
      * @var string $documento
      * @ORM\Column(name="documento", type="string", length=255, nullable=true)
      */
     private $documento;
 
     /**
+     * Atributo tipo
      * @var TipoOperador $tipo
      * @ORM\ManyToOne(targetEntity="TipoOperador")
      * @ORM\JoinColumns({
@@ -43,22 +50,32 @@ class Operador
     private $tipo;
 
     /**
+     * Atributo acesso
      * @var Acesso $acesso
      * @ORM\OneToOne(targetEntity="Acesso", mappedBy="operador" ,cascade={"persist", "remove"})
      */
     private $acesso;
 
+    /**
+     * Inicializa entidade
+     * @param array $data Dados para popular entidade
+     */
     public function __construct(array $data = array())
     {
         (new Hydrator\ClassMethods())->hydrate($data, $this);
     }
 
+    /**
+     * Converte a entidade em array
+     * @return array
+     */
     public function toArray()
     {
         return (new Hydrator\ClassMethods())->extract($this);
     }
 
     /**
+     * Retorna atributo id
      * @return int
      */
     public function getId()
@@ -67,6 +84,7 @@ class Operador
     }
 
     /**
+     * Seta atributo id
      * @param int $id
      * @return $this
      */
@@ -77,6 +95,7 @@ class Operador
     }
 
     /**
+     * Retorna atributo nome
      * @return string
      */
     public function getNome()
@@ -85,6 +104,7 @@ class Operador
     }
 
     /**
+     * Seta atributo nome
      * @param string $nome
      * @return $this
      */
@@ -95,6 +115,7 @@ class Operador
     }
 
     /**
+     * Retorna atributo documento
      * @return string
      */
     public function getDocumento()
@@ -103,6 +124,7 @@ class Operador
     }
 
     /**
+     * Seta atributo documento
      * @param string $documento
      * @return $this
      */
@@ -113,7 +135,8 @@ class Operador
     }
 
     /**
-     * @return TipoOperador
+     * Retorna atributo tipo
+     * @return object TipoOperador
      */
     public function getTipo()
     {
@@ -121,8 +144,9 @@ class Operador
     }
 
     /**
+     * Seta atributo tipo
      * @param TipoOperador $tipo
-     * @return $this
+     * @return object $this
      */
     public function setTipo($tipo)
     {
@@ -131,7 +155,8 @@ class Operador
     }
 
     /**
-     * @return Acesso
+     * Retorna atributo acesso
+     * @return object Acesso
      */
     public function getAcesso()
     {
@@ -139,6 +164,7 @@ class Operador
     }
 
     /**
+     * Seta atributo acesso
      * @param Acesso $acesso
      */
     public function setAcesso($acesso)

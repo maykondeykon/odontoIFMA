@@ -1,4 +1,7 @@
 <?php
+/**
+ * Classe para manipulação dos métodos de cadastro
+ */
 namespace odontoIFMA\controller;
 
 
@@ -9,8 +12,16 @@ use odontoIFMA\entity\Parafuncionais;
 use odontoIFMA\entity\QueixaPricipal;
 use odontoIFMA\entity\Higiene;
 
+/**
+ * Class CadastroController
+ * @package odontoIFMA\controller
+ */
 class CadastroController extends AbstractController
 {
+    /**
+     * Inicialização da classe
+     * @param object $app Instância de app
+     */
     public function __construct($app)
     {
         $this->app = $app;
@@ -18,6 +29,7 @@ class CadastroController extends AbstractController
     }
 
     /**
+     * Tela tipo operador
      * @return mixed Retorna tela de cadastro de tipo de operador
      */
     public function tipoOperador()
@@ -27,6 +39,7 @@ class CadastroController extends AbstractController
     }
 
     /**
+     * Tela paciente
      * @return mixed Retorna tela de cadastro de pacientes
      */
     public function paciente()
@@ -42,6 +55,7 @@ class CadastroController extends AbstractController
     }
 
     /**
+     * Tela tipo campus
      * @return mixed Retorna tela de cadastro de campus
      */
     public function tipoCampus()
@@ -51,6 +65,7 @@ class CadastroController extends AbstractController
     }
 
     /**
+     * Tela atendimento
      * @return mixed Retorna tela de cadastro de atendimento
      */
     public function atendimento()
@@ -70,6 +85,7 @@ class CadastroController extends AbstractController
     }
 
     /**
+     * Tela operador
      * @return mixed Retorna tela de cadastro de operador
      */
     public function operador()
@@ -259,6 +275,7 @@ class CadastroController extends AbstractController
     }
 
     /**
+     * Tela anamnese
      * @return mixed Retorna tela de cadastro da anamnese
      */
     public function anamnese()
@@ -378,6 +395,7 @@ class CadastroController extends AbstractController
     }
 
     /**
+     * Recupera lista de pacientes
      * @param string param - parte do nome do paciente
      * @return mixed Retorna lista de pacientes no formato Json
      */
