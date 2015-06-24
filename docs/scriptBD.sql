@@ -336,15 +336,15 @@ DROP TABLE IF EXISTS `atendimentos`;
 CREATE TABLE `atendimentos` (
   `id` INT NOT NULL AUTO_INCREMENT,
   `descricao` VARCHAR(100) NOT NULL,
-  `data` TIMESTAMP NOT NULL,
+  `data_agendamento` TIMESTAMP NOT NULL,
+  `data_atendimento` TIMESTAMP,
   `paciente_id` INT(11) NOT NULL,
-  `paciente_campus_id` INT(11) NOT NULL,
-  PRIMARY KEY (`id`, `paciente_id`, `paciente_campus_id`),
+  PRIMARY KEY (`id`, `paciente_id`),
   UNIQUE INDEX `id_UNIQUE` (`id` ASC),
-  INDEX `fk_atendimentos_paciente_idx` (`paciente_id` ASC, `paciente_campus_id` ASC),
+  INDEX `fk_atendimentos_paciente_idx` (`paciente_id` ASC),
   CONSTRAINT `fk_atendimentos_paciente`
-    FOREIGN KEY (`paciente_id` , `paciente_campus_id`)
-    REFERENCES `odontoifma`.`paciente` (`id` , `campus_id`)
+    FOREIGN KEY (`paciente_id`)
+    REFERENCES `odontoifma`.`paciente` (`id`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB

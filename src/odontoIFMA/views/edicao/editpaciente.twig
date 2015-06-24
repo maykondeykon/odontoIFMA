@@ -1,0 +1,114 @@
+{% extends 'template/template.twig' %}
+{% block content %}
+
+
+    <form class="form-horizontal form-padrao" id="formPaciente" method="post" action="/cadastro/salvar/salvarPaciente">
+
+        <div class="form-group">
+            <label for="nome" class="col-sm-2 control-label">Nome</label>
+
+            <div class="col-sm-8">
+                <input type="text" class="form-control uppercase" name="nome"
+                       id="nome" placeholder="Nome" value="">
+            </div>
+
+        </div>
+
+        <div class="form-group">
+            <label for="dtNascimento" class="col-sm-2 control-label">Data de Nascimento</label>
+
+            <div class="col-sm-2">
+                <input type="text" class="form-control uppercase datepicker" name="dtNascimento"
+                       id="dtNascimento" placeholder="Data de Nascimento" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="turma" class="col-sm-2 control-label">Turma </label>
+
+            <div class="col-sm-8">
+                <input type="text" class="form-control uppercase" name="turma"
+                       id="turma" placeholder="Turma" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="naturalidade" class="col-sm-2 control-label">Naturalidade </label>
+
+            <div class="col-sm-8">
+                <input type="text" class="form-control uppercase" name="naturalidade"
+                       id="naturalidade" placeholder="Naturalidade" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="telefone" class="col-sm-2 control-label">Contato </label>
+
+            <div class="col-sm-3">
+                <input type="text" class="form-control uppercase cel" name="telefone"
+                       id="telefone" placeholder="Telefone" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Sexo </label>
+
+            <div class="col-sm-4">
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="sexo" value="masculino"> Masculino
+                    </label>
+                </div>
+                <div class="radio">
+                    <label>
+                        <input type="radio" name="sexo" value="feminino"> Feminino
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="raca" class="col-sm-2 control-label">Raça </label>
+
+            <div class="col-sm-4">
+                <input type="text" class="form-control uppercase" name="raca"
+                       id="raca" placeholder="Pra que tem esse campo" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="matricula" class="col-sm-2 control-label">Matricula </label>
+
+            <div class="col-sm-4">
+                <input type="text" class="form-control uppercase" name="matricula"
+                       id="matricula" placeholder="Matricula" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="campus_id" class="col-sm-2 control-label">Campus </label>
+
+            <div class="col-sm-4">
+                <select class="form-control" name="campus_id" id="campus_id">
+                    <option value="">Selecione</option>
+                    {% for item in listaCampus %}
+                        <option value={{ item.getId }}>{{ item.getNome }}</option> {% endfor %}
+                </select>
+            </div>
+        </div>
+
+        <input type="hidden" id="id" name="id">
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-8">
+                <button type="submit" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-ok"></span> Salvar
+                </button>
+                <a class="btn btn-default" href="/home"><i
+                            class="glyphicon glyphicon-remove"></i> Cancelar</a>
+            </div>
+        </div>
+
+    </form>
+
+{% endblock %}
