@@ -253,14 +253,14 @@ ul.alert-dropdown {
     width:25%;
 }
 
-.botaoTipoOperador,.botaoOperador,.botaoPaciente,.botaoCampus,.botaoAnamnese,.botaoAtendimento{
+.botaoTipoOperador,.botaoOperador,.botaoPaciente,.botaoCampus,.botaoAnamnese,.botaoAtendimento,.botaoConsultas{
     height: 200px;
     width: 200px;
     padding: 5px;
     display: inline-block;    
 }
 
-.botaoTipoOperador:hover,.botaoOperador:hover,.botaoPaciente:hover,.botaoCampus:hover,.botaoAtendimento:hover,.botaoAnamnese:hover{
+.botaoTipoOperador:hover,.botaoOperador:hover,.botaoPaciente:hover,.botaoCampus:hover,.botaoAtendimento:hover,.botaoAnamnese:hover,.botaoConsultas:hover{
 
 
   -webkit-transition: all 0.5s ease;
