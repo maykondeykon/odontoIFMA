@@ -12,7 +12,7 @@ class Permissao
                 'tipoCampus' => array('cadastros','cadTipoCampus','fa fa-fw fa-edit','Cadastro Campus'),
                 'operador' => array('cadastros','cadOperador','fa fa-fw fa-edit','Cadastro Operador'),
                 'consultas' => array('principal','consultas','fa fa-fw fa-search','Consultas'),
-                'atendimento' => array('cadastros','cadAtendimento','fa fa-fw fa-edit','Agendar Atendimento'),
+                'atendimento' => array('principal','cadAtendimento','fa fa-fw fa-edit','Agendar Atendimento'),                
             ),
             'heranca' => null
         ),

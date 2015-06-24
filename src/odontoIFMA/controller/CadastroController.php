@@ -56,16 +56,13 @@ class CadastroController extends AbstractController
     public function atendimento()
     {
         $this->getPermissao();
-        $repoCampus = $this->em->getRepository('odontoIFMA\entity\Campus'); // Obtêm o repositório da entidade
-        $listaCampus = $repoCampus->findAll(); // Recupera a lista de todos os itens da entidade
-
+        
         $repoPaciente = $this->em->getRepository('odontoIFMA\entity\Paciente'); // Obtêm o repositório da entidade
         $listaPaciente = $repoPaciente->findAll(); // Recupera a lista de todos os itens da entidade        
 
         return $this->app['twig']->render('cadastro/atendimento.twig', array(
             "active_page" => "cadAtendimento",
-            'listaPaciente' => $listaPaciente, // Passa a lista para a view
-            'listaCampus' => $listaCampus // Passa a lista para a view
+            'listaPaciente' => $listaPaciente // Passa a lista para a view           
             ));
     }
 
@@ -214,12 +211,9 @@ class CadastroController extends AbstractController
             $dados = $request->all();           
 
             $repoPaciente = $this->em->getRepository('odontoIFMA\entity\Paciente');
-            $paciente = $repoPaciente->find($dados['paciente_id']); // Recupera o objeto a partir do ID
-            $repoCampus = $this->em->getRepository('odontoIFMA\entity\Campus');
-            $campus = $repoCampus->find($dados['paciente_campus_id']); // Recupera o objeto a partir do ID
+            $paciente = $repoPaciente->find($dados['paciente_id']); // Recupera o objeto a partir do ID            
             $dados['paciente'] = $paciente; // Cria uma nova entrada no array com o nome do atributo da entidade
-            $dados['campus'] = $campus; // Cria uma nova entrada no array com o nome do atributo da entidade
-
+            
             $this->insert($dados);
 
             return $this->msgSuccess($params);

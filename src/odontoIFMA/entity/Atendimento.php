@@ -21,10 +21,16 @@ class Atendimento
     private $id;
 
     /**
-     * @var datetime $data
-     * @ORM\Column(name="data", type="datetime", nullable=false)
+     * @var datetime $data_agendamento
+     * @ORM\Column(name="data_agendamento", type="datetime", nullable=false)
      */
-    private $data;
+    private $data_agendamento;
+
+     /**
+     * @var datetime $data_atendimennto
+     * @ORM\Column(name="data_atendimento", type="datetime", nullable=true)
+     */
+    private $data_atendimento;
 
     /**
      * @var string $descricao
@@ -32,16 +38,7 @@ class Atendimento
      */
     private $descricao;
 
-     /**
-     * @var Campus $campus
-     * @ORM\ManyToOne(targetEntity="Campus")
-     * @ORM\JoinColumns({
-     * @ORM\JoinColumn(name="paciente_campus_id", referencedColumnName="id")
-     * })
-     */
-    private $campus;
-
-    /**
+        /**
      * @var Paciente $paciente
      * @ORM\ManyToOne(targetEntity="Paciente")
      * @ORM\JoinColumns({
@@ -99,39 +96,39 @@ class Atendimento
     /**
      * @return datetime
      */
-    public function getData()
+    public function getDataAgendamento()
     {
-        return $this->data;
+        return $this->data_agendamento;
     }
 
     /**
-     * @param datetime $data
+     * @param datetime $data_agendamento
      * @return $this
      */
-    public function setData($data)
+    public function setDataAgendamento($data_agendamento)
     {
-        $this->data = date_create_from_format('d/m/Y', $data);
+        $this->data_agendamento = date_create_from_format('d/m/Y', $data_agendamento);
         return $this;
     }
 
      /**
-     * @return Campus
+     * @return datetime
      */
-    public function getCampus()
+    public function getDataAtendimento()
     {
-        return $this->campus;
+        return $this->data_atendimento;
     }
 
     /**
-     * @param Campus $campus
+     * @param datetime $data_agendamento
      * @return $this
      */
-    public function setCampus($campus)
+    public function setDataAtendimento($data_atendimento)
     {
-        $this->campus = $campus;
+        $this->data_atendimento = date_create_from_format('d/m/Y', $data_atendimento);
         return $this;
     }
-
+    
      /**
      * @return Paciente
      */
