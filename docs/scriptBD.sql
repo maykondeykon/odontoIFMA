@@ -360,6 +360,21 @@ LOCK TABLES `atendimentos` WRITE;
 /*!40000 ALTER TABLE `atendimentos` ENABLE KEYS */;
 UNLOCK TABLES;
 
+USE `odontoifma`;
+CREATE  OR REPLACE VIEW `getAgendamentos` AS
+  SELECT agendamento.id, agendamento.obs, agendamento.status,
+    DATE_FORMAT(agendamento.data_agendamento,'%d/%m/%Y %H:%i') AS dataAgendamento,
+    DATE_FORMAT(agendamento.data_atendimento,'%d/%m/%Y %H:%i') AS dataAtendimento,
+    DATE_FORMAT(agendamento.criado_em,'%d/%m/%Y %H:%i') AS criadoEm,
+    DATE_FORMAT(agendamento.alterado_em,'%d/%m/%Y %H:%i') AS alteradoEm,
+    agendamento.data_agendamento,agendamento.data_atendimento,agendamento.criado_em,agendamento.alterado_em,
+    paciente.id AS pacienteId, paciente.nome AS pacienteNome,
+    operador.id AS dentistaId,operador.nome AS dentistaNome
+  FROM agendamento
+    JOIN paciente ON paciente.id = agendamento.paciente
+    JOIN operador ON operador.id = agendamento.dentista ;
+
+
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

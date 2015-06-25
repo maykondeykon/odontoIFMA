@@ -170,4 +170,24 @@ class TesteController extends AbstractController
         return "";
     }
 
+    /**
+     * Teste de agendamento
+     * @return string
+     * @throws \Exception
+     */
+    public function testeAgendamento()
+    {
+        // $this->getPermissao();
+        $sql = "SELECT * FROM getAgendamentos WHERE data_agendamento BETWEEN :dateIni AND :dateFim";
+
+
+
+        $today = new \DateTime('now');
+
+        $agenda = $this->findDateInterval($sql, $today->format('d/m/Y'), $today->format('d/m/Y'));
+        print_r($agenda);
+
+        return "";
+    }
+
 }

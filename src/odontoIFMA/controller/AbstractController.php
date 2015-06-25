@@ -3,6 +3,7 @@
  * Classe para abstração de funções
  */
 namespace odontoIFMA\controller;
+
 use odontoIFMA\entity\Permissao;
 
 
@@ -118,15 +119,15 @@ abstract class AbstractController
             throw new \Exception("Não permitido.", 403);
         }
 
-        $callers=debug_backtrace();
+        $callers = debug_backtrace();
         $metodo = $callers[1]['function'];
         $perfil = $this->app['session']->get('usuario')['perfil'];
 
         $permissao = new Permissao();
 
-        if($permissao->isValid($metodo,$perfil)){
+        if ($permissao->isValid($metodo, $perfil)) {
             return;
-        }else{
+        } else {
             throw new \Exception("Não permitido.");
         }
     }
@@ -149,7 +150,32 @@ abstract class AbstractController
         } catch (\Exception $exc) {
             throw $exc;
         }
+    }
 
+    /**
+     * Executa consulta no banco de dados usando a intervalo de datas
+     * @param string $sql A query a ser usada na consulta
+     * @param string $dateIni data inicial
+     * @param string $dateFim data final
+     * @return array
+     * @throws \Exception Caso ocorra erro durante a consulta
+     */
+    public function findDateInterval($sql, $dateIni, $dateFim)
+    {
+        try {
+            $dateIni = date_create_from_format('d/m/Y', $dateIni);
+            $dateFim = date_create_from_format('d/m/Y', $dateFim);
+
+            $stmt = $this->em->getConnection()->prepare($sql);
+            $stmt->bindValue('dateIni', $dateIni->format('Y/m/d') . ' 00:00:00');
+            $stmt->bindValue('dateFim', $dateFim->format('Y/m/d') . ' 23:59:59');
+
+            $stmt->execute();
+
+            return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        } catch (\Exception $exc) {
+            throw $exc;
+        }
     }
 
     /**
@@ -161,5 +187,4 @@ abstract class AbstractController
     {
         return $this->app['twig']->render('success/success.twig', $params);
     }
-
 }

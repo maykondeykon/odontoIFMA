@@ -37,10 +37,10 @@
         <tbody>
         {% for item in agenda %}
         <tr>
-            <td>{{ item.getDtAgendamento|date("d/m/Y H:i") }}</td>
-            <td>{{ item.getPaciente.getNome }}</td>
-            <td>{{ item.getDentista.getNome }}</td>
-            <td>{{ item.getCriadoEm|date("d/m/Y H:i:s") }}</td>
+            <td>{{ item.dataAgendamento }}</td>
+            <td>{{ item.pacienteNome }}</td>
+            <td>{{ item.dentistaNome }}</td>
+            <td>{{ item.criadoEm }}</td>
             <td></td>
         </tr>
         {% endfor %}

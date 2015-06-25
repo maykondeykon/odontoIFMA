@@ -72,14 +72,14 @@ class CadastroController extends AbstractController
     public function atendimento()
     {
         $this->getPermissao();
-        
+
         $repoPaciente = $this->em->getRepository('odontoIFMA\entity\Paciente'); // Obtêm o repositório da entidade
         $listaPaciente = $repoPaciente->findAll(); // Recupera a lista de todos os itens da entidade        
 
         return $this->app['twig']->render('cadastro/atendimento.twig', array(
             "active_page" => "cadAtendimento",
             'listaPaciente' => $listaPaciente // Passa a lista para a view           
-            ));
+        ));
     }
 
     /**
@@ -225,12 +225,12 @@ class CadastroController extends AbstractController
 
         if ($this->app['request']->getMethod() == 'POST') {
             $request = $this->app['request']->request;
-            $dados = $request->all();           
+            $dados = $request->all();
 
             $repoPaciente = $this->em->getRepository('odontoIFMA\entity\Paciente');
             $paciente = $repoPaciente->find($dados['paciente_id']); // Recupera o objeto a partir do ID            
             $dados['paciente'] = $paciente; // Cria uma nova entrada no array com o nome do atributo da entidade
-            
+
             $this->insert($dados);
 
             return $this->msgSuccess($params);
@@ -417,9 +417,9 @@ class CadastroController extends AbstractController
 
             if (isset($dados['pacienteId'])) {
                 $paciente = $repoPaciente->find($dados['pacienteId']); // Recupera o objeto Paciente
-                if($paciente){
+                if ($paciente) {
                     $dados['paciente'] = $paciente;
-                }else{
+                } else {
                     throw new \Exception("Paciente não encontrado.");
                 }
             } else {
@@ -428,9 +428,9 @@ class CadastroController extends AbstractController
 
             if (isset($dados['dentistaId'])) {
                 $dentista = $repoDentista->find($dados['dentistaId']); // Recupera o objeto Operador/Dentista
-                if($dentista){
+                if ($dentista) {
                     $dados['dentista'] = $dentista;
-                }else{
+                } else {
                     throw new \Exception("Dentista não encontrado.");
                 }
             } else {
@@ -482,5 +482,25 @@ class CadastroController extends AbstractController
 
         return $this->app->json($pacientes);
 
+    }
+
+    /**
+     * Recupera agendamentos
+     * @param array $dados com o intervalo de datas ou informa que é do dia
+     * @return array
+     */
+    public function getAgendamentos(array $dados)
+    {
+        $today = new \DateTime('now');
+        if (isset($dados['doDia'])) {
+            $dtInicial = $dtFinal = $today->format('d/m/Y');
+        }else{
+            $dtInicial = $dados['dtInicial'];
+            $dtFinal = $dados['dtFinal'];
+        }
+
+        $sql = "SELECT * FROM getAgendamentos WHERE data_agendamento BETWEEN :dateIni AND :dateFim";
+
+        return $this->findDateInterval($sql, $dtInicial, $dtFinal);
     }
 }
