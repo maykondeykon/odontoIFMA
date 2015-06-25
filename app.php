@@ -69,6 +69,10 @@ $app->get('/cadastro/agendamento', function () use ($app) {
     return $app['cadastro.controller']->agendamento();
 })->bind('cadAgendamento');
 
+$app->get('/cadastro/editar/agendamento/{id}', function ($id) use ($app) {
+    return $app['cadastro.controller']->editAgendamento($id);
+})->bind('editAgendamento');
+
 $app->get('/editar/{tipo}/{id}', function ($tipo, $id) use ($app) {
     return $app['cadastro.controller']->$tipo();
 })->bind('editarCadastro');

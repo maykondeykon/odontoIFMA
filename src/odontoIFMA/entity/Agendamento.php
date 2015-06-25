@@ -90,6 +90,9 @@ class Agendamento
      */
     public function __construct(array $data = array())
     {
+        if($this->getDtAgendamento() != null){
+            $data['dtAgendamento'] = $this->getDtAgendamento()->format('d/m/Y H:i');
+        }
         (new Hydrator\ClassMethods())->hydrate($data, $this);
     }
 
@@ -158,7 +161,7 @@ class Agendamento
      */
     public function setDtAtendimento($dtAtendimento)
     {
-        $this->dtAtendimento = $dtAtendimento;
+        $this->dtAtendimento = date_create_from_format('d/m/Y H:i', $dtAtendimento);
         return $this;
     }
 

@@ -389,6 +389,10 @@ class CadastroController extends AbstractController
         }
     }
 
+    /**
+     * Tela agendamento
+     * @return mixed Retorna tela de agendamento
+     */
     public function agendamento()
     {
         return $this->app['twig']->render('cadastro/agendamento.twig', array(
@@ -396,14 +400,40 @@ class CadastroController extends AbstractController
         ));
     }
 
+    /**
+     * Exibe tela de edição de agendamento
+     * @param $id Id do agendamento
+     * @return mixed Retorna tela populada com os dados do agendamento
+     */
+    public function editAgendamento($id)
+    {
+        $repoAgendamento = $this->em->getRepository('odontoIFMA\entity\Agendamento');
+        $repoStatus = $this->em->getRepository('odontoIFMA\entity\StatusAgendamento');
+        $status = $repoStatus->findAll();
+
+        $agendamento = $repoAgendamento->find($id);
+
+        return $this->app['twig']->render('cadastro/agendamento.twig', array(
+            "active_page" => "editAgendamento",
+            'edit' => 1,
+            'listaStatus' => $status,
+            'agendamento' => $agendamento
+        ));
+    }
+
+    /**
+     * Salva agendamento no banco de dados
+     * @return mixed Messagem de sucesso
+     * @throws \Exception Caso algum dados seja passado de forma errada
+     */
     public function salvarAgendamento()
     {
         $this->entity = 'odontoIFMA\entity\Agendamento'; //Define a entidade que será usada
         $repoPaciente = $this->em->getRepository('odontoIFMA\entity\Paciente');
         $repoDentista = $this->em->getRepository('odontoIFMA\entity\Operador');
+        $repoStatus = $this->em->getRepository('odontoIFMA\entity\StatusAgendamento');
         //Define os parâmetros que serão usados na renderização da tela com retorno da operação
         $params = array(
-            'message' => 'Agendamento cadastrado com sucesso.', //Mensagem a ser exibida
             'titulo' => 'Sucesso!', // Título da mensagem
             'tipo' => 'alert-success', // Define o tipo da mensagem, erro ou sucesso
             'icon' => 'glyphicon-ok', // Ícone do título da mensagem
@@ -437,11 +467,23 @@ class CadastroController extends AbstractController
                 throw new \Exception("Id do dentista não informado.");
             }
 
-            $dados['criadoEm'] = new \DateTime('now');
+            if (isset($dados['id']) && !empty($dados['id'])) {
+                $params['message'] = 'Agendamento atualizado com sucesso.'; //Mensagem a ser exibida
 
+                if (isset($dados['statusId'])) {
+                    $status = $repoStatus->find($dados['statusId']); // Recupera o objeto StatusAgendamento
+                    $dados['status'] = $status;
+                }
+                unset($dados['dtAgendamento']);
+                $dados['atualizadoEm'] = new \DateTime('now');
 
-//            print_r($dados);die();
-            $this->insert($dados);
+                $this->update($dados);
+
+            } else {
+                $params['message'] = 'Agendamento cadastrado com sucesso.'; //Mensagem a ser exibida
+                $dados['criadoEm'] = new \DateTime('now');
+                $this->insert($dados);
+            }
 
             return $this->msgSuccess($params);
         } else {
@@ -494,7 +536,7 @@ class CadastroController extends AbstractController
         $today = new \DateTime('now');
         if (isset($dados['doDia'])) {
             $dtInicial = $dtFinal = $today->format('d/m/Y');
-        }else{
+        } else {
             $dtInicial = $dados['dtInicial'];
             $dtFinal = $dados['dtFinal'];
         }

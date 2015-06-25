@@ -9,7 +9,7 @@
 
             <div class="col-sm-6">
                 <input type="text" class="form-control uppercase pacienteNome" name="pacienteNome"
-                       id="pacienteNome" placeholder="Paciente" value="">
+                       id="pacienteNome" placeholder="Paciente" value="{{ agendamento.getPaciente.getNome|default('') }}" autofocus>
             </div>
         </div>
 
@@ -18,32 +18,62 @@
 
             <div class="col-sm-6">
                 <input type="text" class="form-control uppercase datepickerTime" name="dtAgendamento"
-                       id="dtAgendamento" placeholder="Data do agendamento" value="">
+                       id="dtAgendamento" placeholder="Data do agendamento" value="{% if agendamento is defined %}{{ agendamento.getDtAgendamento|date("d/m/Y H:i") }}{% endif %}">
             </div>
         </div>
+
+        {% if edit is defined %}
+            <div class="form-group">
+                <label for="dtAtendimento" class="col-sm-2 control-label">Data do atendimento</label>
+
+                <div class="col-sm-6">
+                    <input type="text" class="form-control uppercase datepickerTime" name="dtAtendimento"
+                           id="dtAtendimento" placeholder="Data do atendimento" value="{{ agendamento.getDtAtendimento is empty ? "" :agendamento.getDtAtendimento|date("d/m/Y H:i") }}">
+                </div>
+            </div>
+        {% endif %}
 
         <div class="form-group">
             <label for="dentistaNome" class="col-sm-2 control-label">Dentista </label>
 
             <div class="col-sm-6">
                 <input type="text" class="form-control uppercase dentistaNome" name="dentistaNome"
-                       id="dentistaNome" placeholder="Dentista" value="">
+                       id="dentistaNome" placeholder="Dentista" value="{{ agendamento.getDentista.getNome|default('') }}">
             </div>
         </div>
+
+        {% if edit is defined %}
+            <div class="form-group">
+                <label for="statusId" class="col-sm-2 control-label">Status </label>
+
+                <div class="col-sm-6">
+                    <select class="form-control" name="statusId" id="statusId">
+                        <option value="">Selecione</option>
+                        {% for item in listaStatus %}
+                            {% if  agendamento.getStatus == item.getId%}
+                                <option value={{ item.getId }} selected>{{ item.getDescricao }}</option>
+                            {% else %}
+                                <option value={{ item.getId }}>{{ item.getDescricao }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+        {% endif %}
 
         <div class="form-group">
             <label for="obs" class="col-sm-2 control-label">Observação</label>
 
             <div class="col-sm-6">
                 <textarea class="form-control uppercase textareaNoResize" name="obs" id="obs"
-                          placeholder="Observação" rows="3"></textarea>
+                          placeholder="Observação" rows="3">{% if agendamento is defined %}{{ agendamento.getObs }}{% endif %}</textarea>
             </div>
         </div>
 
         {#Hiddens#}
-        <input type="hidden" class="pacienteId" name="pacienteId">
-        <input type="hidden" class="dentistaId" name="dentistaId">
-        <input type="hidden" id="id" name="id">
+        <input type="hidden" class="pacienteId" name="pacienteId" value="{{ agendamento.getPaciente.getId|default('') }}">
+        <input type="hidden" class="dentistaId" name="dentistaId" value="{{ agendamento.getDentista.getId|default('') }}">
+        <input type="hidden" id="id" name="id" value="{{ agendamento.getId|default('') }}">
 
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-6">

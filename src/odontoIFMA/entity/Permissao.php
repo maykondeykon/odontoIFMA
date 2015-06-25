@@ -32,6 +32,7 @@ class Permissao
         'DENTISTA' => array(
             'recursos' => array(
                 'anamnese' => array('principal','cadAnamnese','fa fa-fw fa-edit','Anamnese'),
+                'editAgendamento' => array('nenhum','editAgendamento','fa fa-fw fa-edit','Editar Atendimento'),
             ),
             'heranca' => 'ATENDENTE'
         ),
