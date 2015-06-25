@@ -126,6 +126,12 @@
     </li>
 
                                                                                                         <li class="method public">
+        <a href="#method_agendamento" title="agendamento :: Tela agendamento">
+            <span class="description">Tela agendamento</span><pre>agendamento</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
         <a href="#method_anamnese" title="anamnese :: Tela anamnese">
             <span class="description">Tela anamnese</span><pre>anamnese</pre>
         </a>
@@ -143,9 +149,33 @@
         </a>
     </li>
 
+                                                                                                        <li class="method public">
+        <a href="#method_editAgendamento" title="editAgendamento :: Exibe tela de edição de agendamento">
+            <span class="description">Exibe tela de edição de agendamento</span><pre>editAgendamento</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
+        <a href="#method_findDateInterval" title="findDateInterval :: Executa consulta no banco de dados usando a intervalo de datas">
+            <span class="description">Executa consulta no banco de dados usando a intervalo de datas</span><pre>findDateInterval</pre>
+        </a>
+    </li>
+
                                                                                                         <li class="method public inherited">
         <a href="#method_findLike" title="findLike :: Executa consulta no banco de dados usando a cláusula LIKE">
             <span class="description">Executa consulta no banco de dados usando a cláusula LIKE</span><pre>findLike</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getAgendamentos" title="getAgendamentos :: Recupera agendamentos">
+            <span class="description">Recupera agendamentos</span><pre>getAgendamentos</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_getDentistasJson" title="getDentistasJson :: Recupera lista de dentistas">
+            <span class="description">Recupera lista de dentistas</span><pre>getDentistasJson</pre>
         </a>
     </li>
 
@@ -180,6 +210,12 @@
     </li>
 
                                                                                                                                                                 <li class="method public">
+        <a href="#method_salvarAgendamento" title="salvarAgendamento :: Salva agendamento no banco de dados">
+            <span class="description">Salva agendamento no banco de dados</span><pre>salvarAgendamento</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
         <a href="#method_salvarAnamnese" title="salvarAnamnese :: Salva a anamnese no Banco de dados">
             <span class="description">Salva a anamnese no Banco de dados</span><pre>salvarAnamnese</pre>
         </a>
@@ -237,7 +273,7 @@
         </li>
         <li class="nav-header protected">» Protected
             <ul>
-                                                                                                                                                                                                                                                                                                    <li class="method protected inherited">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        <li class="method protected inherited">
                             <a href="#method_getPermissao" title="getPermissao :: Checa se existe sessão aberta e se o perfil do usuário tem permissão para acessar o recurso">
                                 <span class="description">Checa se existe sessão aberta e se o perfil do usuário tem permissão para acessar o recurso</span><pre>getPermissao</pre>
                             </a>
@@ -247,11 +283,11 @@
                                 <span class="description">Persiste o objeto no banco de dados</span><pre>persist</pre>
                             </a>
                         </li>
-                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
         </li>
         <li class="nav-header private">» Private
             <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                </ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        </ul>
         </li>
         <li class="nav-header">
             <i class="icon-custom icon-constant"></i> Constants
@@ -315,6 +351,35 @@
                                                 <code>object</code><p><p>Instância de app</p></p>
                                             </div>
                                                                             
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_agendamento"></a>
+                        <div class="element clickable method public  method_agendamento" data-toggle="collapse" data-target=".method_agendamento .collapse">
+                            <h2>Tela agendamento</h2>
+                            <pre>agendamento() : mixed</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>mixed</code><p><p>Retorna tela de agendamento</p></p>
                                                                     </div>
                             </div>
 
@@ -413,6 +478,77 @@
                             </div>
 
                         </div>
+                                            <a id="method_editAgendamento"></a>
+                        <div class="element clickable method public  method_editAgendamento" data-toggle="collapse" data-target=".method_editAgendamento .collapse">
+                            <h2>Exibe tela de edição de agendamento</h2>
+                            <pre>editAgendamento( $id) : mixed</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$id</h4>
+                                                <code></code><p><p>Id do agendamento</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>mixed</code><p><p>Retorna tela populada com os dados do agendamento</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_findDateInterval"></a>
+                        <div class="element clickable method public  method_findDateInterval inherited" data-toggle="collapse" data-target=".method_findDateInterval .collapse">
+                            <h2>Executa consulta no banco de dados usando a intervalo de datas</h2>
+                            <pre>findDateInterval(string $sql, string $dateIni, string $dateFim) : array</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    throws
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Caso ocorra erro durante a consulta</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$sql</h4>
+                                                <code>string</code><p><p>A query a ser usada na consulta</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$dateIni</h4>
+                                                <code>string</code><p><p>data inicial</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$dateFim</h4>
+                                                <code>string</code><p><p>data final</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
                                             <a id="method_findLike"></a>
                         <div class="element clickable method public  method_findLike inherited" data-toggle="collapse" data-target=".method_findLike .collapse">
                             <h2>Executa consulta no banco de dados usando a cláusula LIKE</h2>
@@ -449,6 +585,55 @@
                                                                             
                                                                             <h3>Response</h3>
                                         <code>array</code><p><p>Resultado da consulta</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getAgendamentos"></a>
+                        <div class="element clickable method public  method_getAgendamentos" data-toggle="collapse" data-target=".method_getAgendamentos .collapse">
+                            <h2>Recupera agendamentos</h2>
+                            <pre>getAgendamentos(array $dados) : array</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$dados</h4>
+                                                <code>array</code><p><p>com o intervalo de datas ou informa que é do dia</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getDentistasJson"></a>
+                        <div class="element clickable method public  method_getDentistasJson" data-toggle="collapse" data-target=".method_getDentistasJson .collapse">
+                            <h2>Recupera lista de dentistas</h2>
+                            <pre>getDentistasJson() : mixed</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>mixed</code><p><p>Retorna lista de dentistas no formato Json</p></p>
                                                                     </div>
                             </div>
 
@@ -664,6 +849,44 @@
                                                                             
                                                                             <h3>Response</h3>
                                         <code>object</code><p><p>O objeto persistido</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_salvarAgendamento"></a>
+                        <div class="element clickable method public  method_salvarAgendamento" data-toggle="collapse" data-target=".method_salvarAgendamento .collapse">
+                            <h2>Salva agendamento no banco de dados</h2>
+                            <pre>salvarAgendamento() : mixed</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    throws
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Caso algum dados seja passado de forma errada</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>mixed</code><p><p>Messagem de sucesso</p></p>
                                                                     </div>
                             </div>
 
@@ -1095,7 +1318,7 @@
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Wed, 24 Jun 2015 19:19:00 +0000.<br/>
+            generated on Thu, 25 Jun 2015 18:52:54 +0000.<br/>
     </footer>
     </body>
 </html>

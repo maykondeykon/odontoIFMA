@@ -138,6 +138,12 @@
     </li>
 
                                                                                                         <li class="method public inherited">
+        <a href="#method_findDateInterval" title="findDateInterval :: Executa consulta no banco de dados usando a intervalo de datas">
+            <span class="description">Executa consulta no banco de dados usando a intervalo de datas</span><pre>findDateInterval</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
         <a href="#method_findLike" title="findLike :: Executa consulta no banco de dados usando a cláusula LIKE">
             <span class="description">Executa consulta no banco de dados usando a cláusula LIKE</span><pre>findLike</pre>
         </a>
@@ -165,7 +171,7 @@
         </li>
         <li class="nav-header protected">» Protected
             <ul>
-                                                                                                                                                                                                                            <li class="method protected inherited">
+                                                                                                                                                                                                                                                                <li class="method protected inherited">
                             <a href="#method_getPermissao" title="getPermissao :: Checa se existe sessão aberta e se o perfil do usuário tem permissão para acessar o recurso">
                                 <span class="description">Checa se existe sessão aberta e se o perfil do usuário tem permissão para acessar o recurso</span><pre>getPermissao</pre>
                             </a>
@@ -179,7 +185,7 @@
         </li>
         <li class="nav-header private">» Private
             <ul>
-                                                                                                                                                                                                                                                                                                                                                                                </ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
         </li>
         <li class="nav-header">
             <i class="icon-custom icon-constant"></i> Constants
@@ -308,6 +314,50 @@
                                                                             
                                                                             <h3>Response</h3>
                                         <code>Integer</code><p><p>O Id deletado</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_findDateInterval"></a>
+                        <div class="element clickable method public  method_findDateInterval inherited" data-toggle="collapse" data-target=".method_findDateInterval .collapse">
+                            <h2>Executa consulta no banco de dados usando a intervalo de datas</h2>
+                            <pre>findDateInterval(string $sql, string $dateIni, string $dateFim) : array</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    throws
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Caso ocorra erro durante a consulta</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$sql</h4>
+                                                <code>string</code><p><p>A query a ser usada na consulta</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$dateIni</h4>
+                                                <code>string</code><p><p>data inicial</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$dateFim</h4>
+                                                <code>string</code><p><p>data final</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
                                                                     </div>
                             </div>
 
@@ -624,7 +674,7 @@
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Wed, 24 Jun 2015 19:19:00 +0000.<br/>
+            generated on Thu, 25 Jun 2015 18:52:55 +0000.<br/>
     </footer>
     </body>
 </html>
