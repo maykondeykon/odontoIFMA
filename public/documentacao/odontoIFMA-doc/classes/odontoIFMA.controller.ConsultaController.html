@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <meta charset="utf-8"/>
-    <title>    OdontoIFMA &raquo; \odontoIFMA\entity\Parafuncionais
+    <title>    OdontoIFMA &raquo; \odontoIFMA\controller\ConsultaController
 </title>
     <meta name="author" content=""/>
     <meta name="description" content=""/>
@@ -120,62 +120,50 @@
             <i class="icon-custom icon-method"></i> Methods
             <ul>
                                                                                                     <li class="method public">
-        <a href="#method___construct" title="__construct :: Inicializa entidade">
-            <span class="description">Inicializa entidade</span><pre>__construct</pre>
+        <a href="#method___construct" title="__construct :: Inicialização da classe">
+            <span class="description">Inicialização da classe</span><pre>__construct</pre>
         </a>
     </li>
 
                                                                                                         <li class="method public">
-        <a href="#method_getHabito" title="getHabito :: Retorna atributo habito">
-            <span class="description">Retorna atributo habito</span><pre>getHabito</pre>
+        <a href="#method_consultas" title="consultas :: Tela de consultas">
+            <span class="description">Tela de consultas</span><pre>consultas</pre>
         </a>
     </li>
 
-                                                                                                        <li class="method public">
-        <a href="#method_getId" title="getId :: Retorna atributo id">
-            <span class="description">Retorna atributo id</span><pre>getId</pre>
+                                                                                                        <li class="method public inherited">
+        <a href="#method_delete" title="delete :: Deleta um objeto">
+            <span class="description">Deleta um objeto</span><pre>delete</pre>
         </a>
     </li>
 
-                                                                                                        <li class="method public">
-        <a href="#method_getPaciente" title="getPaciente :: Retorna atributo paciente">
-            <span class="description">Retorna atributo paciente</span><pre>getPaciente</pre>
+                                                                                                        <li class="method public inherited">
+        <a href="#method_findDateInterval" title="findDateInterval :: Executa consulta no banco de dados usando a intervalo de datas">
+            <span class="description">Executa consulta no banco de dados usando a intervalo de datas</span><pre>findDateInterval</pre>
         </a>
     </li>
 
-                                                                                                        <li class="method public">
-        <a href="#method_isEstado" title="isEstado :: Retorna atributo estado">
-            <span class="description">Retorna atributo estado</span><pre>isEstado</pre>
+                                                                                                        <li class="method public inherited">
+        <a href="#method_findLike" title="findLike :: Executa consulta no banco de dados usando a cláusula LIKE">
+            <span class="description">Executa consulta no banco de dados usando a cláusula LIKE</span><pre>findLike</pre>
         </a>
     </li>
 
-                                                                                                        <li class="method public">
-        <a href="#method_setEstado" title="setEstado :: Seta atributo estado">
-            <span class="description">Seta atributo estado</span><pre>setEstado</pre>
+                                                                                                                                                                <li class="method public inherited">
+        <a href="#method_insert" title="insert :: Cria o objeto e insere no banco de dados">
+            <span class="description">Cria o objeto e insere no banco de dados</span><pre>insert</pre>
         </a>
     </li>
 
-                                                                                                        <li class="method public">
-        <a href="#method_setHabito" title="setHabito :: Seta atributo habito">
-            <span class="description">Seta atributo habito</span><pre>setHabito</pre>
+                                                                                                        <li class="method public inherited">
+        <a href="#method_msgSuccess" title="msgSuccess :: Exibe mensagem de sucesso da operação">
+            <span class="description">Exibe mensagem de sucesso da operação</span><pre>msgSuccess</pre>
         </a>
     </li>
 
-                                                                                                        <li class="method public">
-        <a href="#method_setId" title="setId :: Seta atributo id">
-            <span class="description">Seta atributo id</span><pre>setId</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_setPaciente" title="setPaciente :: Seta atributo paciente">
-            <span class="description">Seta atributo paciente</span><pre>setPaciente</pre>
-        </a>
-    </li>
-
-                                                                                                        <li class="method public">
-        <a href="#method_toArray" title="toArray :: Converte a entidade em array">
-            <span class="description">Converte a entidade em array</span><pre>toArray</pre>
+                                                                                                                                                                <li class="method public inherited">
+        <a href="#method_update" title="update :: Recupera o objeto e atualiza">
+            <span class="description">Recupera o objeto e atualiza</span><pre>update</pre>
         </a>
     </li>
 
@@ -183,7 +171,17 @@
         </li>
         <li class="nav-header protected">» Protected
             <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+                                                                                                                                                                                                                                                                <li class="method protected inherited">
+                            <a href="#method_getPermissao" title="getPermissao :: Checa se existe sessão aberta e se o perfil do usuário tem permissão para acessar o recurso">
+                                <span class="description">Checa se existe sessão aberta e se o perfil do usuário tem permissão para acessar o recurso</span><pre>getPermissao</pre>
+                            </a>
+                        </li>
+                                                                                                                                                        <li class="method protected inherited">
+                            <a href="#method_persist" title="persist :: Persiste o objeto no banco de dados">
+                                <span class="description">Persiste o objeto no banco de dados</span><pre>persist</pre>
+                            </a>
+                        </li>
+                                                                                    </ul>
         </li>
         <li class="nav-header private">» Private
             <ul>
@@ -201,10 +199,11 @@
 
         <div class="span8">
             <div class="element class">
-                <h1>Parafuncionais</h1>
+                <h1>ConsultaController</h1>
                 <small style="display: block; text-align: right">
+                                            Extends <a href="odontoIFMA.controller.AbstractController.html">\odontoIFMA\controller\AbstractController</a>
                                                         </small>
-                <p class="short_description">Class Parafuncionais</p>
+                <p class="short_description">Class ConsultaController</p>
                 <div class="details">
                     <div class="long_description">
                         
@@ -216,25 +215,7 @@
                                                                             </th>
                                     <td>
                                                                                     
-                                                                                <p>odontoIFMA\entity</p>
-                                    </td>
-                                </tr>
-                                                                                                                <tr>
-                                    <th>
-                                        ORM\Entity
-                                                                            </th>
-                                    <td>
-                                                                                    
-                                                                                
-                                    </td>
-                                </tr>
-                                                                                                                <tr>
-                                    <th>
-                                        ORM\Table
-                                                                            </th>
-                                    <td>
-                                                                                    
-                                                                                <p>(name=&quot;parafuncionais&quot;)</p>
+                                                                                <p>odontoIFMA\controller</p>
                                     </td>
                                 </tr>
                                                                                                                                                                                 </table>
@@ -242,8 +223,8 @@
                     <h3><i class="icon-custom icon-method"></i> Methods</h3>
                                                                 <a id="method___construct"></a>
                         <div class="element clickable method public  method___construct" data-toggle="collapse" data-target=".method___construct .collapse">
-                            <h2>Inicializa entidade</h2>
-                            <pre>__construct(array $data = array()) </pre>
+                            <h2>Inicialização da classe</h2>
+                            <pre>__construct(object $app) </pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
@@ -264,18 +245,18 @@
 
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
-                                                <h4>$data</h4>
-                                                <code>array</code><p><p>Dados para popular entidade</p></p>
+                                                <h4>$app</h4>
+                                                <code>object</code><p><p>Instância de app</p></p>
                                             </div>
                                                                             
                                                                     </div>
                             </div>
 
                         </div>
-                                            <a id="method_getHabito"></a>
-                        <div class="element clickable method public  method_getHabito" data-toggle="collapse" data-target=".method_getHabito .collapse">
-                            <h2>Retorna atributo habito</h2>
-                            <pre>getHabito() : \odontoIFMA\entity\TipoHabito</pre>
+                                            <a id="method_consultas"></a>
+                        <div class="element clickable method public  method_consultas" data-toggle="collapse" data-target=".method_consultas .collapse">
+                            <h2>Tela de consultas</h2>
+                            <pre>consultas() : mixed</pre>
                             <div class="labels">
                                                                                                                                                                                             </div>
 
@@ -296,17 +277,17 @@
 
                                     
                                                                             <h3>Response</h3>
-                                        <code><a href="../classes/odontoIFMA.entity.TipoHabito.html">\odontoIFMA\entity\TipoHabito</a></code><p></p>
+                                        <code>mixed</code><p><p>Retorna a tela de consultas</p></p>
                                                                     </div>
                             </div>
 
                         </div>
-                                            <a id="method_getId"></a>
-                        <div class="element clickable method public  method_getId" data-toggle="collapse" data-target=".method_getId .collapse">
-                            <h2>Retorna atributo id</h2>
-                            <pre>getId() : integer</pre>
+                                            <a id="method_delete"></a>
+                        <div class="element clickable method public  method_delete inherited" data-toggle="collapse" data-target=".method_delete .collapse">
+                            <h2>Deleta um objeto</h2>
+                            <pre>delete(Integer $id) : Integer</pre>
                             <div class="labels">
-                                                                                                                                                                                            </div>
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
 
                             
                             <div class="row collapse">
@@ -316,160 +297,11 @@
                                     <table class="table">
                                                                                     <tr>
                                                 <th>
-                                                    
+                                                    throws
                                                 </th>
                                                 <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                            </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>integer</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_getPaciente"></a>
-                        <div class="element clickable method public  method_getPaciente" data-toggle="collapse" data-target=".method_getPaciente .collapse">
-                            <h2>Retorna atributo paciente</h2>
-                            <pre>getPaciente() : object</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                            </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>object</code><p><p>Paciente</p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_isEstado"></a>
-                        <div class="element clickable method public  method_isEstado" data-toggle="collapse" data-target=".method_isEstado .collapse">
-                            <h2>Retorna atributo estado</h2>
-                            <pre>isEstado() : boolean</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                            </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>boolean</code><p></p>
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setEstado"></a>
-                        <div class="element clickable method public  method_setEstado" data-toggle="collapse" data-target=".method_setEstado .collapse">
-                            <h2>Seta atributo estado</h2>
-                            <pre>setEstado(boolean $estado) </pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                            </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$estado</h4>
-                                                <code>boolean</code><p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setHabito"></a>
-                        <div class="element clickable method public  method_setHabito" data-toggle="collapse" data-target=".method_setHabito .collapse">
-                            <h2>Seta atributo habito</h2>
-                            <pre>setHabito(\odontoIFMA\entity\TipoHabito $habito) </pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                            </table>
-
-                                                                            <h3>Arguments</h3>
-                                                                                    <div class="subelement argument">
-                                                <h4>$habito</h4>
-                                                <code><a href="../classes/odontoIFMA.entity.TipoHabito.html">\odontoIFMA\entity\TipoHabito</a></code><p></p>
-                                            </div>
-                                                                            
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_setId"></a>
-                        <div class="element clickable method public  method_setId" data-toggle="collapse" data-target=".method_setId .collapse">
-                            <h2>Seta atributo id</h2>
-                            <pre>setId(integer $id) </pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Se o objeto não for encontrado ou o Id não for definido</p>
                                                                                                     </td>
                                             </tr>
                                                                             </table>
@@ -477,19 +309,21 @@
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
                                                 <h4>$id</h4>
-                                                <code>integer</code><p></p>
+                                                <code>Integer</code><p><p>Id do objeto a ser deletado</p></p>
                                             </div>
                                                                             
+                                                                            <h3>Response</h3>
+                                        <code>Integer</code><p><p>O Id deletado</p></p>
                                                                     </div>
                             </div>
 
                         </div>
-                                            <a id="method_setPaciente"></a>
-                        <div class="element clickable method public  method_setPaciente" data-toggle="collapse" data-target=".method_setPaciente .collapse">
-                            <h2>Seta atributo paciente</h2>
-                            <pre>setPaciente(\odontoIFMA\entity\Paciente $paciente) </pre>
+                                            <a id="method_findDateInterval"></a>
+                        <div class="element clickable method public  method_findDateInterval inherited" data-toggle="collapse" data-target=".method_findDateInterval .collapse">
+                            <h2>Executa consulta no banco de dados usando a intervalo de datas</h2>
+                            <pre>findDateInterval(string $sql, string $dateIni, string $dateFim) : array</pre>
                             <div class="labels">
-                                                                                                                                                                                            </div>
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
 
                             
                             <div class="row collapse">
@@ -499,29 +333,41 @@
                                     <table class="table">
                                                                                     <tr>
                                                 <th>
-                                                    
+                                                    throws
                                                 </th>
                                                 <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Caso ocorra erro durante a consulta</p>
                                                                                                     </td>
                                             </tr>
                                                                             </table>
 
                                                                             <h3>Arguments</h3>
                                                                                     <div class="subelement argument">
-                                                <h4>$paciente</h4>
-                                                <code><a href="../classes/odontoIFMA.entity.Paciente.html">\odontoIFMA\entity\Paciente</a></code><p></p>
+                                                <h4>$sql</h4>
+                                                <code>string</code><p><p>A query a ser usada na consulta</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$dateIni</h4>
+                                                <code>string</code><p><p>data inicial</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$dateFim</h4>
+                                                <code>string</code><p><p>data final</p></p>
                                             </div>
                                                                             
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p></p>
                                                                     </div>
                             </div>
 
                         </div>
-                                            <a id="method_toArray"></a>
-                        <div class="element clickable method public  method_toArray" data-toggle="collapse" data-target=".method_toArray .collapse">
-                            <h2>Converte a entidade em array</h2>
-                            <pre>toArray() : array</pre>
+                                            <a id="method_findLike"></a>
+                        <div class="element clickable method public  method_findLike inherited" data-toggle="collapse" data-target=".method_findLike .collapse">
+                            <h2>Executa consulta no banco de dados usando a cláusula LIKE</h2>
+                            <pre>findLike(string $sql, string $param) : array</pre>
                             <div class="labels">
-                                                                                                                                                                                            </div>
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
 
                             
                             <div class="row collapse">
@@ -529,6 +375,55 @@
                                     <div class="long_description"></div>
 
                                     <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    throws
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Caso ocorra erro durante a consulta</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$sql</h4>
+                                                <code>string</code><p><p>A query a ser usada na consulta</p></p>
+                                            </div>
+                                                                                    <div class="subelement argument">
+                                                <h4>$param</h4>
+                                                <code>string</code><p><p>O parâmetro de busca</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>array</code><p><p>Resultado da consulta</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_getPermissao"></a>
+                        <div class="element clickable method protected  method_getPermissao inherited" data-toggle="collapse" data-target=".method_getPermissao .collapse">
+                            <h2>Checa se existe sessão aberta e se o perfil do usuário tem permissão para acessar o recurso</h2>
+                            <pre>getPermissao() : void</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    throws
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Se não houver sessão aberta ou não houver permissão de acesso</p>
+                                                                                                    </td>
+                                            </tr>
                                                                                     <tr>
                                                 <th>
                                                     
@@ -539,8 +434,141 @@
                                                                             </table>
 
                                     
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_insert"></a>
+                        <div class="element clickable method public  method_insert inherited" data-toggle="collapse" data-target=".method_insert .collapse">
+                            <h2>Cria o objeto e insere no banco de dados</h2>
+                            <pre>insert(array $dados) : object</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    throws
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Se os dados estiverem vazios</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$dados</h4>
+                                                <code>array</code><p><p>Dados para criação do objeto a ser persistido</p></p>
+                                            </div>
+                                                                            
                                                                             <h3>Response</h3>
-                                        <code>array</code><p></p>
+                                        <code>object</code><p><p>Retorna o objeto persistido</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_msgSuccess"></a>
+                        <div class="element clickable method public  method_msgSuccess inherited" data-toggle="collapse" data-target=".method_msgSuccess .collapse">
+                            <h2>Exibe mensagem de sucesso da operação</h2>
+                            <pre>msgSuccess(array $params) : mixed</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$params</h4>
+                                                <code>array</code><p><p>Dados para exibição na mensagem</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>mixed</code><p><p>Tela de sucesso</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_persist"></a>
+                        <div class="element clickable method protected  method_persist inherited" data-toggle="collapse" data-target=".method_persist .collapse">
+                            <h2>Persiste o objeto no banco de dados</h2>
+                            <pre>persist(object $entity) : object</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    throws
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Caso ocorra erro durante a persistência</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$entity</h4>
+                                                <code>object</code><p><p>Objeto a ser persistido no banco de dados</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>object</code><p><p>O objeto persistido</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_update"></a>
+                        <div class="element clickable method public  method_update inherited" data-toggle="collapse" data-target=".method_update .collapse">
+                            <h2>Recupera o objeto e atualiza</h2>
+                            <pre>update(array $dados) : object</pre>
+                            <div class="labels">
+                                <span class="label">inherited</span>                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    throws
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Se os dados estiverem vazios ou o objeto não puder ser encontrado</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                                                            <h3>Arguments</h3>
+                                                                                    <div class="subelement argument">
+                                                <h4>$dados</h4>
+                                                <code>array</code><p><p>Dados para localizar e atualizar o objeto</p></p>
+                                            </div>
+                                                                            
+                                                                            <h3>Response</h3>
+                                        <code>object</code><p><p>Retorna o objeto atualizado</p></p>
                                                                     </div>
                             </div>
 
@@ -548,12 +576,12 @@
                     
                     
                                                                 <h3><i class="icon-custom icon-property"></i> Properties</h3>
-                                                    <a id="property_id"> </a>
-                            <div class="element clickable property  private property_id" data-toggle="collapse" data-target=".property_id .collapse">
-                                <h2>Atributo id</h2>
-                                <pre>id : integer</pre>
+                                                    <a id="property_app"> </a>
+                            <div class="element clickable property  protected property_app inherited" data-toggle="collapse" data-target=".property_app .collapse">
+                                <h2>Recebe instância da aplicação</h2>
+                                <pre>app : object</pre>
                                 <div class="labels">
-                                                                                                        </div>
+                                    <span class="label">inherited</span>                                                                    </div>
                                 <div class="row collapse">
                                     <div class="detail-description">
                                         <div class="long_description"></div>
@@ -564,46 +592,22 @@
                                                         var
                                                     </th>
                                                     <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                            <tr>
-                                                    <th>
-                                                        ORM\Column
-                                                    </th>
-                                                    <td>
-                                                                                                                    <p>(name=&quot;id&quot;, type=&quot;integer&quot;, nullable=false)</p>
-                                                                                                            </td>
-                                                </tr>
-                                                                                            <tr>
-                                                    <th>
-                                                        ORM\Id
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                            <tr>
-                                                    <th>
-                                                        ORM\GeneratedValue
-                                                    </th>
-                                                    <td>
-                                                                                                                    <p>(strategy=&quot;IDENTITY&quot;)</p>
+                                                                                                                    <p>Recebe instância da aplicação</p>
                                                                                                             </td>
                                                 </tr>
                                                                                     </table>
 
                                                                                     <h3>Type(s)</h3>
-                                            <code>integer</code>
+                                            <code>object</code>
                                                                             </div>
                                 </div>
                             </div>
-                                                    <a id="property_habito"> </a>
-                            <div class="element clickable property  private property_habito" data-toggle="collapse" data-target=".property_habito .collapse">
-                                <h2>Atributo habito</h2>
-                                <pre>habito : \odontoIFMA\entity\TipoHabito</pre>
+                                                    <a id="property_em"> </a>
+                            <div class="element clickable property  protected property_em inherited" data-toggle="collapse" data-target=".property_em .collapse">
+                                <h2>Recebe instância do entity manager do Doctrine</h2>
+                                <pre>em : object</pre>
                                 <div class="labels">
-                                                                                                        </div>
+                                    <span class="label">inherited</span>                                                                    </div>
                                 <div class="row collapse">
                                     <div class="detail-description">
                                         <div class="long_description"></div>
@@ -614,47 +618,22 @@
                                                         var
                                                     </th>
                                                     <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                            <tr>
-                                                    <th>
-                                                        ORM\ManyToOne
-                                                    </th>
-                                                    <td>
-                                                                                                                    <p>(targetEntity=&quot;TipoHabito&quot;)</p>
-                                                                                                            </td>
-                                                </tr>
-                                                                                            <tr>
-                                                    <th>
-                                                        ORM\JoinColumns
-                                                    </th>
-                                                    <td>
-                                                                                                                    <p>({</p>
-                                                                                                            </td>
-                                                </tr>
-                                                                                            <tr>
-                                                    <th>
-                                                        ORM\JoinColumn
-                                                    </th>
-                                                    <td>
-                                                                                                                    <p>(name=&quot;habito&quot;, referencedColumnName=&quot;id&quot;)
-})</p>
+                                                                                                                    <p>Recebe instância do entity manager do Doctrine</p>
                                                                                                             </td>
                                                 </tr>
                                                                                     </table>
 
                                                                                     <h3>Type(s)</h3>
-                                            <code><a href="../classes/odontoIFMA.entity.TipoHabito.html">\odontoIFMA\entity\TipoHabito</a></code>
+                                            <code>object</code>
                                                                             </div>
                                 </div>
                             </div>
-                                                    <a id="property_estado"> </a>
-                            <div class="element clickable property  private property_estado" data-toggle="collapse" data-target=".property_estado .collapse">
-                                <h2>Atributo estado</h2>
-                                <pre>estado : boolean</pre>
+                                                    <a id="property_entity"> </a>
+                            <div class="element clickable property  protected property_entity inherited" data-toggle="collapse" data-target=".property_entity .collapse">
+                                <h2>Recebe o nome da entidade a ser instânciada</h2>
+                                <pre>entity : String</pre>
                                 <div class="labels">
-                                                                                                        </div>
+                                    <span class="label">inherited</span>                                                                    </div>
                                 <div class="row collapse">
                                     <div class="detail-description">
                                         <div class="long_description"></div>
@@ -665,85 +644,26 @@
                                                         var
                                                     </th>
                                                     <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                            <tr>
-                                                    <th>
-                                                        ORM\Column
-                                                    </th>
-                                                    <td>
-                                                                                                                    <p>(name=&quot;estado&quot;, type=&quot;boolean&quot;, nullable=false)</p>
+                                                                                                                    <p>Recebe o nome da entidade a ser instânciada</p>
                                                                                                             </td>
                                                 </tr>
                                                                                     </table>
 
                                                                                     <h3>Type(s)</h3>
-                                            <code>boolean</code>
-                                                                            </div>
-                                </div>
-                            </div>
-                                                    <a id="property_paciente"> </a>
-                            <div class="element clickable property  private property_paciente" data-toggle="collapse" data-target=".property_paciente .collapse">
-                                <h2>Atributo paciente</h2>
-                                <pre>paciente : \odontoIFMA\entity\Paciente</pre>
-                                <div class="labels">
-                                                                                                        </div>
-                                <div class="row collapse">
-                                    <div class="detail-description">
-                                        <div class="long_description"></div>
-
-                                        <table class="table">
-                                                                                            <tr>
-                                                    <th>
-                                                        var
-                                                    </th>
-                                                    <td>
-                                                                                                                    
-                                                                                                            </td>
-                                                </tr>
-                                                                                            <tr>
-                                                    <th>
-                                                        ORM\ManyToOne
-                                                    </th>
-                                                    <td>
-                                                                                                                    <p>(targetEntity=&quot;Paciente&quot;, inversedBy=&quot;parafuncionais&quot;)</p>
-                                                                                                            </td>
-                                                </tr>
-                                                                                            <tr>
-                                                    <th>
-                                                        ORM\JoinColumns
-                                                    </th>
-                                                    <td>
-                                                                                                                    <p>({</p>
-                                                                                                            </td>
-                                                </tr>
-                                                                                            <tr>
-                                                    <th>
-                                                        ORM\JoinColumn
-                                                    </th>
-                                                    <td>
-                                                                                                                    <p>(name=&quot;paciente&quot;, referencedColumnName=&quot;id&quot;)
-})</p>
-                                                                                                            </td>
-                                                </tr>
-                                                                                    </table>
-
-                                                                                    <h3>Type(s)</h3>
-                                            <code><a href="../classes/odontoIFMA.entity.Paciente.html">\odontoIFMA\entity\Paciente</a></code>
+                                            <code>String</code>
                                                                             </div>
                                 </div>
                             </div>
                                                             </div>
             </div>
-            <a id="\odontoIFMA\entity\Parafuncionais"></a>
+            <a id="\odontoIFMA\controller\ConsultaController"></a>
             <ul class="breadcrumb">
                 <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
                     
     
-    <li><span class="divider">\</span><a href="../namespaces/odontoIFMA.entity.html">entity</a></li>
+    <li><span class="divider">\</span><a href="../namespaces/odontoIFMA.controller.html">controller</a></li>
 
-                <li class="active"><span class="divider">\</span><a href="../classes/odontoIFMA.entity.Parafuncionais.html">Parafuncionais</a></li>
+                <li class="active"><span class="divider">\</span><a href="../classes/odontoIFMA.controller.ConsultaController.html">ConsultaController</a></li>
             </ul>
         </div>
     </div>
@@ -754,7 +674,7 @@
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Thu, 25 Jun 2015 18:52:54 +0000.<br/>
+            generated on Thu, 25 Jun 2015 18:52:55 +0000.<br/>
     </footer>
     </body>
 </html>

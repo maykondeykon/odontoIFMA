@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <meta charset="utf-8"/>
-    <title>    OdontoIFMA &raquo; \odontoIFMA\controller\ConsultaController
+    <title>    OdontoIFMA &raquo; \odontoIFMA\controller\IndexController
 </title>
     <meta name="author" content=""/>
     <meta name="description" content=""/>
@@ -125,12 +125,6 @@
         </a>
     </li>
 
-                                                                                                        <li class="method public">
-        <a href="#method_consultas" title="consultas :: Tela de consultas">
-            <span class="description">Tela de consultas</span><pre>consultas</pre>
-        </a>
-    </li>
-
                                                                                                         <li class="method public inherited">
         <a href="#method_delete" title="delete :: Deleta um objeto">
             <span class="description">Deleta um objeto</span><pre>delete</pre>
@@ -149,9 +143,27 @@
         </a>
     </li>
 
-                                                                                                                                                                <li class="method public inherited">
+                                                                                                                                                                <li class="method public">
+        <a href="#method_home" title="home :: Tela home">
+            <span class="description">Tela home</span><pre>home</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_index" title="index :: Tela de login">
+            <span class="description">Tela de login</span><pre>index</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public inherited">
         <a href="#method_insert" title="insert :: Cria o objeto e insere no banco de dados">
             <span class="description">Cria o objeto e insere no banco de dados</span><pre>insert</pre>
+        </a>
+    </li>
+
+                                                                                                        <li class="method public">
+        <a href="#method_login" title="login :: Autentica os dados do login">
+            <span class="description">Autentica os dados do login</span><pre>login</pre>
         </a>
     </li>
 
@@ -171,12 +183,12 @@
         </li>
         <li class="nav-header protected">» Protected
             <ul>
-                                                                                                                                                                                                                                                                <li class="method protected inherited">
+                                                                                                                                                                                                                            <li class="method protected inherited">
                             <a href="#method_getPermissao" title="getPermissao :: Checa se existe sessão aberta e se o perfil do usuário tem permissão para acessar o recurso">
                                 <span class="description">Checa se existe sessão aberta e se o perfil do usuário tem permissão para acessar o recurso</span><pre>getPermissao</pre>
                             </a>
                         </li>
-                                                                                                                                                        <li class="method protected inherited">
+                                                                                                                                                                                                                                                                    <li class="method protected inherited">
                             <a href="#method_persist" title="persist :: Persiste o objeto no banco de dados">
                                 <span class="description">Persiste o objeto no banco de dados</span><pre>persist</pre>
                             </a>
@@ -185,7 +197,7 @@
         </li>
         <li class="nav-header private">» Private
             <ul>
-                                                                                                                                                                                                                                                                                                                                                                                                                    </ul>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </ul>
         </li>
         <li class="nav-header">
             <i class="icon-custom icon-constant"></i> Constants
@@ -199,11 +211,11 @@
 
         <div class="span8">
             <div class="element class">
-                <h1>ConsultaController</h1>
+                <h1>IndexController</h1>
                 <small style="display: block; text-align: right">
-                                            Extends <a href="../classes/odontoIFMA.controller.AbstractController.html">\odontoIFMA\controller\AbstractController</a>
+                                            Extends <a href="odontoIFMA.controller.AbstractController.html">\odontoIFMA\controller\AbstractController</a>
                                                         </small>
-                <p class="short_description">Class ConsultaController</p>
+                <p class="short_description">Class IndexController</p>
                 <div class="details">
                     <div class="long_description">
                         
@@ -249,35 +261,6 @@
                                                 <code>object</code><p><p>Instância de app</p></p>
                                             </div>
                                                                             
-                                                                    </div>
-                            </div>
-
-                        </div>
-                                            <a id="method_consultas"></a>
-                        <div class="element clickable method public  method_consultas" data-toggle="collapse" data-target=".method_consultas .collapse">
-                            <h2>Tela de consultas</h2>
-                            <pre>consultas() : mixed</pre>
-                            <div class="labels">
-                                                                                                                                                                                            </div>
-
-                            
-                            <div class="row collapse">
-                                <div class="detail-description">
-                                    <div class="long_description"></div>
-
-                                    <table class="table">
-                                                                                    <tr>
-                                                <th>
-                                                    
-                                                </th>
-                                                <td>
-                                                                                                    </td>
-                                            </tr>
-                                                                            </table>
-
-                                    
-                                                                            <h3>Response</h3>
-                                        <code>mixed</code><p><p>Retorna a tela de consultas</p></p>
                                                                     </div>
                             </div>
 
@@ -438,6 +421,64 @@
                             </div>
 
                         </div>
+                                            <a id="method_home"></a>
+                        <div class="element clickable method public  method_home" data-toggle="collapse" data-target=".method_home .collapse">
+                            <h2>Tela home</h2>
+                            <pre>home() : mixed</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>mixed</code><p><p>Tela inicial</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_index"></a>
+                        <div class="element clickable method public  method_index" data-toggle="collapse" data-target=".method_index .collapse">
+                            <h2>Tela de login</h2>
+                            <pre>index() : mixed</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>mixed</code><p><p>Tela de login</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
                                             <a id="method_insert"></a>
                         <div class="element clickable method public  method_insert inherited" data-toggle="collapse" data-target=".method_insert .collapse">
                             <h2>Cria o objeto e insere no banco de dados</h2>
@@ -470,6 +511,44 @@
                                                                             
                                                                             <h3>Response</h3>
                                         <code>object</code><p><p>Retorna o objeto persistido</p></p>
+                                                                    </div>
+                            </div>
+
+                        </div>
+                                            <a id="method_login"></a>
+                        <div class="element clickable method public  method_login" data-toggle="collapse" data-target=".method_login .collapse">
+                            <h2>Autentica os dados do login</h2>
+                            <pre>login() : mixed</pre>
+                            <div class="labels">
+                                                                                                                                                                                            </div>
+
+                            
+                            <div class="row collapse">
+                                <div class="detail-description">
+                                    <div class="long_description"></div>
+
+                                    <table class="table">
+                                                                                    <tr>
+                                                <th>
+                                                    throws
+                                                </th>
+                                                <td>
+                                                                                                                                                                        
+                                                                                                                                                                        <p>Caso o usuário ou senha sejam inválidos</p>
+                                                                                                    </td>
+                                            </tr>
+                                                                                    <tr>
+                                                <th>
+                                                    
+                                                </th>
+                                                <td>
+                                                                                                    </td>
+                                            </tr>
+                                                                            </table>
+
+                                    
+                                                                            <h3>Response</h3>
+                                        <code>mixed</code><p><p>Direciona para a tela principal</p></p>
                                                                     </div>
                             </div>
 
@@ -656,14 +735,14 @@
                             </div>
                                                             </div>
             </div>
-            <a id="\odontoIFMA\controller\ConsultaController"></a>
+            <a id="\odontoIFMA\controller\IndexController"></a>
             <ul class="breadcrumb">
                 <li><a href="../index.html"><i class="icon-custom icon-class"></i></a></li>
                     
     
     <li><span class="divider">\</span><a href="../namespaces/odontoIFMA.controller.html">controller</a></li>
 
-                <li class="active"><span class="divider">\</span><a href="../classes/odontoIFMA.controller.ConsultaController.html">ConsultaController</a></li>
+                <li class="active"><span class="divider">\</span><a href="../classes/odontoIFMA.controller.IndexController.html">IndexController</a></li>
             </ul>
         </div>
     </div>
@@ -674,7 +753,7 @@
             Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
             <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
             Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
-            generated on Thu, 25 Jun 2015 18:52:55 +0000.<br/>
+            generated on Thu, 25 Jun 2015 18:52:54 +0000.<br/>
     </footer>
     </body>
 </html>
