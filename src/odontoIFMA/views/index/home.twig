@@ -1,26 +1,50 @@
 {% extends 'template/template.twig' %}
 {% block content %}
 
-    <div class="btnWrapper">
-         <a href='/cadastro/atendimento'><img class='botaoAtendimento' src='/img/AtendimentoBotao.jpg'>
-    </div>
-    <div class="btnWrapper">
-         <a href='/cadastro/paciente'><img class='botaoPaciente' src='/img/PacienteBotao.jpg'>
-    </div>
-    <div class="btnWrapper">
-         <a href='/cadastro/campus'><img class='botaoCampus' src='/img/CampusBotao.jpg'>
-    </div>
-    <div class="btnWrapper">
-         <a href='/cadastro/anamnese'><img class='botaoAnamnese' src='/img/AnamneseBotao.jpg'>
-    </div>
-    <div class="btnWrapper">
-    	 <a href='/cadastro/tipo-operador'><img class='botaoTipoOperador' src='/img/tipoOperadorbotao.jpg'></a>
-    </div>
-    <div class="btnWrapper">
-    	 <a href='/cadastro/operador'><img class='botaoOperador' src='/img/OperadorBotao.jpg'>
-    </div> 
-     <div class="btnWrapper">
-         <a href='/consultas'><img class='botaoConsultas' src='/img/botaoConsultas.jpg'>
-    </div> 
+    {#<div class="btnWrapper">#}
+         {#<a href='/cadastro/atendimento'><img class='botaoAtendimento' src='/img/AtendimentoBotao.jpg'>#}
+    {#</div>#}
+    {#<div class="btnWrapper">#}
+         {#<a href='/cadastro/paciente'><img class='botaoPaciente' src='/img/PacienteBotao.jpg'>#}
+    {#</div>#}
+    {#<div class="btnWrapper">#}
+         {#<a href='/cadastro/campus'><img class='botaoCampus' src='/img/CampusBotao.jpg'>#}
+    {#</div>#}
+    {#<div class="btnWrapper">#}
+         {#<a href='/cadastro/anamnese'><img class='botaoAnamnese' src='/img/AnamneseBotao.jpg'>#}
+    {#</div>#}
+    {#<div class="btnWrapper">#}
+    	 {#<a href='/cadastro/tipo-operador'><img class='botaoTipoOperador' src='/img/tipoOperadorbotao.jpg'></a>#}
+    {#</div>#}
+    {#<div class="btnWrapper">#}
+    	 {#<a href='/cadastro/operador'><img class='botaoOperador' src='/img/OperadorBotao.jpg'>#}
+    {#</div> #}
+     {#<div class="btnWrapper">#}
+         {#<a href='/consultas'><img class='botaoConsultas' src='/img/botaoConsultas.jpg'>#}
+    {#</div> #}
+
+    <table class="table table-bordered table-hover dataTable" id="tableAgenda" width="100%" cellspacing="0"
+           style="font-size: 13px;">
+        <thead>
+        <tr>
+            <th>Data/Hora</th>
+            <th>Paciente</th>
+            <th>Dentista</th>
+            <th>Agendado em</th>
+            <th>Ação</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in agenda %}
+        <tr>
+            <td>{{ item.getDtAgendamento|date("d/m/Y H:i") }}</td>
+            <td>{{ item.getPaciente.getNome }}</td>
+            <td>{{ item.getDentista.getNome }}</td>
+            <td>{{ item.getCriadoEm|date("d/m/Y H:i:s") }}</td>
+            <td></td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
     
 {% endblock %}

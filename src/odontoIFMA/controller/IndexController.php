@@ -80,6 +80,12 @@ class IndexController extends AbstractController
     public function home()
     {
         $this->getPermissao();
-        return $this->app['twig']->render('index/home.twig', array("active_page" => "home"));
+        $repoAgendamento = $this->em->getRepository('odontoIFMA\entity\Agendamento');
+        $agenda = $repoAgendamento->findAll();
+
+        return $this->app['twig']->render('index/home.twig', array(
+            "active_page" => "home",
+            "agenda" => $agenda
+        ));
     }
 }
