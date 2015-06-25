@@ -49,22 +49,22 @@
               </ul>
           </li>
 
-          <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-edit"></i>Alteração</i> <b
-                          class="caret"></b></a>
-              <ul class="dropdown-menu">
-                  <li>
-                      {% for item in app.session.get('usuario').recursos %}
-                          {% if item[0] == 'alteracao' %}
-                              <li {% if item[1] == active_page %} class="active" {% endif %}>
-                                  <a href="{{ app.url_generator.generate(item[1]) }}">{{ item[3] }}
-                                  </a>
-                              </li>
-                          {% endif %}
-                      {% endfor %}
-                  </li>
-              </ul>
-          </li>
+          {#<li class="dropdown">#}
+              {#<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-fw fa-edit"></i>Alteração</i> <b#}
+                          {#class="caret"></b></a>#}
+              {#<ul class="dropdown-menu">#}
+                  {#<li>#}
+                      {#{% for item in app.session.get('usuario').recursos %}#}
+                          {#{% if item[0] == 'alteracao' %}#}
+                              {#<li {% if item[1] == active_page %} class="active" {% endif %}>#}
+                                  {#<a href="{{ app.url_generator.generate(item[1]) }}">{{ item[3] }}#}
+                                  {#</a>#}
+                              {#</li>#}
+                          {#{% endif %}#}
+                      {#{% endfor %}#}
+                  {#</li>#}
+              {#</ul>#}
+          {#</li>#}
 
       </ul>
     </div>
