@@ -41,7 +41,7 @@
             <td>{{ item.pacienteNome }}</td>
             <td>{{ item.dentistaNome }}</td>
             <td>{{ item.criadoEm }}</td>
-            <td></td>
+            <td><a class='btn btn-default' href='/cadastro/editar/agendamento/{{ item.id }}' title="Editar"><i class='fa fa-edit'></i> </a></td>
         </tr>
         {% endfor %}
         </tbody>
