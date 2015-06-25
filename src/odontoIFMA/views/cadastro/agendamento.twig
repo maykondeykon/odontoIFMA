@@ -1,0 +1,60 @@
+{% extends 'template/template.twig' %}
+{% block content %}
+
+    <form class="form-horizontal form-padrao" id="formAtendimento" method="post"
+          action="/cadastro/salvar/salvarAgendamento">
+
+        <div class="form-group">
+            <label for="pacienteNome" class="col-sm-2 control-label">Paciente </label>
+
+            <div class="col-sm-6">
+                <input type="text" class="form-control uppercase pacienteNome" name="pacienteNome"
+                       id="pacienteNome" placeholder="Paciente" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="dtAgendamento" class="col-sm-2 control-label">Agendar para</label>
+
+            <div class="col-sm-6">
+                <input type="text" class="form-control uppercase datepickerTime" name="dtAgendamento"
+                       id="dtAgendamento" placeholder="Data do agendamento" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="dentistaNome" class="col-sm-2 control-label">Dentista </label>
+
+            <div class="col-sm-6">
+                <input type="text" class="form-control uppercase dentistaNome" name="dentistaNome"
+                       id="dentistaNome" placeholder="Dentista" value="">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="obs" class="col-sm-2 control-label">Observação</label>
+
+            <div class="col-sm-6">
+                <textarea class="form-control uppercase textareaNoResize" name="obs" id="obs"
+                          placeholder="Observação" rows="3"></textarea>
+            </div>
+        </div>
+
+        {#Hiddens#}
+        <input type="hidden" class="pacienteId" name="pacienteId">
+        <input type="hidden" class="dentistaId" name="dentistaId">
+        <input type="hidden" id="id" name="id">
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-6">
+                <button type="submit" class="btn btn-primary">
+                    <span class="glyphicon glyphicon-ok"></span> Salvar
+                </button>
+                <a class="btn btn-default" href="/home"><i
+                            class="glyphicon glyphicon-remove"></i> Cancelar</a>
+            </div>
+        </div>
+
+    </form>
+
+{% endblock %}

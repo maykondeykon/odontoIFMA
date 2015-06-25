@@ -37,6 +37,7 @@ $params = array(
 );
 
 Doctrine\DBAL\Types\Type::overrideType("datetime", "Doctrine\\DBAL\\Types\\VarDateTimeType");
+date_default_timezone_set('America/Fortaleza');
 
 $app = new Application();
 

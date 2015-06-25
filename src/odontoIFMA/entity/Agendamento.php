@@ -42,10 +42,8 @@ class Agendamento
     /**
      * Atributo paciente
      * @var Paciente $paciente
-     * @ORM\ManyToOne(targetEntity="Paciente", inversedBy="agendamento")
-     * @ORM\JoinColumns({
+     * @ORM\ManyToOne(targetEntity="Paciente")
      * @ORM\JoinColumn(name="paciente", referencedColumnName="id")
-     * })
      */
     private $paciente;
 
@@ -82,7 +80,7 @@ class Agendamento
     /**
      * Atributo atualizadoEm
      * @var datetime $atualizadoEm
-     * @ORM\Column(name="atualizado_em", type="datetime", nullable=true)
+     * @ORM\Column(name="alterado_em", type="datetime", nullable=true)
      */
     private $atualizadoEm;
 
@@ -93,10 +91,6 @@ class Agendamento
     public function __construct(array $data = array())
     {
         (new Hydrator\ClassMethods())->hydrate($data, $this);
-
-        $this->parafuncionais = new ArrayCollection();
-        $this->queixaPrincipal = new ArrayCollection();
-        $this->historiaMedica = new ArrayCollection();
     }
 
     /**
@@ -144,7 +138,7 @@ class Agendamento
      */
     public function setDtAgendamento($dtAgendamento)
     {
-        $this->dtAgendamento = $dtAgendamento;
+        $this->dtAgendamento = date_create_from_format('d/m/Y H:i', $dtAgendamento);
         return $this;
     }
 

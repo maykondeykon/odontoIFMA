@@ -38,10 +38,6 @@ class StatusAgendamento
     public function __construct(array $data = array())
     {
         (new Hydrator\ClassMethods())->hydrate($data, $this);
-
-        $this->parafuncionais = new ArrayCollection();
-        $this->queixaPrincipal = new ArrayCollection();
-        $this->historiaMedica = new ArrayCollection();
     }
 
     /**

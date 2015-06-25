@@ -4,6 +4,11 @@ $(function () {
         pickTime: false
     });
 
+    $('.datepickerTime').datetimepicker({
+        language: 'pt-BR',
+        pickTime: true
+    });
+
 //http://igorescobar.github.io/jQuery-Mask-Plugin/
     $(".data").mask('11/11/1111');
     $(".tel").mask('(00)0000-0000');
@@ -44,6 +49,33 @@ $(function () {
         select: function (event, ui) {
             this.value = ui.item.value;
             $('.pacienteId').val(ui.item.id);//Adiciona o id do paciente ao form
+
+            return false;
+        }
+    });
+
+    /**
+     * Retorna lista de dentistas com base no texto informado dinâmicamente
+     * @param string
+     * @return Json
+     */
+    var cache = {};
+    $(".dentistaNome").autocomplete({
+        minLength: 2,
+        source: function (request, response) {
+            var term = request.term;
+            if (term in cache) {
+                response(cache[term]);
+                return;
+            }
+            $.post("/get-json/getDentistasJson", request, function (data, status, xhr) {
+                cache[term] = data;
+                response(data);
+            });
+        },
+        select: function (event, ui) {
+            this.value = ui.item.value;
+            $('.dentistaId').val(ui.item.id);//Adiciona o id do dentista ao form
 
             return false;
         }

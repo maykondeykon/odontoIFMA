@@ -6,6 +6,7 @@ namespace odontoIFMA\controller;
 
 
 use odontoIFMA\entity\Acesso;
+use odontoIFMA\entity\Paciente;
 use odontoIFMA\entity\TipoOperador;
 use odontoIFMA\entity\HistoriaMedica;
 use odontoIFMA\entity\Parafuncionais;
@@ -388,6 +389,67 @@ class CadastroController extends AbstractController
         }
     }
 
+    public function agendamento()
+    {
+        return $this->app['twig']->render('cadastro/agendamento.twig', array(
+            "active_page" => "cadAgendamento",
+        ));
+    }
+
+    public function salvarAgendamento()
+    {
+        $this->entity = 'odontoIFMA\entity\Agendamento'; //Define a entidade que será usada
+        $repoPaciente = $this->em->getRepository('odontoIFMA\entity\Paciente');
+        $repoDentista = $this->em->getRepository('odontoIFMA\entity\Operador');
+        //Define os parâmetros que serão usados na renderização da tela com retorno da operação
+        $params = array(
+            'message' => 'Agendamento cadastrado com sucesso.', //Mensagem a ser exibida
+            'titulo' => 'Sucesso!', // Título da mensagem
+            'tipo' => 'alert-success', // Define o tipo da mensagem, erro ou sucesso
+            'icon' => 'glyphicon-ok', // Ícone do título da mensagem
+            'active_page' => 'cadAgendamento', // Define a página ativa no menu e breadcrumb
+            'btVoltar' => '/cadastro/agendamento' // Define a rota do botão voltar
+        );
+
+        if ($this->app['request']->getMethod() == 'POST') {
+            $request = $this->app['request']->request;
+            $dados = $request->all();
+
+            if (isset($dados['pacienteId'])) {
+                $paciente = $repoPaciente->find($dados['pacienteId']); // Recupera o objeto Paciente
+                if($paciente){
+                    $dados['paciente'] = $paciente;
+                }else{
+                    throw new \Exception("Paciente não encontrado.");
+                }
+            } else {
+                throw new \Exception("Id do paciente não informado.");
+            }
+
+            if (isset($dados['dentistaId'])) {
+                $dentista = $repoDentista->find($dados['dentistaId']); // Recupera o objeto Operador/Dentista
+                if($dentista){
+                    $dados['dentista'] = $dentista;
+                }else{
+                    throw new \Exception("Dentista não encontrado.");
+                }
+            } else {
+                throw new \Exception("Id do dentista não informado.");
+            }
+
+            $dados['criadoEm'] = new \DateTime('now');
+
+
+//            print_r($dados);die();
+            $this->insert($dados);
+
+            return $this->msgSuccess($params);
+        } else {
+            throw new \Exception("Método inválido.");
+        }
+
+    }
+
     /**
      * Recupera lista de pacientes
      * @param string param - parte do nome do paciente
@@ -399,6 +461,23 @@ class CadastroController extends AbstractController
         $dados = $request->all();
 
         $sql = "SELECT paciente.*,campus.nome AS campus,DATE_FORMAT(data_nasc,'%d/%m/%Y') AS data_nasc, paciente.nome as value FROM paciente JOIN campus ON campus.id = paciente.campus_id WHERE paciente.nome LIKE :param";
+        $pacientes = $this->findLike($sql, $dados['param']);
+
+        return $this->app->json($pacientes);
+
+    }
+
+    /**
+     * Recupera lista de dentistas
+     * @param string param - parte do nome do dentista
+     * @return mixed Retorna lista de dentistas no formato Json
+     */
+    public function getDentistasJson()
+    {
+        $request = $this->app['request']->request;
+        $dados = $request->all();
+
+        $sql = "SELECT *, odontoifma.operador.nome AS value FROM odontoifma.operador WHERE tipo_operador = 3 AND operador.nome LIKE :param";
         $pacientes = $this->findLike($sql, $dados['param']);
 
         return $this->app->json($pacientes);
