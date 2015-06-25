@@ -1,8 +1,8 @@
--- MySQL dump 10.15  Distrib 10.0.13-MariaDB, for Linux (x86_64)
+-- MySQL dump 10.13  Distrib 5.6.17, for Linux (x86_64)
 --
 -- Host: localhost    Database: odontoifma
 -- ------------------------------------------------------
--- Server version	10.0.13-MariaDB
+-- Server version	5.6.17
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -19,12 +19,6 @@
 -- Table structure for table `acesso`
 --
 
--- -----------------------------------------------------
--- Schema odontoifma
--- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `odontoifma` DEFAULT CHARACTER SET utf8 ;
-USE `odontoifma` ;
-
 DROP TABLE IF EXISTS `acesso`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
@@ -36,7 +30,7 @@ CREATE TABLE `acesso` (
   PRIMARY KEY (`id`,`operador_id`),
   KEY `fk_acesso_operador1_idx` (`operador_id`),
   CONSTRAINT `fk_acesso_operador1` FOREIGN KEY (`operador_id`) REFERENCES `operador` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,8 +39,46 @@ CREATE TABLE `acesso` (
 
 LOCK TABLES `acesso` WRITE;
 /*!40000 ALTER TABLE `acesso` DISABLE KEYS */;
-INSERT INTO `acesso` VALUES (3,'admin','ec517094b947c70a4c7bae092433c504',7);
+INSERT INTO `acesso` VALUES (3,'admin','ec517094b947c70a4c7bae092433c504',7),(4,'maykon','dd9c39de49ac9b69f4d77b0fb683ae9f',8),(5,'fulana','dd9c39de49ac9b69f4d77b0fb683ae9f',9),(6,'jose','dd9c39de49ac9b69f4d77b0fb683ae9f',10),(7,'maria','dd9c39de49ac9b69f4d77b0fb683ae9f',11);
 /*!40000 ALTER TABLE `acesso` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `agendamento`
+--
+
+DROP TABLE IF EXISTS `agendamento`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `agendamento` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `data_agendamento` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `data_atendimento` datetime DEFAULT NULL,
+  `paciente` int(11) NOT NULL,
+  `dentista` int(11) DEFAULT NULL,
+  `obs` varchar(255) DEFAULT NULL,
+  `criado_em` datetime DEFAULT NULL,
+  `alterado_em` datetime DEFAULT NULL,
+  `status` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `id_UNIQUE` (`id`),
+  KEY `fk_atendimentos_paciente_idx` (`paciente`),
+  KEY `fk_agendamento_dentista_idx` (`dentista`),
+  KEY `fk_agendamento_status_idx` (`status`),
+  CONSTRAINT `fk_agendamento_dentista` FOREIGN KEY (`dentista`) REFERENCES `operador` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_agendamento_paciente` FOREIGN KEY (`paciente`) REFERENCES `paciente` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_agendamento_status` FOREIGN KEY (`status`) REFERENCES `status_agendamento` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `agendamento`
+--
+
+LOCK TABLES `agendamento` WRITE;
+/*!40000 ALTER TABLE `agendamento` DISABLE KEYS */;
+INSERT INTO `agendamento` VALUES (3,'2015-06-26 09:30:00',NULL,1,10,'teste','2015-06-25 00:02:47',NULL,NULL),(4,'2015-06-26 10:00:00',NULL,2,11,'obturação','2015-06-25 00:06:57',NULL,NULL),(5,'2015-06-25 09:00:00',NULL,3,11,'teste','2015-06-25 00:59:39',NULL,NULL);
+/*!40000 ALTER TABLE `agendamento` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -60,7 +92,7 @@ CREATE TABLE `campus` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -69,7 +101,7 @@ CREATE TABLE `campus` (
 
 LOCK TABLES `campus` WRITE;
 /*!40000 ALTER TABLE `campus` DISABLE KEYS */;
-INSERT INTO `campus` VALUES (1,'MONTE CASTELLO');
+INSERT INTO `campus` VALUES (1,'MONTE CASTELLO'),(2,'MARACANÃ');
 /*!40000 ALTER TABLE `campus` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -86,7 +118,7 @@ CREATE TABLE `doencas_preexistentes` (
   `familiar` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -175,7 +207,7 @@ CREATE TABLE `operador` (
   UNIQUE KEY `idoperador_UNIQUE` (`id`),
   KEY `fk_operador_tipo_operador1_idx` (`tipo_operador`),
   CONSTRAINT `fk_operador_tipo_operador1` FOREIGN KEY (`tipo_operador`) REFERENCES `tipo_operador` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -184,7 +216,7 @@ CREATE TABLE `operador` (
 
 LOCK TABLES `operador` WRITE;
 /*!40000 ALTER TABLE `operador` DISABLE KEYS */;
-INSERT INTO `operador` VALUES (7,'Administrador','',1);
+INSERT INTO `operador` VALUES (7,'Administrador','',1),(8,'MAYKON DEYKON SANTA BARROS','',1),(9,'Fulana dos Anzois','',2),(10,'José Ribamar','CRM123',3),(11,'Maria das Dores','CRO4354',3);
 /*!40000 ALTER TABLE `operador` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -210,7 +242,7 @@ CREATE TABLE `paciente` (
   UNIQUE KEY `idpaciente_UNIQUE` (`id`),
   KEY `fk_paciente_campus1_idx` (`campus_id`),
   CONSTRAINT `fk_paciente_campus1` FOREIGN KEY (`campus_id`) REFERENCES `campus` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -219,6 +251,7 @@ CREATE TABLE `paciente` (
 
 LOCK TABLES `paciente` WRITE;
 /*!40000 ALTER TABLE `paciente` DISABLE KEYS */;
+INSERT INTO `paciente` VALUES (1,'Maykon Deykon Santa Barros','1981-03-14','234','PARAENSE','(34) 53453-4534','MASCULINO','MORENA','SI1312002-21',1),(2,'Ana Cristina Bezerra Barros','1988-07-22','4534','MARANHENSE','(23) 42345-6456','FEMININO','MORENA','NUT34535',1),(3,'Arthur Bezerra Barros','2013-12-28','453','MARANHENSE','(45) 64574-6733','MASCULINO','MORENA','SI1312002-22',1);
 /*!40000 ALTER TABLE `paciente` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -279,6 +312,53 @@ LOCK TABLES `queixa_principal` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `status_agendamento`
+--
+
+DROP TABLE IF EXISTS `status_agendamento`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `status_agendamento` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `descricao` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `status_agendamento`
+--
+
+LOCK TABLES `status_agendamento` WRITE;
+/*!40000 ALTER TABLE `status_agendamento` DISABLE KEYS */;
+/*!40000 ALTER TABLE `status_agendamento` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tipo_atendimento`
+--
+
+DROP TABLE IF EXISTS `tipo_atendimento`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tipo_atendimento` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `descricao` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tipo_atendimento`
+--
+
+LOCK TABLES `tipo_atendimento` WRITE;
+/*!40000 ALTER TABLE `tipo_atendimento` DISABLE KEYS */;
+INSERT INTO `tipo_atendimento` VALUES (1,'EMERGÊNCIA'),(2,'EXAME CLÍNICO'),(3,'REEXAME'),(4,'PROFILAXIA'),(5,'TARTARECTOMIA'),(6,'ATF'),(7,'IBH'),(8,'REST. PROVISÓRIA'),(9,'REST. RESINA'),(10,'REST. AMALGAMA'),(11,'CAPEAMENTO'),(12,'ACABAMENTO REST.'),(13,'POLIMENTO REST'),(14,'EXODONTIA'),(15,'SUTURA'),(16,'REMOÇÃO DE SUTURA'),(17,'CIRURGIA PERIOD.'),(18,'PRESC. MEDICAÇÃO'),(19,'ATESTADO'),(20,'ENCAMINHAMENTO'),(21,'SOLICITAÇÃO EXAMES COMPLEMENTARES'),(22,'ESCOVAÇÃO SUPERVISIONADA'),(23,'TC');
+/*!40000 ALTER TABLE `tipo_atendimento` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `tipo_habito`
 --
 
@@ -290,7 +370,7 @@ CREATE TABLE `tipo_habito` (
   `descricao` varchar(255) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -314,7 +394,7 @@ CREATE TABLE `tipo_operador` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `descricao` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -336,4 +416,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-06-19 15:27:38
+-- Dump completed on 2015-06-25  9:08:13
